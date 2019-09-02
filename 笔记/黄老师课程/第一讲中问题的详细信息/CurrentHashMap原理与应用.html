@@ -1,0 +1,3437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_33589510/article/details/79962152"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"CurrentHashMap原理与应用(JDK7) - JavaEdge"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>CurrentHashMap原理与应用(JDK7) - JavaEdge - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-515b86e11a.min.css">
+            
+            <script type="application/ld+json">{"@context":"https:\/\/ziyuan.baidu.com\/contexts\/cambrian.jsonld","@id":"https:\/\/blog.csdn.net\/qq_33589510\/article\/details\/79962152","appid":"1563894916825412","title":"CurrentHashMap\u539f\u7406\u4e0e\u5e94\u7528(JDK7) - JavaEdge","images":["http:\/\/upload-images.jianshu.io\/upload_images\/4685968-d63b196a1cf25d71.png?imageMogr2\/auto-orient\/strip%7CimageView2\/2\/w\/1240","http:\/\/upload-images.jianshu.io\/upload_images\/4685968-e0162ded64f9254f?imageMogr2\/auto-orient\/strip%7CimageView2\/2\/w\/1240","http:\/\/upload-images.jianshu.io\/upload_images\/4685968-8dd52ccd75fa7de1?imageMogr2\/auto-orient\/strip%7CimageView2\/2\/w\/1240"],"pubDate":"2019-07-16T19:25:19"}</script>
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin-finalboss/skin-finalboss-48b4f9f954.min.css">
+        <script type="text/javascript">
+        var username = "qq_33589510";
+        var blog_address = "https://blog.csdn.net/qq_33589510";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_33589510/article/details/79962152"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin-finalboss";
+        // 第四范式所需数据
+        var articleTitles = "CurrentHashMap原理与应用(JDK7) - JavaEdge";
+        
+        var nickName = " JavaEdge";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_33589510/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/qq_33589510/article/details/79962152";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,track/1.2.6/track.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-845","con":",,"}' data-track-click='{"mod":"kp_popu_476-845","con":",,"}' data-report-view='{"mod":"kp_popu_476-845","keyword":""}' data-report-click='{"mod":"kp_popu_476-845","keyword":""}'><script src="//csdnimg.cn/public/common/indexSuperise/1.1.1/indexSuperise.js?20190111165312"></script><script>window.csdn.indexSuperise({smallMoveImg:'https://img-bss.csdn.net/1560915579293.png',bigMoveImg:'https://img-bss.csdn.net/1560915575919.png',link:'https://kunyu.csdn.net?p=476&a=845&c=394&k=&d=1&t=3&dest=https%3A%2F%2Fedu.csdn.net%2Ftopic%2Fai30%3Futm_source%3Dblogpopup',trackSuperId:476,smallMove:'notMove',trackSId:845});</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <span class="article-type type-1 float-left">原</span>                <h1 class="title-article">CurrentHashMap原理与应用(JDK7)</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                                                                                                                        <span class="time">2018年04月16日 16:15:54</span>
+                    <a class="follow-nickName" href="https://me.csdn.net/qq_33589510" target="_blank"> JavaEdge</a>
+                    <span class="read-count">阅读数 19265</span>
+                                                                                                                                </div>
+                <div class="operating">
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+        <div id="article_content" class="article_content clearfix" data-track-view='{"mod":"popu_307","con":",https://blog.csdn.net/qq_33589510/article/details/79962152,"}' data-track-click='{"mod":"popu_307","con":",https://blog.csdn.net/qq_33589510/article/details/79962152"}'>
+                                                <div class="article-copyright">
+                        
+                        版权声明：欢迎加入 Java 技术交流群214821336                        https://blog.csdn.net/qq_33589510/article/details/79962152                    </div>
+                                                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-cd6c485e8b.css" />
+                                        <div id="content_views" class="markdown_views prism-tomorrow-night-eighties">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                                            <p>ConcurrentHashMap是线程安全且高效的HashMap</p>
+
+
+
+<h1 id="1-为什么要使用concurrenthashmap">1 为什么要使用ConcurrentHashMap</h1>
+
+<ul>
+<li>线程不安全的HashMap <br>
+HashMap是Java中最常用的一个Map类，00000性能好、速度快，但不能保证线程安全，它可用null作为key/value <br>
+在多线程环境下,使用HashMap进行put操作会引起死循环,所以在并发情况下不能使用HashMap.例如,执行以下代码会引起死循环.</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs coffeescript">final HashMap&lt;String, String&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;(<span class="hljs-number">2</span>);
+ Thread t = <span class="hljs-keyword">new</span> Thread<span class="hljs-function"><span class="hljs-params">(() -&gt; {
+     <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+         <span class="hljs-keyword">new</span> Thread(() -&gt; map.put(UUID.randomUUID().toString(), <span class="hljs-string">""</span>), <span class="hljs-string">"ftf"</span> + i).start();
+     }
+ }, <span class="hljs-string">"ftf"</span>)</span>;
+ <span class="hljs-title">t</span>.<span class="hljs-title">start</span><span class="hljs-params">()</span>;
+ <span class="hljs-title">t</span>.<span class="hljs-title">join</span><span class="hljs-params">()</span>;</span></code></pre>
+
+<p>HashMap在并发执行put操作时会引起死循环,是因为多线程会导致HashMap的Entry链表形成环,一旦成环,Entry的next节点永远不为空,产生死循环. <br>
+- 效率低下的HashTable <br>
+线程安全的Map类，其public方法均用synchronize修饰 <br>
+这表示在多线程操作时，每个线程在操作之前都会锁住整个map，待操作完成后才释放 <br>
+如线程1使用put进行元素添加,线程2不但不能使用put方法进行添加元素,也不能使用get方法来获取元素,所以竞争越激烈效率越低,这必然导致多线程时性能不佳.另外，Hashtable不能使用null作为key/value <br>
+- 锁分段技术可有效提升并发访问率 <br>
+HashTable在竞争激烈的并发环境下表现出效率低下的原因是所有访问HashTable的线程都必须竞争同一把锁 <br>
+假如容器里有多把锁,每一把锁用于锁容器其中一部分的数据,那么当多线程访问容器里不同数据段的数据时,线程间就不会存在锁竞争,从而可以有效提高并发访问效率,这就是ConcurrentHashMap所使用的锁分段技术 <br>
+   - 首先将数据分成一段一段地存储 <br>
+   - 然后给每一段数据配一把锁 <br>
+   - 当一个线程占用锁访问其中一个段数据的时候,其他段的数据也能被其他线程访问</p>
+
+
+
+<h1 id="2-concurrenthashmap的结构">2 ConcurrentHashMap的结构</h1>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/4685968-d63b196a1cf25d71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ConcurrentHashMap.png" title=""> <br>
+通过ConcurrentHashMap的类图来分析ConcurrentHashMap的结构 <br>
+<img src="http://upload-images.jianshu.io/upload_images/4685968-e0162ded64f9254f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title=""> <br>
+ConcurrentHashMap是由Segment数组和HashEntry数组组成. <br>
+Segment是一种可重入锁,在ConcurrentHashMap里扮演锁的角色; <br>
+HashEntry则用于存储键值对数据. <br>
+一个ConcurrentHashMap里包含一个Segment数组. <br>
+Segment的结构和HashMap类似,是一种数组和链表结构. <br>
+一个Segment里包含一个HashEntry数组,每个HashEntry是一个链表结构的元素,每个Segment守护着一个HashEntry数组里的元素,当对HashEntry数组的数据进行修改时, <br>
+必须首先获得与它对应的Segment锁.如图 <br>
+<img src="http://upload-images.jianshu.io/upload_images/4685968-8dd52ccd75fa7de1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title=""></p>
+
+
+
+<h1 id="3-concurrenthashmap的初始化">3 ConcurrentHashMap的初始化</h1>
+
+
+
+<h2 id="segment详解">Segment详解</h2>
+
+
+
+<h3 id="segment的索引与读取">Segment的索引与读取</h3>
+
+<p>ConcurrentHashMap类中包含三个与Segment相关的成员变量：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs java"><span class="hljs-javadoc">/**
+ * Mask value for indexing into segments. The upper bits of a
+ * key's hash code are used to choose the segment.
+ */</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> segmentMask;
+
+<span class="hljs-javadoc">/**
+ * Shift value for indexing within segments.
+ */</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> segmentShift;
+
+<span class="hljs-javadoc">/**
+ * The segments, each of which is a specialized hash table.
+ */</span> <span class="hljs-keyword">final</span> Segment&lt;K,V&gt;[] segments;</code></pre>
+
+<p>其中segments是Segment的原生数组，此数组的长度可以在ConcurrentHashMap的构造函数中使用并发度参数指定，其默认值为DEFAULT_CONCURRENCY_LEVEL=16 <br>
+- segmentShift是用来计算segments数组索引的位移量，而 <br>
+- segmentMask则是用来计算索引的掩码值</p>
+
+<p>例如并发度为16时（即segments数组长度为16），segmentShift为32-4=28（因为2的4次幂为16），而segmentMask则为1111（二进制），索引的计算式如下：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs bash">int j = (<span class="hljs-built_in">hash</span> &gt;&gt;&gt; segmentShift) &amp; segmentMask;</code></pre>
+
+
+
+<h3 id="在多线程并发访问一个共享变量时为了保证逻辑的正确可以采用以下方法">在多线程并发访问一个共享变量时，为了保证逻辑的正确，可以采用以下方法：</h3>
+
+<ol>
+<li>加锁，性能最低，能保证原子性、可见性，防止指令重排；</li>
+<li>volatile修饰，性能中等，能保证可见性，防止指令重排；</li>
+<li>使用getObjectVolatile，性能最好，可防止指令重排；</li>
+</ol>
+
+<p>因此ConcurrentHashMap选择了使用Unsafe的getObjectVolatile来读取segments中的元素，相关代码如下</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs java"><span class="hljs-comment">// Unsafe mechanics private static final sun.misc.Unsafe UNSAFE;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> SBASE;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> SSHIFT;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> TBASE;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TSHIFT;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> HASHSEED_OFFSET;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> SEGSHIFT_OFFSET;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> SEGMASK_OFFSET;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> SEGMENTS_OFFSET;
+
+<span class="hljs-keyword">static</span> {
+    <span class="hljs-keyword">int</span> ss, ts;
+    <span class="hljs-keyword">try</span> {
+        UNSAFE = sun.misc.Unsafe.getUnsafe();
+        Class tc = HashEntry[].class;
+        Class sc = Segment[].class;
+        TBASE = UNSAFE.arrayBaseOffset(tc);
+        SBASE = UNSAFE.arrayBaseOffset(sc);
+        ts = UNSAFE.arrayIndexScale(tc);
+        ss = UNSAFE.arrayIndexScale(sc);
+        HASHSEED_OFFSET = UNSAFE.objectFieldOffset(
+            ConcurrentHashMap.class.getDeclaredField(<span class="hljs-string">"hashSeed"</span>));
+        SEGSHIFT_OFFSET = UNSAFE.objectFieldOffset(
+            ConcurrentHashMap.class.getDeclaredField(<span class="hljs-string">"segmentShift"</span>));
+        SEGMASK_OFFSET = UNSAFE.objectFieldOffset(
+            ConcurrentHashMap.class.getDeclaredField(<span class="hljs-string">"segmentMask"</span>));
+        SEGMENTS_OFFSET = UNSAFE.objectFieldOffset(
+            ConcurrentHashMap.class.getDeclaredField(<span class="hljs-string">"segments"</span>));
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(e);
+    }
+    <span class="hljs-keyword">if</span> ((ss &amp; (ss-<span class="hljs-number">1</span>)) != <span class="hljs-number">0</span> || (ts &amp; (ts-<span class="hljs-number">1</span>)) != <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">"data type scale not a power of two"</span>);
+    SSHIFT = <span class="hljs-number">31</span> - Integer.numberOfLeadingZeros(ss);
+    TSHIFT = <span class="hljs-number">31</span> - Integer.numberOfLeadingZeros(ts);
+}
+
+
+<span class="hljs-keyword">private</span> Segment&lt;K,V&gt; <span class="hljs-title">segmentForHash</span>(<span class="hljs-keyword">int</span> h) {
+    <span class="hljs-keyword">long</span> u = (((h &gt;&gt;&gt; segmentShift) &amp; segmentMask) &lt;&lt; SSHIFT) + SBASE;
+    <span class="hljs-keyword">return</span> (Segment&lt;K,V&gt;) UNSAFE.getObjectVolatile(segments, u);
+}</code></pre>
+
+<p>观察segmentForHash(int h)方法可知 <br>
+- 首先使用(h &gt;&gt;&gt; segmentShift) &amp; segmentMask <br>
+计算出该h对应的segments索引值（假设为x） <br>
+- 然后使用索引值(x&lt;</p>
+
+<h3 id="segment的锁">Segment的锁</h3>
+
+<p>Segment继承了ReentrantLock，因此它实际上是一把锁。在进行put、remove、replace、clear等需要改动内部内容的操作时，都要进行加锁操作，其代码一般是这样的：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">final V put(K key, <span class="hljs-keyword">int</span> hash, V <span class="hljs-keyword">value</span>, boolean onlyIfAbsent) {
+    HashEntry&lt;K,V&gt; node = tryLock() ? <span class="hljs-keyword">null</span> :
+        scanAndLockForPut(key, hash, <span class="hljs-keyword">value</span>);
+    V oldValue;
+    <span class="hljs-keyword">try</span> {
+<span class="hljs-comment">//实际代码……</span>
+        }
+    } <span class="hljs-keyword">finally</span> {
+        unlock();
+    }
+    <span class="hljs-keyword">return</span> oldValue;
+}</code></pre>
+
+<p>首先调用tryLock，如果加锁失败，则进入<code>scanAndLockForPut(key, hash, value)</code> <br>
+该方法实际上是先自旋等待其他线程解锁，直至指定的次数<code>MAX_SCAN_RETRIES</code> <br>
+若自旋过程中，其他线程释放了锁，导致本线程直接获得了锁，就避免了本线程进入等待锁的场景，提高了效率 <br>
+若自旋一定次数后，仍未获取锁，则调用lock方法进入等待锁的场景</p>
+
+<p>采用这种自旋锁和独占锁结合的方法，在很多场景下能够提高Segment并发操作数据的效率。</p>
+
+<p>初始化方法是通过initialCapacity、loadFactor和concurrencyLevel等几个 <br>
+参数来初始化segment数组、段偏移量segmentShift、段掩码segmentMask和每个segment里的HashEntry数组来实现的.</p>
+
+<ul>
+<li>初始化segments数组</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">       <span class="hljs-keyword">if</span> (concurrencyLevel &gt; MAX_SEGMENTS)
+            concurrencyLevel = MAX_SEGMENTS;
+            <span class="hljs-keyword">int</span> sshift = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">int</span> ssize = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">while</span> (ssize &lt; concurrencyLevel) {
+                ++sshift;
+                ssize &lt;&lt;= <span class="hljs-number">1</span>;
+       }
+       segmentShift = <span class="hljs-number">32</span> - sshift;
+       segmentMask = ssize - <span class="hljs-number">1</span>;
+       <span class="hljs-keyword">this</span>.segments = Segment.newArray(ssize);</code></pre>
+
+<p>segments数组的长度<code>ssize</code>是通过<code>concurrencyLevel</code>计算得出的 <br>
+为了能通过按位与的散列算法来定位segments数组的索引,必须保证segments数组的长度是2的N次方,所以必须计算出一个大于或等于concurrencyLevel的最小的2的N次方值来作为segments数组的长度</p>
+
+<blockquote>
+  <p>concurrencyLevel的最大值是65535,这意味着segments数组的长度最大为65536,对应的二进制是16位</p>
+</blockquote>
+
+<ul>
+<li>初始化segmentShift和segmentMask <br>
+这两个全局变量需要在定位segment时的散列算法里使用 <br>
+sshift等于ssize从1向左移位的次数,默认concurrencyLevel等于16,1需要向左移位移动4次,所以sshift为4. <br>
+<ul><li>segmentShift用于定位参与散列运算的位数,segmentShift等于32减sshift,所以等于28,这里之所以用32是因为ConcurrentHashMap里的hash()方法输出的最大数是32位,后面的测试中我们可以看到这点</li>
+<li>segmentMask是散列运算的掩码,等于ssize减1,即15,掩码的二进制各个位的值都是1.因为ssize的最大长度是65536,所以segmentShift最大值是16,segmentMask最大值是65535,对应的二进制是16位,每个位都是1</li></ul></li>
+<li>初始化每个segment <br>
+输入参数initialCapacity是ConcurrentHashMap的初始化容量,loadfactor是每个segment的负载因子,在构造方法里需要通过这两个参数来初始化数组中的每个segment.</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs go">       <span class="hljs-keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)
+            initialCapacity = MAXIMUM_CAPACITY;
+        <span class="hljs-typename">int</span> c = initialCapacity / ssize;
+        <span class="hljs-keyword">if</span> (c * ssize &lt; initialCapacity)
+            ++c;
+        <span class="hljs-typename">int</span> <span class="hljs-built_in">cap</span> =<span class="hljs-number"> 1</span>;
+        while (<span class="hljs-built_in">cap</span> &lt; c)
+            <span class="hljs-built_in">cap</span> &lt;&lt;=<span class="hljs-number"> 1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-typename">int</span> i =<span class="hljs-number"> 0</span>; i &lt; this.segments.length; ++i)
+            this.segments[i] = <span class="hljs-built_in">new</span> Segment&lt;K, V&gt;(<span class="hljs-built_in">cap</span>, loadFactor);</code></pre>
+
+<p>上面代码中的变量cap就是segment里HashEntry数组的长度,它等于initialCapacity除以ssize的倍数c,如果c大于1,就会取大于等于c的2的N次方值,所以cap不是1,就是2的N次方. <br>
+segment的容量threshold＝（int）cap*loadFactor,默认initialCapacity等于16,loadfactor等于0.75,通过运算cap等于1,threshold等于零.</p>
+
+<ul>
+<li>定位Segment <br>
+既然ConcurrentHashMap使用分段锁Segment来保护不同段的数据,那么在插入和获取元素时,必须先通过散列算法定位到Segment.可以看到ConcurrentHashMap会首先使用Wang/Jenkins hash的变种算法对元素的hashCode进行一次再散列.</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">       <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hash</span>(<span class="hljs-keyword">int</span> h) {
+            h += (h &lt;&lt; <span class="hljs-number">15</span>) ^ <span class="hljs-number">0xffffcd7d</span>;
+            h ^= (h &gt;&gt;&gt; <span class="hljs-number">10</span>);
+            h += (h &lt;&lt; <span class="hljs-number">3</span>);
+            h ^= (h &gt;&gt;&gt; <span class="hljs-number">6</span>);
+            h += (h &lt;&lt; <span class="hljs-number">2</span>) + (h &lt;&lt; <span class="hljs-number">14</span>);
+            <span class="hljs-keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="hljs-number">16</span>);
+        }</code></pre>
+
+<p>进行再散列,是为了减少散列冲突,使元素能够均匀地分布在不同的Segment上,从而提高容器的存取效率. <br>
+假如散列的质量差到极点,那么所有的元素都在一个Segment中,不仅存取元素缓慢,分段锁也会失去意义.</p>
+
+<p>ConcurrentHashMap通过以下散列算法定位segment</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs bash">final Segment&lt;K,V&gt; segmentFor(int <span class="hljs-built_in">hash</span>) {
+      <span class="hljs-keyword">return</span> segments[(<span class="hljs-built_in">hash</span> &gt;&gt;&gt; segmentShift) &amp; segmentMask];
+}</code></pre>
+
+<p>默认情况下segmentShift为28,segmentMask为15,再散列后的数最大是32位二进制数据,向右无符号移动28位,即让高4位参与到散列运算中,(hash&gt;&gt;&gt;segmentShift)&amp;segmentMask的运算结果分别是4、15、7和8,可以看到散列值没有发生冲突.</p>
+
+
+
+<h3 id="hashentry">HashEntry</h3>
+
+<p>如果说ConcurrentHashMap中的segments数组是第一层hash表，则每个Segment中的HashEntry数组（transient volatile <br>
+HashEntry</p>
+
+<pre class="prettyprint"><code class=" hljs java"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> class HashEntry&lt;K,V&gt; {
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> hash;
+    <span class="hljs-keyword">final</span> K key;
+    <span class="hljs-keyword">volatile</span> V value;
+    <span class="hljs-keyword">volatile</span> HashEntry&lt;K,V&gt; next;
+
+    HashEntry(<span class="hljs-keyword">int</span> hash, K key, V value, HashEntry&lt;K,V&gt; next) {
+        <span class="hljs-keyword">this</span>.hash = hash;
+        <span class="hljs-keyword">this</span>.key = key;
+        <span class="hljs-keyword">this</span>.value = value;
+        <span class="hljs-keyword">this</span>.next = next;
+    }
+
+    <span class="hljs-javadoc">/**
+     * Sets next field with volatile write semantics.  (See above
+     * about use of putOrderedObject.)
+     */</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> setNext(HashEntry&lt;K,V&gt; n) {
+        UNSAFE.putOrderedObject(<span class="hljs-keyword">this</span>, nextOffset, n);
+    }
+
+    <span class="hljs-comment">// Unsafe mechanics static final sun.misc.Unsafe UNSAFE;</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> nextOffset;
+    <span class="hljs-keyword">static</span> {
+        <span class="hljs-keyword">try</span> {
+            UNSAFE = sun.misc.Unsafe.getUnsafe();
+            Class k = HashEntry.class;
+            nextOffset = UNSAFE.objectFieldOffset
+                (k.getDeclaredField(<span class="hljs-string">"next"</span>));
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(e);
+        }
+    }
+}
+
+<span class="hljs-javadoc">/**
+ * Gets the ith element of given table (if nonnull) with volatile
+ * read semantics. Note: This is manually integrated into a few
+ * performance-sensitive methods to reduce call overhead.
+ */</span> <span class="hljs-annotation">@SuppressWarnings</span>(<span class="hljs-string">"unchecked"</span>)
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> &lt;K,V&gt; HashEntry&lt;K,V&gt; entryAt(HashEntry&lt;K,V&gt;[] tab, <span class="hljs-keyword">int</span> i) {
+    <span class="hljs-keyword">return</span> (tab == <span class="hljs-keyword">null</span>) ? <span class="hljs-keyword">null</span> :
+        (HashEntry&lt;K,V&gt;) UNSAFE.getObjectVolatile
+        (tab, ((<span class="hljs-keyword">long</span>)i &lt;&lt; TSHIFT) + TBASE);
+}
+
+<span class="hljs-javadoc">/**
+ * Sets the ith element of given table, with volatile write
+ * semantics. (See above about use of putOrderedObject.)
+ */</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> &lt;K,V&gt; <span class="hljs-keyword">void</span> setEntryAt(HashEntry&lt;K,V&gt;[] tab, <span class="hljs-keyword">int</span> i,
+                                   HashEntry&lt;K,V&gt; e) {
+    UNSAFE.putOrderedObject(tab, ((<span class="hljs-keyword">long</span>)i &lt;&lt; TSHIFT) + TBASE, e);
+}</code></pre>
+
+<p>与Segment类似，HashEntry使用UNSAFE.putOrderedObject来设置它的next成员变量，这样既可以提高性能，又能保持并发可见性。同时，entryAt方法和setEntryAt方法也使用了UNSAFE.getObjectVolatile和UNSAFE.putOrderedObject来读取和写入指定索引的HashEntry。</p>
+
+<p>总之，Segment数组和HashEntry数组的读取写入一般都是使用UNSAFE。</p>
+
+
+
+<h1 id="5-concurrenthashmap的操作">5 ConcurrentHashMap的操作</h1>
+
+<p>主要研究ConcurrentHashMap的3种操作——get操作、put操作和size操作.</p>
+
+
+
+<h2 id="51-get操作">5.1 get操作</h2>
+
+<p>Segment的get操作实现非常简单和高效. <br>
+  - 先经过一次再散列 <br>
+  - 然后使用这个散列值通过散列运算定位到Segment <br>
+  - 再通过散列算法定位到元素.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span>(Object key) {
+    Segment&lt;K,V&gt; s; 
+    HashEntry&lt;K,V&gt;[] tab;
+    <span class="hljs-keyword">int</span> h = hash(key);
+<span class="hljs-comment">//找到segment的地址 long u = (((h &gt;&gt;&gt; segmentShift) &amp; segmentMask) &lt;&lt; SSHIFT) + SBASE;</span>
+<span class="hljs-comment">//取出segment，并找到其hashtable if ((s = (Segment&lt;K,V&gt;)UNSAFE.getObjectVolatile(segments, u)) != null &amp;&amp;</span>
+        (tab = s.table) != <span class="hljs-keyword">null</span>) {
+<span class="hljs-comment">//遍历此链表，直到找到对应的值 for (HashEntry&lt;K,V&gt; e = (HashEntry&lt;K,V&gt;) UNSAFE.getObjectVolatile</span>
+                 (tab, ((<span class="hljs-keyword">long</span>)(((tab.length - <span class="hljs-number">1</span>) &amp; h)) &lt;&lt; TSHIFT) + TBASE);
+             e != <span class="hljs-keyword">null</span>; e = e.next) {
+            K k;
+            <span class="hljs-keyword">if</span> ((k = e.key) == key || (e.hash == h &amp;&amp; key.equals(k)))
+                <span class="hljs-keyword">return</span> e.<span class="hljs-keyword">value</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}</code></pre>
+
+<p>整个get方法不需要加锁，只需要计算两次hash值，然后遍历一个单向链表（此链表长度平均小于2），因此get性能很高。 <br>
+高效之处在于整个过程不需要加锁,除非读到的值是空才会加锁重读. <br>
+HashTable容器的get方法是需要加锁的,那ConcurrentHashMap的get操作是如何做到不加锁的呢? <br>
+原因是它的get方法将要使用的<strong>共享变量都定义成了volatile类型</strong>, <br>
+如用于统计当前Segement大小的count字段和用于存储值的HashEntry的value.<strong>定义成volatile的变量,能够在线程之间保持可见性,能够被多线程同时读,并且保证不会读到过期的值,但是只能被单线程写</strong>(有一种情况可以被多线程写,就是写入的值不依赖于原值), <br>
+在get操作里只需要读不需要写共享变量count和value,所以可以不用加锁. <br>
+之所以不会读到过期的值,是因为根据Java内存模型的happen before原则,对volatile字段的写操作先于读操作,即使两个线程同时修改和获取 <br>
+volatile变量,get操作也能拿到最新的值, <br>
+这是用volatile替换锁的经典应用场景.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">transient <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">int</span> count;
+<span class="hljs-keyword">volatile</span> V <span class="hljs-keyword">value</span>;</code></pre>
+
+<p>在定位元素的代码里可以发现,定位HashEntry和定位Segment的散列算法虽然一样,都与数组的长度减去1再相“与”,但是相“与”的值不一样</p>
+
+<ul>
+<li>定位Segment使用的是元素的hashcode再散列后得到的值的高位</li>
+<li>定位HashEntry直接使用再散列后的值.</li>
+</ul>
+
+<p>其目的是避免两次散列后的值一样,虽然元素在Segment里散列开了,但是却没有在HashEntry里散列开.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs bash"><span class="hljs-built_in">hash</span> &gt;&gt;&gt; segmentShift &amp; segmentMask　　 // 定位Segment所使用的<span class="hljs-built_in">hash</span>算法
+int index = <span class="hljs-built_in">hash</span> &amp; (tab.length - <span class="hljs-number">1</span>);　　 // 定位HashEntry所使用的<span class="hljs-built_in">hash</span>算法</code></pre>
+
+
+
+<h2 id="52-put操作">5.2 put操作</h2>
+
+<p>由于需要<strong>对共享变量进行写操作,所以为了线程安全,在操作共享变量时必须加锁</strong>. <br>
+put方法首先定位到Segment,然后在Segment里进行插入操作. <br>
+插入操作需要经历两个步骤</p>
+
+<ul>
+<li>判断是否需要对Segment里的HashEntry数组进行扩容</li>
+<li><p>定位添加元素的位置,然后将其放在HashEntry数组里</p>
+
+<ol><li>是否需要扩容 <br>
+在插入元素前会先判断Segment里的HashEntry数组是否超过容量(threshold),如果超过阈值,则对数组进行扩容. <br>
+值得一提的是,Segment的扩容判断比HashMap更恰当,因为HashMap是在插入元素后判断元素是否已经到达容量的,如果到达了就进行扩容,但是很有可能扩容之后没有新元素插入,这时HashMap就进行了一次无效的扩容.</li>
+<li>如何扩容 <br>
+在扩容的时候,首先会创建一个容量是原来两倍的数组,然后将原数组里的元素进行再散列后插入到新的数组里. <br>
+为了高效,ConcurrentHashMap不会对整个容器进行扩容,而只对某个segment扩容.</li></ol></li>
+</ul>
+
+<p>put方法的第一步，计算segment数组的索引，并找到该segment，然后调用该segment的put方法。</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> V <span class="hljs-title">put</span>(K key, V <span class="hljs-keyword">value</span>) {
+    Segment&lt;K,V&gt; s;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">value</span> == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+    <span class="hljs-keyword">int</span> hash = hash(key);
+<span class="hljs-comment">//计算segment数组的索引，并找到该segment int j = (hash &gt;&gt;&gt; segmentShift) &amp; segmentMask;</span>
+    <span class="hljs-keyword">if</span> ((s = (Segment&lt;K,V&gt;)UNSAFE.getObject          <span class="hljs-comment">// nonvolatile; recheck</span>
+         (segments, (j &lt;&lt; SSHIFT) + SBASE)) == <span class="hljs-keyword">null</span>) <span class="hljs-comment">//  in ensureSegment</span>
+        s = ensureSegment(j);
+<span class="hljs-comment">//调用该segment的put方法 return s.put(key, hash, value, false);</span>
+}</code></pre>
+
+<p>put方法第二步，在Segment的put方法中进行操作。</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">final V put(K key, <span class="hljs-keyword">int</span> hash, V <span class="hljs-keyword">value</span>, boolean onlyIfAbsent) {
+<span class="hljs-comment">//调用tryLock()尝试加锁，若失败则调用scanAndLockForPut进行加锁，同时寻找key相应的节点node</span>
+    HashEntry&lt;K,V&gt; node = tryLock() ? <span class="hljs-keyword">null</span> :
+        scanAndLockForPut(key, hash, <span class="hljs-keyword">value</span>);
+<span class="hljs-comment">//以下的代码都运行在加锁状态</span>
+    V oldValue;
+    <span class="hljs-keyword">try</span> {
+        HashEntry&lt;K,V&gt;[] tab = table;
+<span class="hljs-comment">//计算hash表的索引值，并取出HashEntry int index = (tab.length - 1) &amp; hash;</span>
+        HashEntry&lt;K,V&gt; first = entryAt(tab, index);
+<span class="hljs-comment">//遍历此链表 for (HashEntry&lt;K,V&gt; e = first;;) {</span>
+<span class="hljs-comment">//如果链表不为空，在链表中寻找对应的node，找到后进行赋值，并退出循环 if (e != null) {</span>
+                K k;
+                <span class="hljs-keyword">if</span> ((k = e.key) == key ||
+                    (e.hash == hash &amp;&amp; key.equals(k))) {
+                    oldValue = e.<span class="hljs-keyword">value</span>;
+                    <span class="hljs-keyword">if</span> (!onlyIfAbsent) {
+                        e.<span class="hljs-keyword">value</span> = <span class="hljs-keyword">value</span>;
+                        ++modCount;
+                    }
+                    <span class="hljs-keyword">break</span>;
+                }
+                e = e.next;
+            }
+<span class="hljs-comment">//如果在链表中没有找到对应的node else {</span>
+<span class="hljs-comment">//如果scanAndLockForPut方法中已经返回的对应的node，则将其插入first之前 if (node != null)</span>
+                    node.setNext(first);
+                <span class="hljs-keyword">else</span> <span class="hljs-comment">//否则，new一个新的HashEntry</span>
+                    node = <span class="hljs-keyword">new</span> HashEntry&lt;K,V&gt;(hash, key, <span class="hljs-keyword">value</span>, first);
+                <span class="hljs-keyword">int</span> c = count + <span class="hljs-number">1</span>;
+<span class="hljs-comment">//测试是否需要自动扩容 if (c &gt; threshold &amp;&amp; tab.length &lt; MAXIMUM_CAPACITY)</span>
+                    rehash(node);
+                <span class="hljs-keyword">else</span> <span class="hljs-comment">//设置node到Hash表的index索引处</span>
+                    setEntryAt(tab, index, node);
+                ++modCount;
+                count = c;
+                oldValue = <span class="hljs-keyword">null</span>;
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+    } <span class="hljs-keyword">finally</span> {
+        unlock();
+    }
+    <span class="hljs-keyword">return</span> oldValue;
+}</code></pre>
+
+
+
+<h2 id="53-size操作">5.3 size操作</h2>
+
+<p>要统计整个ConcurrentHashMap里元素的数量,就必须统计所有Segment里元素的数量后计总. <br>
+Segment里的全局变量count是一个volatile,在并发场景下,是不是直接把所有Segment的count相加就可以得到整个ConcurrentHashMap大小了呢?不是的 <br>
+虽然相加时可以获取每个Segment的count的最新值,但是<strong>可能累加前使用的count发生了变化</strong>,那么统计结果就不准了. <br>
+所以,最安全的做法是在统计size的时候把所有Segment的put、remove和clean方法全部锁住,但是这种做法显然非常低效.</p>
+
+<p>因为在累加count操作过程中,之前累加过的count发生变化的几率非常小,所以 <br>
+ConcurrentHashMap的做法是先尝试2次通过不锁Segment的方式来统计各个Segment大小,如果统计的过程中,count发生了变化,则再采用加锁的方式来统计所有Segment的大小.</p>
+
+<p>那么ConcurrentHashMap又是如何判断在统计的时候容器是否发生了变化呢? <br>
+使用modCount变量,在put、remove和clean方法里操作元素前都会将变量modCount进行加1,那么在<strong>统计size前后比较modCount是否发生变化</strong>,<strong>从而得知容器的大小是否发生变化.</strong></p>                                    </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-e44c3c0e64.css" rel="stylesheet">
+                    </div>
+    </article>
+</div>
+
+            <div class="hide-article-box hide-article-pos text-center">
+            <a class="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/qq_33589510/article/details/79962152,readmore"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/qq_33589510/article/details/79962152,readmore"}'>
+                展开阅读全文
+                <svg class="icon chevrondown" aria-hidden="true">
+                    <use xlink:href="#csdnc-chevrondown"></use>
+                </svg>
+            </a>
+        </div>
+    
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+</script>
+        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}' data-report-view='{"mod":"kp_popu_58-402","keyword":""}' data-report-click='{"mod":"kp_popu_58-402","keyword":""}'><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="79962152">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-mod="popu_384"><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/liuzhengkang/article/details/2916620,BlogCommendFromMachineLearnPai2_0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liuzhengkang/article/details/2916620" target="_blank" title="ConcurrentHashMap原理分析">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em><em>原理</em>分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liuzhengkang/article/details/2916620" target="_blank" title="ConcurrentHashMap原理分析">
+				<span class="desc oneline">    集合是编程中最常用的数据结构。而谈到并发，几乎总是离不开集合这类高级数据结构的支持。比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。这...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liuzhengkang">来自：	<span class="blog_title">  反ㄋ方向 .</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/programerxiaoer/article/details/80040090,BlogCommendFromMachineLearnPai2_1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/programerxiaoer/article/details/80040090" target="_blank" title="Java容器（二）-CurrentHashMap详解（JDK1.8）">
+		<h4 class="text-truncate oneline">
+				Java容器（二）-<em>CurrentHashMap</em>详解（JDK1.8）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6048</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/programerxiaoer/article/details/80040090" target="_blank" title="Java容器（二）-CurrentHashMap详解（JDK1.8）">
+				<span class="desc oneline">摘要在涉及到Java多线程同步时，如果我们使用HashMap可能会导致死锁问题吗，但是使用HashTable效率又不高。所以这个时候ConcurrentHashmap是我们最好的选择。为什么使用Con...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/programerxiaoer">来自：	<span class="blog_title"> 码小二的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_23960265/article/details/79233702,BlogCommendFromMachineLearnPai2_2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_23960265/article/details/79233702" target="_blank" title="HashMap与CurrentHashMap区别">
+		<h4 class="text-truncate oneline">
+				HashMap与<em>CurrentHashMap</em>区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6294</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_23960265/article/details/79233702" target="_blank" title="HashMap与CurrentHashMap区别">
+				<span class="desc oneline">好像今天没有什么源码读，那么就来看看java的这两种HashMap有啥不一样的地方吧，在这之前先普及一下HashMap的一些基本知识：（1）放入HashMap的元素是key-value对。（2）底层说...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_23960265">来自：	<span class="blog_title"> qq_23960265的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/kobejayandy/article/details/16834311,BlogCommendFromMachineLearnPai2_3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/kobejayandy/article/details/16834311" target="_blank" title="CocurrentHashMap和Hashtable的区别">
+		<h4 class="text-truncate oneline">
+				Co<em>currentHashMap</em>和Hashtable的区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9428</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/kobejayandy/article/details/16834311" target="_blank" title="CocurrentHashMap和Hashtable的区别">
+				<span class="desc oneline">集合类是JavaAPI的核心，但是我觉得要用好它们是一种艺术。我总结了一些个人的经验，譬如使用ArrayList能够提高性能，而不再需要过时的Vector了，等等。JDK1.5引入了一些好用的并发集合...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/kobejayandy">来自：	<span class="blog_title"> kobejayandy的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}' data-report-view='{"mod":"kp_popu_59-78","keyword":""}' data-report-click='{"mod":"kp_popu_59-78","keyword":""}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/jjc120074203/article/details/78625433,BlogCommendFromMachineLearnPai2_4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/jjc120074203/article/details/78625433" target="_blank" title="深入理解ConcurrentHashMap原理分析以及线程安全性问题">
+		<h4 class="text-truncate oneline">
+				深入理解Con<em>currentHashMap</em><em>原理</em>分析以及线程安全性问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jjc120074203/article/details/78625433" target="_blank" title="深入理解ConcurrentHashMap原理分析以及线程安全性问题">
+				<span class="desc oneline">在之前的文章提到CurrentHashMap是一个线程安全的，那么我么看一下CurrentHashMap如何进行操作的。CurrentHashMap与HashTable区别？HashTableput(...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/jjc120074203">来自：	<span class="blog_title"> jjc120074203的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u010723709/article/details/48007881,BlogCommendFromBaidu_5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010723709/article/details/48007881" target="_blank" title="ConcurrentHashMap源码分析（JDK8版本）">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em>源码分析（JDK8版本）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010723709/article/details/48007881" target="_blank" title="ConcurrentHashMap源码分析（JDK8版本）">
+				<span class="desc oneline">注：本文源码是JDK8的版本，与之前的版本有较大差异ConcurrentHashMap是conccurrent家族中的一个类，由于它可以高效地支持并发操作，以及被广泛使用，经典的开源框架Spring的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010723709">来自：	<span class="blog_title"> 惟愿无事</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_38977097/article/details/88827217,BlogCommendFromBaidu_6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_38977097/article/details/88827217" target="_blank" title="HashMap和CurrentHashMap的知识总结">
+		<h4 class="text-truncate oneline">
+				HashMap和<em>CurrentHashMap</em>的知识总结		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					195</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_38977097/article/details/88827217" target="_blank" title="HashMap和CurrentHashMap的知识总结">
+				<span class="desc oneline">博客推荐：https://www.cnblogs.com/chengxiao/p/6059914.html</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_38977097">来自：	<span class="blog_title"> 子非鱼焉</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_34144916/article/details/80850116,BlogCommendFromBaidu_7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_34144916/article/details/80850116" target="_blank" title="CurrentHashMap、HashMap、HashTable的区别">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em>、HashMap、HashTable的区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1681</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_34144916/article/details/80850116" target="_blank" title="CurrentHashMap、HashMap、HashTable的区别">
+				<span class="desc oneline">一：这三者最关键的区别就是线程安全的区别  1. 先说HashMap和HashTable的区别      最开始的时候只有HashMap和HashTable，他们最重要的区别就是HashMap不是线程...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_34144916">来自：	<span class="blog_title"> qq_34144916的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/lzbhnr/article/details/79110180,BlogCommendFromBaidu_8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lzbhnr/article/details/79110180" target="_blank" title="currenthashmap的内部实现原理">
+		<h4 class="text-truncate oneline">
+				<em>currenthashmap</em>的内部实现<em>原理</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3858</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lzbhnr/article/details/79110180" target="_blank" title="currenthashmap的内部实现原理">
+				<span class="desc oneline">存储到currenthashmap的是一个由Segment元素组成的数组。数组里的元素。是一个个的segment。每个segment的元素和hashmap的结构很相似。也是一个数组。也就是说。Segm...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/lzbhnr">来自：	<span class="blog_title"> Andrew_lee's blog</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-894","con":",,"}' data-track-click='{"mod":"kp_popu_60-894","con":",,"}' data-report-view='{"mod":"kp_popu_60-894","keyword":""}' data-report-click='{"mod":"kp_popu_60-894","keyword":""}'></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wl_ldy/article/details/7228127,BlogCommendFromBaidu_9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wl_ldy/article/details/7228127" target="_blank" title="ConcurrentHashMap解析">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em>解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wl_ldy/article/details/7228127" target="_blank" title="ConcurrentHashMap解析">
+				<span class="desc oneline">曾经研究过jkd1.5新特性，其中ConcurrentHashMap就是其中之一，其特点：效率比Hashtable高，并发性比hashmap好。结合了两者的特点。   集合是编程中最常用的数据结构。而...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wl_ldy">来自：	<span class="blog_title"> wl_ldy的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_24451605/article/details/51125946,BlogCommendFromMachineLearnPai2_10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_24451605/article/details/51125946" target="_blank" title="Java并发容器(一) CocurrentHashMap的应用及实现">
+		<h4 class="text-truncate oneline">
+				Java并发容器(一) Co<em>currentHashMap</em>的<em>应用</em>及实现		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_24451605/article/details/51125946" target="_blank" title="Java并发容器(一) CocurrentHashMap的应用及实现">
+				<span class="desc oneline">CocurrentHashMap的优势首先常用三种HashMap包括HashMap,HashTable和CocurrentHashMap：HashMap在并发编程过程中使用可能导致死循环，因为插入过程...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_24451605">来自：	<span class="blog_title"> llin-黎辰</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/JAVA_55555/article/details/84192033,BlogCommendFromMachineLearnPai2_11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/JAVA_55555/article/details/84192033" target="_blank" title="HashMap与CurrentHashMap原理以及区别(图文)">
+		<h4 class="text-truncate oneline">
+				HashMap与<em>CurrentHashMap</em><em>原理</em>以及区别(图文)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					893</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/JAVA_55555/article/details/84192033" target="_blank" title="HashMap与CurrentHashMap原理以及区别(图文)">
+				<span class="desc oneline">HashMap众所周知HashMap底层是基于 数组+链表 组成的，不过在jdk1.7和1.8中具体实现稍有不同。Base1.71.7中的数据结构图：先来看看1.7中的实现。这是HashMap中比较核...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/JAVA_55555">来自：	<span class="blog_title"> JAVA_55555的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/bwh0520/article/details/79828759,BlogCommendFromMachineLearnPai2_12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/bwh0520/article/details/79828759" target="_blank" title="CocurrentHashMap的应用及实现">
+		<h4 class="text-truncate oneline">
+				Co<em>currentHashMap</em>的<em>应用</em>及实现		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					318</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/bwh0520/article/details/79828759" target="_blank" title="CocurrentHashMap的应用及实现">
+				<span class="desc oneline">首先常用三种HashMap包括HashMap,HashTable和CocurrentHashMap：HashMap在并发编程过程中使用可能导致死循环，因为插入过程不是原子操作，每个HashEntry是...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/bwh0520">来自：	<span class="blog_title"> bwh0520的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/mawming/article/details/52302448,BlogCommendFromMachineLearnPai2_13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/mawming/article/details/52302448" target="_blank" title="ConcurrentHashMap从jdk1.7到jdk1.8的变化">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em>从jdk1.7到jdk1.8的变化		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5876</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/mawming/article/details/52302448" target="_blank" title="ConcurrentHashMap从jdk1.7到jdk1.8的变化">
+				<span class="desc oneline">一、简单回顾ConcurrentHashMap在jdk1.7中的设计  先简单看下ConcurrentHashMap类在jdk1.7中的设计，其基本结构如图所示：每一个segment都是一个HashE...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/mawming">来自：	<span class="blog_title"> 马万明的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}' data-report-view='{"mod":"kp_popu_61-557","keyword":""}' data-report-click='{"mod":"kp_popu_61-557","keyword":""}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/sml009z9/article/details/84756996,BlogCommendFromMachineLearnPai2_14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sml009z9/article/details/84756996" target="_blank" title="CurrentHashMap原理">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em><em>原理</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					71</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sml009z9/article/details/84756996" target="_blank" title="CurrentHashMap原理">
+				<span class="desc oneline">ConcurrentHashMap内部数据结构是hashTable，但是与hashTable不同的是CurrentHashMap使用了锁分离技术，即：使用多个不同的锁来控制对HashTable的不同部...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sml009z9">来自：	<span class="blog_title"> 雨落千木的时节</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box  recommend-other-item-box"  data-track-click='{"mod":"popu_614","con":",https://bbs.csdn.net/topics/390415056,BlogCommendFromBaidu_15"}'>
+	<a href="https://bbs.csdn.net/topics/390415056" target="_blank">
+		<h4 class="text-truncate oneline">
+				多线程并发中的Con<em>currentHashMap</em>绝对线程安全问题		</h4>
+		<div class="info-box d-flex align-content-center">
+				<span class="date">04-05</span>
+		</div>
+		<p class="content oneline">
+			<span class="desc oneline">多线程通讯中，发线，ConcurrentHashMap不是绝对线程安全的，就是用CLASS销都不行。 public class ManageData { public static Concurren</span>
+							<span class="type-show type-show-bbs">论坛</span>
+					</p>
+	</a>
+
+</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/liuyuanq123/article/details/80283913,BlogCommendFromBaidu_16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liuyuanq123/article/details/80283913" target="_blank" title="CocurrentHashMap实现原理及源码解析">
+		<h4 class="text-truncate oneline">
+				Co<em>currentHashMap</em>实现<em>原理</em>及源码解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1564</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liuyuanq123/article/details/80283913" target="_blank" title="CocurrentHashMap实现原理及源码解析">
+				<span class="desc oneline">1、CocurrentHashMap概念&amp;amp;amp;amp;amp;amp;amp;nbsp;&amp;amp;amp;amp;amp;amp;amp;nbsp;&amp;amp;amp;amp;amp;amp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liuyuanq123">来自：	<span class="blog_title"> liuyuanq123的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_35211818/article/details/84134741,BlogCommendFromBaidu_17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35211818/article/details/84134741" target="_blank" title="CurrentHashMap多个线程同时遍历与更新----验证CurrentHashMap是线程安全的">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em>多个线程同时遍历与更新----验证<em>CurrentHashMap</em>是线程安全的		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					492</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35211818/article/details/84134741" target="_blank" title="CurrentHashMap多个线程同时遍历与更新----验证CurrentHashMap是线程安全的">
+				<span class="desc oneline">packagecom;importjava.util.Iterator;importjava.util.Map;importjava.util.concurrent.ConcurrentHashMap...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_35211818">来自：	<span class="blog_title"> 橙子的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u014398624/article/details/81782080,BlogCommendFromBaidu_18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u014398624/article/details/81782080" target="_blank" title="HashMap并发导致死循环 CurrentHashMap">
+		<h4 class="text-truncate oneline">
+				HashMap并发导致死循环 <em>CurrentHashMap</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					403</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u014398624/article/details/81782080" target="_blank" title="HashMap并发导致死循环 CurrentHashMap">
+				<span class="desc oneline"> 为何出现死循环简要说明HashMap闭环的详细原因cocurrentHashMap的底层机制 为何出现死循环简要说明　　HashMap是非线程安全的，在并发场景中如果不保持足够的同步，就有可能在执行...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u014398624">来自：	<span class="blog_title"> u014398624的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-1062","con":",,"}' data-track-click='{"mod":"kp_popu_62-1062","con":",,"}' data-report-view='{"mod":"kp_popu_62-1062","keyword":""}' data-report-click='{"mod":"kp_popu_62-1062","keyword":""}'><iframe  src="https://kunpeng-sc.csdnimg.cn/#/preview/237?positionId=62&queryWord=" frameborder="0" width= "100%"  height= "75px" scrolling="no" ></iframe></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/weixin_38785199/article/details/82956571,BlogCommendFromBaidu_19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_38785199/article/details/82956571" target="_blank" title="CurrentHashMap学习笔记_未完">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em>学习笔记_未完		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					208</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_38785199/article/details/82956571" target="_blank" title="CurrentHashMap学习笔记_未完">
+				<span class="desc oneline">线程不安全的HashMapHashMap是Java中最常用的一个Map类，性能好、速度快，但不能保证线程安全，它可用null作为key/value在多线程环境下,使用HashMap进行put操作会引起...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_38785199">来自：	<span class="blog_title"> weixin_38785199的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/i_lovefish/article/details/8044950,BlogCommendFromMachineLearnPai2_20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/i_lovefish/article/details/8044950" target="_blank" title="ConcurrentHashMap基本用法">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em>基本用法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9021</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/i_lovefish/article/details/8044950" target="_blank" title="ConcurrentHashMap基本用法">
+				<span class="desc oneline">ConcurrentHashMapConcurrentHashMap是一个线程安全的HashTable，它的主要功能是提供了一组和HashTable功能相同但是线程安全的方法。ConcurrentHa...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/i_lovefish">来自：	<span class="blog_title"> i_lovefish的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u010771890/article/details/73732648,BlogCommendFromMachineLearnPai2_21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010771890/article/details/73732648" target="_blank" title="Java并发容器ConcurrentHashMap原理及HashMap死循环原因的分析">
+		<h4 class="text-truncate oneline">
+				Java并发容器Con<em>currentHashMap</em><em>原理</em>及HashMap死循环原因的分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1849</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010771890/article/details/73732648" target="_blank" title="Java并发容器ConcurrentHashMap原理及HashMap死循环原因的分析">
+				<span class="desc oneline">HashMap是我们最常用的数据结构之一，它方便高效，但遗憾的是，HashMap是线程不安全的，在并发环境下，在HashMap的扩容过程中，可能造成散列表的循环锁死。而线程安全的HashTable使用...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010771890">来自：	<span class="blog_title"> 大德如危的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u012133048/article/details/83144422,BlogCommendFromMachineLearnPai2_22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012133048/article/details/83144422" target="_blank" title="ConcurrentHashMap原理浅析">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em><em>原理</em>浅析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1451</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012133048/article/details/83144422" target="_blank" title="ConcurrentHashMap原理浅析">
+				<span class="desc oneline">HashMap在高并发场景下存在的问题具体信息可以查看下面这个帖子https://blog.csdn.net/minkeyto/article/details/78667944如果实在懒得看也没有关系...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012133048">来自：	<span class="blog_title"> u012133048的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/xuefeng0707/article/details/40834595,BlogCommendFromMachineLearnPai2_23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xuefeng0707/article/details/40834595" target="_blank" title="HashMap与ConcurrentHashMap的区别">
+		<h4 class="text-truncate oneline">
+				HashMap与Con<em>currentHashMap</em>的区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					22万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xuefeng0707/article/details/40834595" target="_blank" title="HashMap与ConcurrentHashMap的区别">
+				<span class="desc oneline">从JDK1.2起，就有了HashMap，正如前一篇文章所说，HashMap不是线程安全的，因此多线程操作时需要格外小心。在JDK1.5中，伟大的DougLea给我们带来了concurrent包，从此M...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xuefeng0707">来自：	<span class="blog_title"> XF的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-555","con":",,"}' data-track-click='{"mod":"kp_popu_63-555","con":",,"}' data-report-view='{"mod":"kp_popu_63-555","keyword":""}' data-report-click='{"mod":"kp_popu_63-555","keyword":""}'><div id="three_ad23" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad23",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/a137268431/article/details/79978788,BlogCommendFromMachineLearnPai2_24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/a137268431/article/details/79978788" target="_blank" title="CocurrentHashMap和HashTable区别分析">
+		<h4 class="text-truncate oneline">
+				Co<em>currentHashMap</em>和HashTable区别分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					356</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/a137268431/article/details/79978788" target="_blank" title="CocurrentHashMap和HashTable区别分析">
+				<span class="desc oneline">集合是编程中最常用的数据结构。而谈到并发，几乎总是离不开集合这类高级数据结构的支持。比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。这篇文章主...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/a137268431">来自：	<span class="blog_title"> LzwGlory的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/m0_37385244/article/details/80481572,BlogCommendFromBaidu_25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37385244/article/details/80481572" target="_blank" title="currenthashmap源码解析">
+		<h4 class="text-truncate oneline">
+				<em>currenthashmap</em>源码解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					739</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37385244/article/details/80481572" target="_blank" title="currenthashmap源码解析">
+				<span class="desc oneline">什么是concurrenthashmapconcurrenthashmap（简称chm）是java1.5新引入的java.util.concurrent包的成员，作为hashtable的替代。为什么呢...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37385244">来自：	<span class="blog_title"> 木木甫的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/weixin_42386014/article/details/81121620,BlogCommendFromBaidu_26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_42386014/article/details/81121620" target="_blank" title="值传递和引用传递的区别">
+		<h4 class="text-truncate oneline">
+				值传递和引用传递的区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					725</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_42386014/article/details/81121620" target="_blank" title="值传递和引用传递的区别">
+				<span class="desc oneline">值传递是指基本数据类型在方法中的传递，引用传递是指引用数据类型在方法中的传递，举例来说，如下图程序代码运行所示：注：int属于基本数据类型，因此在方法中进行传递和引用时，并不会改变该变量的数值而arr...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_42386014">来自：	<span class="blog_title"> weixin_42386014的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/weixin_40096176/article/details/80350891,BlogCommendFromBaidu_27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_40096176/article/details/80350891" target="_blank" title="数据结构——ConcurrentHashMap">
+		<h4 class="text-truncate oneline">
+				数据结构——Con<em>currentHashMap</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1166</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_40096176/article/details/80350891" target="_blank" title="数据结构——ConcurrentHashMap">
+				<span class="desc oneline">参考博客：http://www.importnew.com/21781.html</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_40096176">来自：	<span class="blog_title"> Amaranth007的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/cpcpcp123/article/details/52745774,BlogCommendFromBaidu_28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/cpcpcp123/article/details/52745774" target="_blank" title="currenthashmap">
+		<h4 class="text-truncate oneline">
+				<em>currenthashmap</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					711</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/cpcpcp123/article/details/52745774" target="_blank" title="currenthashmap">
+				<span class="desc oneline">集合是编程中最常用的数据结构。而谈到并发，几乎总是离不开集合这类高级数据结构的支持。比如两个线程需要同时访问一个中间临界区（Queue），比如常会用缓存作为外部文件的副本（HashMap）。这篇文章主...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/cpcpcp123">来自：	<span class="blog_title"> 王温暖的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}' data-report-view='{"mod":"kp_popu_64-81","keyword":""}' data-report-click='{"mod":"kp_popu_64-81","keyword":""}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/jeffleo/article/details/56496255,BlogCommendFromMachineLearnPai2_29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/jeffleo/article/details/56496255" target="_blank" title="JDK7下ConcurrentHashMap源码分析">
+		<h4 class="text-truncate oneline">
+				<em>JDK7</em>下Con<em>currentHashMap</em>源码分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3679</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jeffleo/article/details/56496255" target="_blank" title="JDK7下ConcurrentHashMap源码分析">
+				<span class="desc oneline">一、ConcurrentHashMap出现的原因　　我们之前学过HashMap，也知道HashMap不是线程安全的，在多线程环境下，HashMap的put方法有可能引起死循环。于是HashTable这...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/jeffleo">来自：	<span class="blog_title"> 刘剑峰的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/yangkang029/article/details/77430329,BlogCommendFromMachineLearnPai2_30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yangkang029/article/details/77430329" target="_blank" title="Java集合-ConcurrentHashMap工作原理和实现JDK7">
+		<h4 class="text-truncate oneline">
+				Java集合-Con<em>currentHashMap</em>工作<em>原理</em>和实现<em>JDK7</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					304</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yangkang029/article/details/77430329" target="_blank" title="Java集合-ConcurrentHashMap工作原理和实现JDK7">
+				<span class="desc oneline">转载请注明出处概述本文学习知识点1.ConcurrentHashMap与HashMap的区别。2.数据存储结构。3.如何提高并发读写性能。4.put和get方法源码实现分析。5.size方法如何实现。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yangkang029">来自：	<span class="blog_title"> yangkang029的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wujingtianze/article/details/74306572,BlogCommendFromMachineLearnPai2_31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wujingtianze/article/details/74306572" target="_blank" title="CurrentHashMap 中  Segment 加锁原理">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em> 中  Segment 加锁<em>原理</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1859</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wujingtianze/article/details/74306572" target="_blank" title="CurrentHashMap 中  Segment 加锁原理">
+				<span class="desc oneline">CurrentHashMap的分段加锁get操作不加锁，原因是使用volatilestaticfinalclassHashEntry{finalinthash;finalKkey;volatileVv...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wujingtianze">来自：	<span class="blog_title"> 飞雨飞羽飞鱼</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_30764991/article/details/80573352,BlogCommendFromMachineLearnPai2_32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_30764991/article/details/80573352" target="_blank" title="RabbitMQ面试专题">
+		<h4 class="text-truncate oneline">
+				RabbitMQ面试专题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_30764991/article/details/80573352" target="_blank" title="RabbitMQ面试专题">
+				<span class="desc oneline">RabbitMQ面试专题：如果觉得文章不错，对你有帮助，请作者喝杯咖啡，谢谢！如果对您有帮助，请多多支持.多少都是您的心意与支持，一分也是爱，再次感谢！！！打开支付宝首页搜“556723462”领红包...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_30764991">来自：	<span class="blog_title"> 从放弃到开始</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_39632561/article/details/82633298,BlogCommendFromMachineLearnPai2_33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_39632561/article/details/82633298" target="_blank" title="CurrentHashMap集合">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em>集合		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					324</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_39632561/article/details/82633298" target="_blank" title="CurrentHashMap集合">
+				<span class="desc oneline">由于码子，插图太麻烦了，我就做那么详细了。说的简单点，做个笔记，以后自己做大佬了再修改。ConcurrentHashMap，是Concurrent并发包下的一个集合类。存在的原因主要是解决并发情况下的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_39632561">来自：	<span class="blog_title"> 沧海一粟</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-84","con":",,"}' data-track-click='{"mod":"kp_popu_65-84","con":",,"}' data-report-view='{"mod":"kp_popu_65-84","keyword":""}' data-report-click='{"mod":"kp_popu_65-84","keyword":""}'><div id="three_ad33" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad33",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/qq_36027146/article/details/76724188,BlogCommendFromBaidu_34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_36027146/article/details/76724188" target="_blank" title="浅谈hashmap    以及其与hashtable,currenthashmap区别">
+		<h4 class="text-truncate oneline">
+				浅谈hashmap    以及其与hashtable,<em>currenthashmap</em>区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2000</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_36027146/article/details/76724188" target="_blank" title="浅谈hashmap    以及其与hashtable,currenthashmap区别">
+				<span class="desc oneline">HashMap：每个隔间都没锁门，有人想上厕所，管理员指给他一个隔间，里面没人的话正常用，里面有人的话把这个人赶出来然后用。优点，每个人进来不耽误都能用；缺点，每一个上厕所的人都有被中途赶出来的危险。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_36027146">来自：	<span class="blog_title"> qq_36027146的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Beixiaozhang/article/details/52938075,BlogCommendFromBaidu_35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Beixiaozhang/article/details/52938075" target="_blank" title="Java集合CurrentHashMap">
+		<h4 class="text-truncate oneline">
+				Java集合<em>CurrentHashMap</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1283</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Beixiaozhang/article/details/52938075" target="_blank" title="Java集合CurrentHashMap">
+				<span class="desc oneline">ConcurrentHashMap是一个线程安全的容器，内部分成了多个Segment，Segment类似于HashTable，Segment实现了ReentrantLock，所以Segment本身就是...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Beixiaozhang">来自：	<span class="blog_title"> 此博客不再更新，请访问： http://blog.csdn.net/qq_29078329</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Yuanyuanasdf/article/details/78792026,BlogCommendFromBaidu_36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Yuanyuanasdf/article/details/78792026" target="_blank" title="CurrentHashMap 源码分析 initTable(),get() 方法">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em> 源码分析 initTable(),get() 方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					369</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Yuanyuanasdf/article/details/78792026" target="_blank" title="CurrentHashMap 源码分析 initTable(),get() 方法">
+				<span class="desc oneline">CurrentHashMap</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Yuanyuanasdf">来自：	<span class="blog_title"> Yuanyuanasdf的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/liu1pan2min3/article/details/79869248,BlogCommendFromBaidu_37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liu1pan2min3/article/details/79869248" target="_blank" title="CurrentHashMap jdk 1.7解读">
+		<h4 class="text-truncate oneline">
+				<em>CurrentHashMap</em> jdk 1.7解读		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					172</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liu1pan2min3/article/details/79869248" target="_blank" title="CurrentHashMap jdk 1.7解读">
+				<span class="desc oneline">ConcurrentHashMap的结构分析  那么mm就有点疑问了，ConcurrentHashMap是如何定位到一个元素的？？？？？？ ConcurrentHashMap定位一个元素的过程需要进行...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liu1pan2min3">来自：	<span class="blog_title"> 程序媛的一生</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/YingHuaNanHai/article/details/81266718,BlogCommendFromMachineLearnPai2_38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/YingHuaNanHai/article/details/81266718" target="_blank" title="CouncurrentHashMap源码解析">
+		<h4 class="text-truncate oneline">
+				Coun<em>currentHashMap</em>源码解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					338</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/YingHuaNanHai/article/details/81266718" target="_blank" title="CouncurrentHashMap源码解析">
+				<span class="desc oneline">转载：https://blog.csdn.net/u010723709/article/details/48007881注：本文源码是JDK8的版本，与之前的版本有较大差异jdk1.7的源码：http...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/YingHuaNanHai">来自：	<span class="blog_title"> 冷血天狼的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-87","con":",,"}' data-track-click='{"mod":"kp_popu_66-87","con":",,"}' data-report-view='{"mod":"kp_popu_66-87","keyword":""}' data-report-click='{"mod":"kp_popu_66-87","keyword":""}'><div id="three_ad38" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad38",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Dax1n/article/details/74532349,BlogCommendFromMachineLearnPai2_39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Dax1n/article/details/74532349" target="_blank" title="JDK7中的ConcurrentHashMap实现原理">
+		<h4 class="text-truncate oneline">
+				<em>JDK7</em>中的Con<em>currentHashMap</em>实现<em>原理</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					469</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Dax1n/article/details/74532349" target="_blank" title="JDK7中的ConcurrentHashMap实现原理">
+				<span class="desc oneline">Java中由于HashMap的线程不安全原因，JDK提供了线程安全的HashTable和SynchronizedMap支持线程安全操作。HashTable线程安全原因：所有存在线程安全的方法都使用sy...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Dax1n">来自：	<span class="blog_title"> 吟啸徐行</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/seebetpro/article/details/45955419,BlogCommendFromMachineLearnPai2_40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/seebetpro/article/details/45955419" target="_blank" title="java中public,private,protect,default区别">
+		<h4 class="text-truncate oneline">
+				java中public,private,protect,default区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/seebetpro/article/details/45955419" target="_blank" title="java中public,private,protect,default区别">
+				<span class="desc oneline">Java中访问修饰符public、private、protect、default范围版权声明：转载时请以超链接形式标明文章原始出处和作者信息及本声明http://lvdairy.blogbus.com...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/seebetpro">来自：	<span class="blog_title"> 一行两行的世界.</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/majingjing66/article/details/74451916,BlogCommendFromMachineLearnPai2_41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/majingjing66/article/details/74451916" target="_blank" title="HashMap HashTable和CurrentHashMap的区别">
+		<h4 class="text-truncate oneline">
+				HashMap HashTable和<em>CurrentHashMap</em>的区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3094</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/majingjing66/article/details/74451916" target="_blank" title="HashMap HashTable和CurrentHashMap的区别">
+				<span class="desc oneline">首先说下最大的区别，HashMap是线程非安全的，效率比较高；HashTable和CurrentHashMap是线程安全的，效率比HashMap差一点，但CurrentHashMap比HashTabl...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/majingjing66">来自：	<span class="blog_title"> majingjing66的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/fwt336/article/details/81110760,BlogCommendFromBaidu_42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/fwt336/article/details/81110760" target="_blank" title="线程并发--CocurrentHashMap和CopyOnWriteArrayList详解">
+		<h4 class="text-truncate oneline">
+				线程并发--Co<em>currentHashMap</em>和CopyOnWriteArrayList详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					406</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/fwt336/article/details/81110760" target="_blank" title="线程并发--CocurrentHashMap和CopyOnWriteArrayList详解">
+				<span class="desc oneline">在多线程开发中，我们经常要考虑线程并发的问题，那么如何来避免线程并发代码的数据读写问题呢？我们常见的HashMap、TreeMap、LinkedList、ArrayList都是线程不安全的，而Java...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/fwt336">来自：	<span class="blog_title"> 文韬武略的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/Sherry_Rui/article/details/51462549,BlogCommendFromBaidu_43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/Sherry_Rui/article/details/51462549" target="_blank" title="ConcurrentHashMap原理详解">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em><em>原理</em>详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Sherry_Rui/article/details/51462549" target="_blank" title="ConcurrentHashMap原理详解">
+				<span class="desc oneline">下面这部分内容转载自：　　http://www.haogongju.net/art/2350374　　JDK5中添加了新的concurrent包，相对同步容器而言，并发容器通过一些机制改进了并发性能。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/Sherry_Rui">来自：	<span class="blog_title"> Sherry_Rui的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-653","con":",,"}' data-track-click='{"mod":"kp_popu_67-653","con":",,"}' data-report-view='{"mod":"kp_popu_67-653","keyword":""}' data-report-click='{"mod":"kp_popu_67-653","keyword":""}'><div id="three_ad43" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : '9gAEHz',
+                placeholderId: "three_ad43",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 16,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Microsoft Yahei',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 12,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/justloveyou_/article/details/72783008,BlogCommendFromBaidu_44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/justloveyou_/article/details/72783008" target="_blank" title="Map 综述（三）：彻头彻尾理解 ConcurrentHashMap">
+		<h4 class="text-truncate oneline">
+				Map 综述（三）：彻头彻尾理解 Con<em>currentHashMap</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/justloveyou_/article/details/72783008" target="_blank" title="Map 综述（三）：彻头彻尾理解 ConcurrentHashMap">
+				<span class="desc oneline">ConcurrentHashMap是J.U.C的重要成员，它是HashMap的一个线程安全的版本。在默认理想状态下，ConcurrentHashMap可以支持16个线程执行并发写操作及任意数量线程的读...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/justloveyou_">来自：	<span class="blog_title"> Rico's Blogs</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/xiaoyaoyulinger/article/details/52097710,BlogCommendFromBaidu_45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xiaoyaoyulinger/article/details/52097710" target="_blank" title="ConcurrentHashMap数据结构分析">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em>数据结构分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2984</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xiaoyaoyulinger/article/details/52097710" target="_blank" title="ConcurrentHashMap数据结构分析">
+				<span class="desc oneline">引言HashMap是线程不安全的数据结构，在单线程环境下有较好的执行效率，但不适用于多线程的应用。HashTable使用synchronized来保证线程安全，但在线程竞争激烈的情况下效率非常低下。当...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xiaoyaoyulinger">来自：	<span class="blog_title"> Dave's Blog</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/liwenxia626/article/details/80607902,BlogCommendFromMachineLearnPai2_46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liwenxia626/article/details/80607902" target="_blank" title="ConcurrentHashMap原理分析（JDK1.7）">
+		<h4 class="text-truncate oneline">
+				Con<em>currentHashMap</em><em>原理</em>分析（JDK1.7）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					297</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liwenxia626/article/details/80607902" target="_blank" title="ConcurrentHashMap原理分析（JDK1.7）">
+				<span class="desc oneline">转自：https://www.cnblogs.com/xiaoxi/p/7474026.html一、出现背景     1、线程不安全的HashMap    因为多线程环境下，使用Hashmap进行pu...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/liwenxia626">来自：	<span class="blog_title"> liwenxia626的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u010251897/article/details/80618399,BlogCommendFromBaidu_47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010251897/article/details/80618399" target="_blank" title="浅谈hashmap 以及其与hashtable,currenthashmap区别">
+		<h4 class="text-truncate oneline">
+				浅谈hashmap 以及其与hashtable,<em>currenthashmap</em>区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					167</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010251897/article/details/80618399" target="_blank" title="浅谈hashmap 以及其与hashtable,currenthashmap区别">
+				<span class="desc oneline">首先我们来简单解析一下hashmap，java中使用hashcode,与equlse方法判断元素是否重复，，，首先将key通过hash算法算成索引值，然后判断该索引值对应的内存里是否有东西，没有就存进...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010251897">来自：	<span class="blog_title"> 沈荣荣的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/M_Sugar/article/details/52169191,BlogCommendFromBaidu_48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/M_Sugar/article/details/52169191" target="_blank" title="ComcurrentHashMap原理分析">
+		<h4 class="text-truncate oneline">
+				Com<em>currentHashMap</em><em>原理</em>分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1129</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/M_Sugar/article/details/52169191" target="_blank" title="ComcurrentHashMap原理分析">
+				<span class="desc oneline">集合是编程中最常用的数据结构，而谈到并发，几乎总是离不开集合这类高级数据结构的支持。比如俩个线程需要访问同一个中间临界区（Queue），比如常会缓存作为外部文件的副本（HashMap）。这篇文章主要分...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/M_Sugar">来自：	<span class="blog_title"> M_Sugar的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-883","con":",,"}' data-track-click='{"mod":"kp_popu_68-883","con":",,"}' data-report-view='{"mod":"kp_popu_68-883","keyword":""}' data-report-click='{"mod":"kp_popu_68-883","keyword":""}'><!-- T48 位置 -->
+<script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T48_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T48  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T48_render", "T48");
+</script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/zldeng19840111/article/details/6703104,BlogCommendFromBaidu_49"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/zldeng19840111/article/details/6703104" target="_blank" title="HashMap和ConcurrentHashMap浅析">
+		<h4 class="text-truncate oneline">
+				HashMap和Con<em>currentHashMap</em>浅析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zldeng19840111/article/details/6703104" target="_blank" title="HashMap和ConcurrentHashMap浅析">
+				<span class="desc oneline">HashMap hashmap本质数据加链表。根据key取得hash值，然后计算出数组下标，如果多个key对应到同一个下标，就用链表串起来，新插入的在前面。看3段重要代码摘要：a：publicHash...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+		<h4 class="text-truncate oneline">
+				jquery/js实现一个网页同时调用多个倒计时(最新的)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					60万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+				<span class="desc oneline">jquery/js实现一个网页同时调用多个倒计时(最新的)nn最近需要网页添加多个倒计时. 查阅网络,基本上都是千遍一律的不好用. 自己按需写了个.希望对大家有用. 有用请赞一个哦!nnnn//jsn...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wuchengzeng">来自：	<span class="blog_title"> Websites</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/sdksdk0/article/details/52332296,BlogCommendHotData_1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sdksdk0/article/details/52332296" target="_blank" title="一小时入门PHP">
+		<h4 class="text-truncate oneline">
+				一小时入门PHP		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6265</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sdksdk0/article/details/52332296" target="_blank" title="一小时入门PHP">
+				<span class="desc oneline">PHP是能让你生成动态网页的工具之一。PHP网页文件被当作一般HTML网页文件来处理并且在编辑时你可以用编辑HTML的常规方法编写PHP。最近在折腾那个安卓扫码登录的功能，然后网页端是用php的做了，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sdksdk0">来自：	<span class="blog_title"> 朱培(知浅_ZLH)</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/llqqxf/article/details/79409351,BlogCommendHotData_2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/llqqxf/article/details/79409351" target="_blank" title="600多个微信小程序源码涵盖各个行业大部分带后台持续更新中">
+		<h4 class="text-truncate oneline">
+				600多个微信小程序源码涵盖各个行业大部分带后台持续更新中		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/llqqxf/article/details/79409351" target="_blank" title="600多个微信小程序源码涵盖各个行业大部分带后台持续更新中">
+				<span class="desc oneline">今天把本人花费一个月左右整理的600多款小程序源码发布出来，以后每个月还会持续更新，很大一部分都带有后台源码并包含有小程序上线教程，帮你分分钟上线自己的小程序，下面我们来看看目录截图，最后面会把源码目...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/llqqxf">来自：	<span class="blog_title"> 明礼馨德的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix"  data-track-click='{"mod":"popu_614","con":",https://blog.csdn.net/u012907049/article/details/73801122,BlogCommendHotData_3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012907049/article/details/73801122" target="_blank" title="Spring Boot集成持久化Quartz定时任务管理和界面展示">
+		<h4 class="text-truncate oneline">
+				Spring Boot集成持久化Quartz定时任务管理和界面展示		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012907049/article/details/73801122" target="_blank" title="Spring Boot集成持久化Quartz定时任务管理和界面展示">
+				<span class="desc oneline">前言本文是对之前的一篇文章Spring+SpringMVC+mybatis+Quartz整合代码部分做的一个修改和补充， 其中最大的变化就是后台框架变成了Spring Boot。本工程所用到的技术或工...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012907049">来自：	<span class="blog_title"> 天降风云的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/course/play/5599/104252 " target="_blank">
+                        颜色模型                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzaYgzsNjUtZWR1.html" target="_blank">
+                        java学习笔记jdk7</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtzacgzsOTUtZWR1.html" target="_blank">
+                        java jdk7学习</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+	<div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_33589510">
+              <img src="https://avatar.csdn.net/8/3/E/3_qq_33589510.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/3.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a href="https://blog.csdn.net/qq_33589510" target="_blank" class="" id="uid"> JavaEdge</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                                    <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+                            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="207">
+                        <dt><a href="https://blog.csdn.net/qq_33589510?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/qq_33589510?t=1"><span class="count">207</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="186">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">186</span></dd>
+        </dl>
+        <dl class="text-center" title="64">
+            <dt>喜欢</dt>
+            <dd><span class="count">64</span></dd>
+        </dl>
+        <dl class="text-center" title="15">
+            <dt>评论</dt>
+            <dd><span class="count">15</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="5级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-5"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="90449">
+                9万+            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="2950">
+                2950            </dd>
+        </dl>
+        <dl title="21037">
+            <dt>排名：</dt>
+            <dd>2万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="GitHub">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/github.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/github.svg" alt="">
+                                   <p>GitHub</p>
+                               </div>
+                               <div class="right-box">
+                                   绑定GitHub第三方账户获取                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                                             <div class="icon-badge" title="专栏达人">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/zhuanlan.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/zhuanlan.svg" alt="">
+                                   <p>专栏达人</p>
+                               </div>
+                               <div class="right-box">
+                                   授予成功创建个人博客专栏的用户。专栏中添加五篇以上博文即可点亮！撰写博客专栏浓缩技术精华，专栏达人就是你！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                                             <div class="icon-badge" title="持之以恒">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/chizhiyiheng.svg" alt="">
+                                   <p>持之以恒</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                                             <div class="icon-badge" title="勤写标兵Lv1">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t4.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t4.svg" alt="">
+                                   <p>勤写标兵Lv1</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周上午根据用户上周的博文发布情况由系统自动颁发。                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                                             <div class="icon-badge" title="勤写标兵Lv2">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l2_t2.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l2_t2.svg" alt="">
+                                   <p>勤写标兵Lv2</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然周发布4篇到6篇原创IT博文的用户。本勋章将于次周上午根据用户上周的博文发布情况由系统自动颁发。                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+    </div>
+<div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-mod="popu_4" style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-703","con":",,"}' data-track-click='{"mod":"kp_popu_56-703","con":",,"}' data-report-view='{"mod":"kp_popu_56-703","keyword":""}' data-report-click='{"mod":"kp_popu_56-703","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左上视窗-20181120 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="7700527946"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_33589510/article/details/96144868" target="_blank">电商详情页系统实战(4) - 支撑高并发+高可用+海量数据+备份恢复的redis的重要性</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_33589510/article/details/96052951" target="_blank">电商详情页系统实战(3)  - 大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_33589510/article/details/96052942" target="_blank">电商详情页系统实战(2) -小型电商网站商品详情页的页面静态化架构及缺陷</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_33589510/article/details/96050734" target="_blank">电商详情页系统实战(1) - 简介</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/qq_33589510/article/details/96049027" target="_blank">高可用服务架构设计(17) - 基于Hystrix的高可用分布式系统架构设计的总结</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+<div id="asideColumn" class="aside-box">
+    <h3 class="aside-title">博主专栏</h3>
+    <div class="aside-content">
+        <ul class="column-box csdn-tracking-statistics tracking-click" data-mod="popu_520" >
+                            <li class="clearfix">
+                    <div class="img-box float-left">
+                        <a class="d-flex align-items-center" href="https://blog.csdn.net/qq_33589510/column/info/17468">
+                            <img src="https://img-blog.csdn.net/20170920124850625?imageView2/5/w/120/h/120" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="title"><a href="https://blog.csdn.net/qq_33589510/column/info/17468">Java并发编程</a></p>
+                        <div class="data">文章数：<span class="count">3 篇</span> 访问量：<span>455</span></div>
+                    </div>
+                </li>
+                            <li class="clearfix">
+                    <div class="img-box float-left">
+                        <a class="d-flex align-items-center" href="https://blog.csdn.net/qq_33589510/column/info/17502">
+                            <img src="https://img-blog.csdn.net/20170921203820570?imageView2/5/w/120/h/120" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="title"><a href="https://blog.csdn.net/qq_33589510/column/info/17502">深入理解JVM</a></p>
+                        <div class="data">文章数：<span class="count">5 篇</span> 访问量：<span>982</span></div>
+                    </div>
+                </li>
+                            <li class="clearfix">
+                    <div class="img-box float-left">
+                        <a class="d-flex align-items-center" href="https://blog.csdn.net/qq_33589510/column/info/17901">
+                            <img src="https://img-blog.csdn.net/20171031201052001?imageView2/5/w/120/h/120" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="title"><a href="https://blog.csdn.net/qq_33589510/column/info/17901">spring framework源码分析</a></p>
+                        <div class="data">文章数：<span class="count">0 篇</span> 访问量：<span>25</span></div>
+                    </div>
+                </li>
+                            <li class="clearfix">
+                    <div class="img-box float-left">
+                        <a class="d-flex align-items-center" href="https://blog.csdn.net/qq_33589510/column/info/34487">
+                            <img src="https://img-blog.csdnimg.cn/20190228094355396.jpeg?imageView2/5/w/120/h/120" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="title"><a href="https://blog.csdn.net/qq_33589510/column/info/34487">SpringCloud 实战</a></p>
+                        <div class="data">文章数：<span class="count">1 篇</span> 访问量：<span>32</span></div>
+                    </div>
+                </li>
+                    </ul>
+    </div>
+    </div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6894051">
+                    <span class="title oneline">SpringBoot框架</span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6894149">
+                    <span class="title oneline">java8特性</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6833844">
+                    <span class="title oneline">各种安装配置</span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6877212">
+                    <span class="title oneline">MySQL</span>
+                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6878174">
+                    <span class="title oneline">数据结构与算法</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6881179">
+                    <span class="title oneline">学习过程中遇到并解决的各种问题集锦</span>
+                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6881291">
+                    <span class="title oneline">mybatis框架</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6925788">
+                    <span class="title oneline">并发编程</span>
+                    <span class="count float-right">17篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6949777">
+                    <span class="title oneline">javase</span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6952499">
+                    <span class="title oneline">集合框架</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/6954081">
+                    <span class="title oneline">javaSE</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7008436">
+                    <span class="title oneline">Redis</span>
+                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7096371">
+                    <span class="title oneline">设计模式</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7138146">
+                    <span class="title oneline">项目初始化</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7164968">
+                    <span class="title oneline">深入理解JVM</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7205861">
+                    <span class="title oneline">前端</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7225203">
+                    <span class="title oneline">linux</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7225441">
+                    <span class="title oneline">nginx</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7574641">
+                    <span class="title oneline">操作系统</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7613605">
+                    <span class="title oneline">spring</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7616897">
+                    <span class="title oneline">MyBtis</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7806569">
+                    <span class="title oneline">Netty</span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7806570">
+                    <span class="title oneline">Java</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/7806571">
+                    <span class="title oneline">网络编程</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8510645">
+                    <span class="title oneline">机器学习</span>
+                    <span class="count float-right">20篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8559103">
+                    <span class="title oneline">Docker</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8669121">
+                    <span class="title oneline">Vue.js</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8697090">
+                    <span class="title oneline">SpringCloud</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8711812">
+                    <span class="title oneline">软件工程实践</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8712999">
+                    <span class="title oneline">分布式</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8725027">
+                    <span class="title oneline">常用小工具</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8794037">
+                    <span class="title oneline">爬虫</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8814842">
+                    <span class="title oneline">大数据</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8882897">
+                    <span class="title oneline">Hive</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8898406">
+                    <span class="title oneline">Flink</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8915212">
+                    <span class="title oneline">面试</span>
+                    <span class="count float-right">48篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/8954317">
+                    <span class="title oneline">Spark Streaming</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/9027289">
+                    <span class="title oneline">Flume</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/9049158">
+                    <span class="title oneline">RabbitMQ</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/9053765">
+                    <span class="title oneline">Go实战</span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/9124635">
+                    <span class="title oneline">高可用架构设计</span>
+                    <span class="count float-right">14篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/qq_33589510/article/category/9130650">
+                    <span class="title oneline">电商详情页系统实战</span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/07">
+                    2019年7月                    <span class="count float-right">49篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/06">
+                    2019年6月                    <span class="count float-right">17篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/05">
+                    2019年5月                    <span class="count float-right">26篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/04">
+                    2019年4月                    <span class="count float-right">14篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/03">
+                    2019年3月                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/02">
+                    2019年2月                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2019/01">
+                    2019年1月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2018/12">
+                    2018年12月                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2018/11">
+                    2018年11月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2018/07">
+                    2018年7月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2018/04">
+                    2018年4月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/12">
+                    2017年12月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/10">
+                    2017年10月                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/09">
+                    2017年9月                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/08">
+                    2017年8月                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/06">
+                    2017年6月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/05">
+                    2017年5月                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_33589510/article/month/2017/04">
+                    2017年4月                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
+							<li>
+					<a href="https://blog.csdn.net/qq_33589510/article/details/79962152">CurrentHashMap原理与应用(JDK7)</a>
+					<p class="read">阅读数 <span>19254</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/qq_33589510/article/details/68941670">Spring Boot CLI安装(WIN10环境)</a>
+					<p class="read">阅读数 <span>6593</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/qq_33589510/article/details/70499989">使用eclipse打开已有项目</a>
+					<p class="read">阅读数 <span>5834</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/qq_33589510/article/details/77129586">default constructor not found解决方法</a>
+					<p class="read">阅读数 <span>5686</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/qq_33589510/article/details/79864874">操作系统之进程管理</a>
+					<p class="read">阅读数 <span>3580</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_33589510/article/details/95474363#comments">突破Java面试(44)-分布式事...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/a153870727" class="user-name" target="_blank">a153870727：</a>光介绍概念，不总结一下每种分布式事务的不足，以及解决方案，对面试帮助不大，我如果是面试官，我就问各种分布式事务的优缺点！为什么会有这样的缺点，有啥解决方案?不会问你概念的，一般都问深层次的实现原理                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_33589510/article/details/94882065#comments">突破Java面试(24)-Redi...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/weixin_43884534" class="user-name" target="_blank">weixin_43884534：</a>收获hf                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_33589510/article/details/79962152#comments">CurrentHashMap原理与...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/NYfor2017" class="user-name" target="_blank">NYfor2017：</a>[reply]wenhuayuzhihui[/reply]
+hashtable是插入元素之前扩容
+hashmap是插入元素之后才判断是否扩容
+两个的扩容和初始化的机制都不一样                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/qq_33589510/article/details/86555927#comments">Java源码解析 - Thread...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/weixin_39858818" class="user-name" target="_blank">weixin_39858818：</a>收获颇多                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+	<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-707","con":",,"}' data-track-click='{"mod":"kp_popu_57-707","con":",,"}' data-report-view='{"mod":"kp_popu_57-707","keyword":""}' data-report-click='{"mod":"kp_popu_57-707","keyword":""}'><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+	<ul class="meau-list">
+		<li class="btn-like-box long-width">
+			<button class=" long-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p>7</p>
+			</button>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments long-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+						2				</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qq_33589510/article/details/79864874" title="操作系统之进程管理">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="next btn-comments hover-box low-height" href="https://blog.csdn.net/qq_33589510/article/details/80049095" title="遨游springmvc之HandlerExceptionResolver">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_33589510/article/details/79864874" title="操作系统之进程管理">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_33589510/article/details/80049095" title="遨游springmvc之HandlerExceptionResolver">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://g.csdnimg.cn/collection-box/1.0.0/collection-box.js?t=20190710173809" type="text/javascript"></script><script>
+    var recommendCount = 54;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 31;
+    var articleId = "79962152";
+    var commentscount = 2;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_33589510/article/details/79962152";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "CurrentHashMap原理与应用(JDK7) - JavaEdge";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = 'tomorrow-night-eighties';
+	var highlight = ["currenthashmap","\u539f\u7406","\u5e94\u7528","jdk7"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '欢迎加入 Java 技术交流群214821336';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
+
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night-eighties.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-45af74a22e.js" /></script>
+
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-757e70faef.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-f0c8984dfe.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin-yellow/skin-yellow-fc7383b956.min.js"></script>
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            afterFinished: function(){
+                setTimeout(function () {
+                    var viphtml = '<a class="option-box" data-type="vip" href="https://mall.csdn.net/vip" target="_blank">'+
+                        '<img src="https://g.csdnimg.cn/side-toolbar/1.2/images/vip.png" alt="" srcset="">'+
+                        '<span class="show-txt">VIP<br>免广告</span>'+
+                        '</a>';
+                    $('.csdn-side-toolbar').prepend(viphtml)
+                },300)
+            }
+        }
+    }
+
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            showReport(false,articleTitles)
+        });
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.2/side-toolbar.js"></script>
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.6/login-box.js,login-box/1.0.5/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>
