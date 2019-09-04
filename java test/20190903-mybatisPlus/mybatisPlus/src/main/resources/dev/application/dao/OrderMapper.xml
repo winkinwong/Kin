@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.application.dao.OrderMapper">
+    <resultMap id="ResultMap" type="dev.application.model.Order">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" jdbcType="VARCHAR" property="userId" />
+        <result column="context" jdbcType="VARCHAR" property="context" />
+        <result column="create_time" jdbcType="BIGINT" property="createTime" typeHandler="dev.application.global.typehandler.LocalDateTimeTypeHandler"/>
+        <result column="update_time" jdbcType="BIGINT" property="updateTime" typeHandler="dev.application.global.typehandler.LocalDateTimeTypeHandler"/>
+        <result column="version" jdbcType="BIGINT" property="version" />
+    </resultMap>
+
+    <select id="countOrdersByUserId" resultType="java.lang.Long">
+        select count(*) from t_order where user_id = #{userId}
+    </select>
+
+    <select id="listOrdersByUserId" resultMap="dev.application.dao.OrderMapper.ResultMap">
+        select * from t_order where user_id = #{userId}
+        limit #{offset}, #{count}
+    </select>
+
+
+
+</mapper>

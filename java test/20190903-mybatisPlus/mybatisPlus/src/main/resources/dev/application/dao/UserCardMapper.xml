@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.application.dao.UserCardMapper">
+    <resultMap id="ResultMap" type="dev.application.model.UserCard">
+        <id column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="card_no" jdbcType="VARCHAR" property="cardNo" />
+        <result column="expiry_date" jdbcType="VARCHAR" property="expiryDate" />
+        <result column="create_time" jdbcType="BIGINT" property="createTime" typeHandler="dev.application.global.typehandler.LocalDateTimeTypeHandler"/>
+        <result column="update_time" jdbcType="BIGINT" property="updateTime" typeHandler="dev.application.global.typehandler.LocalDateTimeTypeHandler"/>
+        <result column="version" jdbcType="BIGINT" property="version" />
+    </resultMap>
+
+    <select id="selectByUserId" resultMap="dev.application.dao.UserCardMapper.ResultMap">
+        select * from t_user_card where user_id = #{userId}
+    </select>
+    
+    <insert id="insert" parameterType="dev.application.model.UserCard">
+        insert into t_user_card (user_id, card_no, expiry_date)
+        values (#{userId}, #{cardNo}, #{expiryDate})
+    </insert>
+
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.application.dao.UserMapper">
+    <resultMap id="ResultMap" type="dev.application.model.User">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="create_time" jdbcType="BIGINT" property="createTime"/>
+        <result column="update_time" jdbcType="BIGINT" property="updateTime"/>
+        <result column="version" jdbcType="BIGINT" property="version" />
+
+        <association property="card" resultMap="dev.application.dao.UserCardMapper.ResultMap" columnPrefix="c_" />
+        <collection property="orders" resultMap="dev.application.dao.OrderMapper.ResultMap" columnPrefix="o_" />
+    </resultMap>
+
+    <select id="selectById" resultType="dev.application.model.User">
+        select
+            u.*,
+            c.user_id as c_user_id, c.expiry_date as c_expiry_date, c.card_no as c_card_no
+        from
+        (select * from t_user where id = #{id}) u
+        left join
+        (select * from t_user_card where user_id = #{id}) c
+        on u.id = c.user_id
+    </select>
+
+    <select id="selectByUsername" resultType="dev.application.model.User">
+        select * from t_user where username = #{username} limit 1
+    </select>
+
+    <insert id="insert" parameterType="dev.application.model.User" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_user (username, password, create_time, update_time, version)
+        values (#{username}, #{password}, #{createTime}, #{updateTime}, #{version})
+    </insert>
+</mapper>
