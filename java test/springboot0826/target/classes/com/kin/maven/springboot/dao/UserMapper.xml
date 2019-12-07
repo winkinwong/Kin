@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kin.maven.springboot.dao.UserMapper">
+    <resultMap id="UserResultMap" type="com.kin.maven.springboot.model.User">
+        <id property="userId" column="user_id"></id>
+        <result property="userName" column="name"></result>
+        <result property="password" column="password"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+        <result property="version" column="version"></result>
+    </resultMap>
+    <insert id="addUser" keyColumn="user_id" keyProperty="userId" useGeneratedKeys="true">
+        insert into my_user2(name,password,create_time,update_time,version)
+        values (#{userName},#{password},#{createTime},#{updateTime},#{version})
+    </insert>
+    <select id="getUserByName" resultMap="UserResultMap">
+        select * from my_user2 where name = #{userName} limit 1
+    </select>
+    <select id="getUserFotList" resultMap="UserResultMap">
+        select * from my_user2
+    </select>
+    <delete id="deleteById" parameterType="Long">
+        delete from my_user2 where user_id = #{userId}
+    </delete>
+</mapper>

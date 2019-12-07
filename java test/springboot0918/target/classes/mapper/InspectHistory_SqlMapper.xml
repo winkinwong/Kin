@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kin.test.springboot.dao.InspectHistoryDao">
+
+    
+    <select id="selectNoInspectSummarySum" resultType="java.lang.Integer" parameterType="com.kin.test.springboot.model.InspectHistory">
+		SELECT COUNT(*) FROM inspect_history 
+		LEFT OUTER JOIN inspect ON(inspect_history.inspect_id=inspect.inspect_id) 
+		LEFT OUTER JOIN dangeroussource ON(inspect.dangeroussource_id=dangeroussource.dangeroussource_id) 
+		LEFT OUTER JOIN dangeroussource_place ON(dangeroussource.dangeroussource_place_id=dangeroussource_place.dangeroussource_place_id) 
+		WHERE inspect_history.inspect_result='未按期巡检' 
+		AND dangeroussource_place.dangeroussource_place_id=#{dangeroussourcePlaceId} 
+		<if test="inspectDatetimeBegin != null and inspectDatetimeBegin != ''">
+	    	<![CDATA[ and date_format(inspect_history.inspect_datetime,'%Y-%m-%d') >= #{inspectDatetimeBegin} ]]>
+	    </if>
+	    <if test="inspectDatetimeEnd != null and inspectDatetimeEnd != ''">
+	  		<![CDATA[ and date_format(inspect_history.inspect_datetime,'%Y-%m-%d') <= #{inspectDatetimeEnd} ]]>
+	    </if>
+	</select>
+	
+	<select id="selectNeedRectifySummarySum" resultType="java.lang.Integer" parameterType="com.kin.test.springboot.model.InspectHistory">
+		SELECT COUNT(inspect_history.inspect_history_id) FROM inspect_history 
+		LEFT OUTER JOIN inspect ON(inspect_history.inspect_id=inspect.inspect_id) 
+		LEFT OUTER JOIN dangeroussource_place_inspect_type dpit ON(inspect.dangeroussource_place_inspect_type_id=dpit.dangeroussource_place_inspect_type_id) 
+		WHERE inspect_history.inspect_result='需整改' 
+		AND dpit.dangeroussource_place_id=#{dangeroussourcePlaceId} 
+		<if test="inspectDatetimeBegin != null and inspectDatetimeBegin != ''">
+	    	<![CDATA[ and date_format(inspect_history.inspect_datetime,'%Y-%m-%d') >= #{inspectDatetimeBegin} ]]>
+	    </if>
+	    <if test="inspectDatetimeEnd != null and inspectDatetimeEnd != ''">
+	  		<![CDATA[ and date_format(inspect_history.inspect_datetime,'%Y-%m-%d') <= #{inspectDatetimeEnd} ]]>
+	    </if>
+	    <if test="inspectTypeId!=null and inspectTypeId!=0">
+	    and dpit.inspect_type_id=#{inspectTypeId} 
+	    </if>
+	    <!-- 查询除了日常巡检的其他类型的巡检 -->
+	    <if test="inspectTypeId!=null and inspectTypeId==0">
+	    and inspect.inspect_type_id!=1 
+	    </if>
+	</select>
+
+	
+</mapper>

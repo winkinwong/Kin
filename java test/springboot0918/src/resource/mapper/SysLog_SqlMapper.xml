@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kin.test.springboot.dao.SysLogDao">
+    <insert id="save" parameterType="com.kin.test.springboot.model.SysLog">
+         INSERT INTO sys_user_log(user_name,operation,method,params,user_ip_address,create_time,result)
+        VALUES (#{userName},#{operation},#{method},#{params},#{userIpAddress},#{createTime},#{result})
+    </insert>
+</mapper>

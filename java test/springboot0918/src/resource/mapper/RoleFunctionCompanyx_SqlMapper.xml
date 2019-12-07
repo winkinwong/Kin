@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kin.test.springboot.dao.RoleFunctionCompanyxMapper">
+
+    <select id="getRoleFunctionCompanyxByUserIdAndFunctionId" resultType="com.kin.test.springboot.model.RoleFunctionCompanyx" parameterType="com.kin.test.springboot.model.RoleFunctionCompanyx">
+        SELECT
+        t.role_function_companyx_id AS roleFunctionCompanyxId,
+        t.role_function_id AS roleFunctionId,
+        t.company_id AS companyId
+        FROM role_function_companyx t
+        LEFT OUTER JOIN role_function rofu ON(t.role_function_id=rofu.role_function_id)
+        LEFT OUTER JOIN role ro ON(rofu.role_id=ro.role_id)
+        LEFT OUTER JOIN user_role usro ON(ro.role_id=usro.role_id)
+        LEFT OUTER JOIN user us ON(usro.user_id=us.user_id)
+        <where>
+            <if test="roleFunctionId != null">
+                and t.role_function_id = #{roleFunctionId}
+            </if>
+            <if test="companyId != null">
+                and t.company_id = #{companyId}
+            </if>
+            <if test="userId != null">
+                and us.user_id = #{userId}
+            </if>
+            <if test="functionId != null">
+                and rofu.function_id = #{functionId}
+            </if>
+        </where>
+    </select>
+</mapper>

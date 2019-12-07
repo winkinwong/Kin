@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud_sleuth" />
+        <module name="springcloud_zipkin_service_hi" />
+        <module name="springcloud_zipkin_service_miya" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud_server_zipkin" target="1.8" />
+      <module name="springcloud_sleuth" target="1.8" />
+      <module name="springcloud_zipkin_service_hi" target="1.8" />
+      <module name="springcloud_zipkin_service_miya" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

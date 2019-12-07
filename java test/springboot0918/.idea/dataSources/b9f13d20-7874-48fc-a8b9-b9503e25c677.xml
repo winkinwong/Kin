@@ -1,0 +1,4051 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="patrol_inspect_system@139.159.201.187">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+    </root>
+    <schema id="2" parent="1" name="hospital_system">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="3" parent="1" name="information_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="4" parent="1" name="mysql">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="5" parent="1" name="patrol_inspect_system">
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="6" parent="1" name="performance_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="test">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="8" parent="1" name="vdepthappyship_uat">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <collation id="9" parent="1" name="armscii8_bin">
+      <Charset>armscii8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="10" parent="1" name="armscii8_general_ci">
+      <Charset>armscii8</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="11" parent="1" name="ascii_bin">
+      <Charset>ascii</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="12" parent="1" name="ascii_general_ci">
+      <Charset>ascii</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="13" parent="1" name="big5_bin">
+      <Charset>big5</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="14" parent="1" name="big5_chinese_ci">
+      <Charset>big5</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="15" parent="1" name="binary">
+      <Charset>binary</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="16" parent="1" name="cp1250_bin">
+      <Charset>cp1250</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="17" parent="1" name="cp1250_croatian_ci">
+      <Charset>cp1250</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="18" parent="1" name="cp1250_czech_cs">
+      <Charset>cp1250</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="19" parent="1" name="cp1250_general_ci">
+      <Charset>cp1250</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="20" parent="1" name="cp1250_polish_ci">
+      <Charset>cp1250</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="21" parent="1" name="cp1251_bin">
+      <Charset>cp1251</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="22" parent="1" name="cp1251_bulgarian_ci">
+      <Charset>cp1251</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="23" parent="1" name="cp1251_general_ci">
+      <Charset>cp1251</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="24" parent="1" name="cp1251_general_cs">
+      <Charset>cp1251</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="25" parent="1" name="cp1251_ukrainian_ci">
+      <Charset>cp1251</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="26" parent="1" name="cp1256_bin">
+      <Charset>cp1256</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="27" parent="1" name="cp1256_general_ci">
+      <Charset>cp1256</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="28" parent="1" name="cp1257_bin">
+      <Charset>cp1257</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="29" parent="1" name="cp1257_general_ci">
+      <Charset>cp1257</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="30" parent="1" name="cp1257_lithuanian_ci">
+      <Charset>cp1257</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="31" parent="1" name="cp850_bin">
+      <Charset>cp850</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="32" parent="1" name="cp850_general_ci">
+      <Charset>cp850</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="33" parent="1" name="cp852_bin">
+      <Charset>cp852</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="34" parent="1" name="cp852_general_ci">
+      <Charset>cp852</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="35" parent="1" name="cp866_bin">
+      <Charset>cp866</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="36" parent="1" name="cp866_general_ci">
+      <Charset>cp866</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="37" parent="1" name="cp932_bin">
+      <Charset>cp932</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="38" parent="1" name="cp932_japanese_ci">
+      <Charset>cp932</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="39" parent="1" name="dec8_bin">
+      <Charset>dec8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="40" parent="1" name="dec8_swedish_ci">
+      <Charset>dec8</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="41" parent="1" name="eucjpms_bin">
+      <Charset>eucjpms</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="42" parent="1" name="eucjpms_japanese_ci">
+      <Charset>eucjpms</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="43" parent="1" name="euckr_bin">
+      <Charset>euckr</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="44" parent="1" name="euckr_korean_ci">
+      <Charset>euckr</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="45" parent="1" name="gb2312_bin">
+      <Charset>gb2312</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="46" parent="1" name="gb2312_chinese_ci">
+      <Charset>gb2312</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="47" parent="1" name="gbk_bin">
+      <Charset>gbk</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="48" parent="1" name="gbk_chinese_ci">
+      <Charset>gbk</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="49" parent="1" name="geostd8_bin">
+      <Charset>geostd8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="50" parent="1" name="geostd8_general_ci">
+      <Charset>geostd8</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="51" parent="1" name="greek_bin">
+      <Charset>greek</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="52" parent="1" name="greek_general_ci">
+      <Charset>greek</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="53" parent="1" name="hebrew_bin">
+      <Charset>hebrew</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="54" parent="1" name="hebrew_general_ci">
+      <Charset>hebrew</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="55" parent="1" name="hp8_bin">
+      <Charset>hp8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="56" parent="1" name="hp8_english_ci">
+      <Charset>hp8</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="57" parent="1" name="keybcs2_bin">
+      <Charset>keybcs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="58" parent="1" name="keybcs2_general_ci">
+      <Charset>keybcs2</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="59" parent="1" name="koi8r_bin">
+      <Charset>koi8r</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="60" parent="1" name="koi8r_general_ci">
+      <Charset>koi8r</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="61" parent="1" name="koi8u_bin">
+      <Charset>koi8u</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="62" parent="1" name="koi8u_general_ci">
+      <Charset>koi8u</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="63" parent="1" name="latin1_bin">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="64" parent="1" name="latin1_danish_ci">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="65" parent="1" name="latin1_general_ci">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="66" parent="1" name="latin1_general_cs">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="67" parent="1" name="latin1_german1_ci">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="68" parent="1" name="latin1_german2_ci">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="69" parent="1" name="latin1_spanish_ci">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="70" parent="1" name="latin1_swedish_ci">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="71" parent="1" name="latin2_bin">
+      <Charset>latin2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="72" parent="1" name="latin2_croatian_ci">
+      <Charset>latin2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="73" parent="1" name="latin2_czech_cs">
+      <Charset>latin2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="74" parent="1" name="latin2_general_ci">
+      <Charset>latin2</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="75" parent="1" name="latin2_hungarian_ci">
+      <Charset>latin2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="76" parent="1" name="latin5_bin">
+      <Charset>latin5</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="77" parent="1" name="latin5_turkish_ci">
+      <Charset>latin5</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="78" parent="1" name="latin7_bin">
+      <Charset>latin7</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="79" parent="1" name="latin7_estonian_cs">
+      <Charset>latin7</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="80" parent="1" name="latin7_general_ci">
+      <Charset>latin7</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="81" parent="1" name="latin7_general_cs">
+      <Charset>latin7</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="82" parent="1" name="macce_bin">
+      <Charset>macce</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="83" parent="1" name="macce_general_ci">
+      <Charset>macce</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="84" parent="1" name="macroman_bin">
+      <Charset>macroman</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="85" parent="1" name="macroman_general_ci">
+      <Charset>macroman</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="86" parent="1" name="sjis_bin">
+      <Charset>sjis</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="87" parent="1" name="sjis_japanese_ci">
+      <Charset>sjis</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="88" parent="1" name="swe7_bin">
+      <Charset>swe7</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="89" parent="1" name="swe7_swedish_ci">
+      <Charset>swe7</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="90" parent="1" name="tis620_bin">
+      <Charset>tis620</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="91" parent="1" name="tis620_thai_ci">
+      <Charset>tis620</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="92" parent="1" name="ucs2_bin">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="93" parent="1" name="ucs2_czech_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="94" parent="1" name="ucs2_danish_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="95" parent="1" name="ucs2_esperanto_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="96" parent="1" name="ucs2_estonian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="97" parent="1" name="ucs2_general_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="98" parent="1" name="ucs2_general_mysql500_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="99" parent="1" name="ucs2_hungarian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="100" parent="1" name="ucs2_icelandic_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="101" parent="1" name="ucs2_latvian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="102" parent="1" name="ucs2_lithuanian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="103" parent="1" name="ucs2_persian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="104" parent="1" name="ucs2_polish_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="105" parent="1" name="ucs2_roman_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="106" parent="1" name="ucs2_romanian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="107" parent="1" name="ucs2_sinhala_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="108" parent="1" name="ucs2_slovak_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="109" parent="1" name="ucs2_slovenian_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="110" parent="1" name="ucs2_spanish2_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="111" parent="1" name="ucs2_spanish_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="112" parent="1" name="ucs2_swedish_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="113" parent="1" name="ucs2_turkish_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="114" parent="1" name="ucs2_unicode_ci">
+      <Charset>ucs2</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="115" parent="1" name="ujis_bin">
+      <Charset>ujis</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="116" parent="1" name="ujis_japanese_ci">
+      <Charset>ujis</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="117" parent="1" name="utf16_bin">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="118" parent="1" name="utf16_czech_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="119" parent="1" name="utf16_danish_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="120" parent="1" name="utf16_esperanto_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="121" parent="1" name="utf16_estonian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="122" parent="1" name="utf16_general_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="123" parent="1" name="utf16_hungarian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="124" parent="1" name="utf16_icelandic_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="125" parent="1" name="utf16_latvian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="126" parent="1" name="utf16_lithuanian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="127" parent="1" name="utf16_persian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="128" parent="1" name="utf16_polish_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="129" parent="1" name="utf16_roman_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="130" parent="1" name="utf16_romanian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="131" parent="1" name="utf16_sinhala_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="132" parent="1" name="utf16_slovak_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="133" parent="1" name="utf16_slovenian_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="134" parent="1" name="utf16_spanish2_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="135" parent="1" name="utf16_spanish_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="136" parent="1" name="utf16_swedish_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="137" parent="1" name="utf16_turkish_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="138" parent="1" name="utf16_unicode_ci">
+      <Charset>utf16</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="139" parent="1" name="utf32_bin">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="140" parent="1" name="utf32_czech_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="141" parent="1" name="utf32_danish_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="142" parent="1" name="utf32_esperanto_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="143" parent="1" name="utf32_estonian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="144" parent="1" name="utf32_general_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="145" parent="1" name="utf32_hungarian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="146" parent="1" name="utf32_icelandic_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="147" parent="1" name="utf32_latvian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="148" parent="1" name="utf32_lithuanian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="149" parent="1" name="utf32_persian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="150" parent="1" name="utf32_polish_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="151" parent="1" name="utf32_roman_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="152" parent="1" name="utf32_romanian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="153" parent="1" name="utf32_sinhala_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="154" parent="1" name="utf32_slovak_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="155" parent="1" name="utf32_slovenian_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="156" parent="1" name="utf32_spanish2_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="157" parent="1" name="utf32_spanish_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="158" parent="1" name="utf32_swedish_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="159" parent="1" name="utf32_turkish_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="160" parent="1" name="utf32_unicode_ci">
+      <Charset>utf32</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="161" parent="1" name="utf8_bin">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="162" parent="1" name="utf8_czech_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="163" parent="1" name="utf8_danish_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="164" parent="1" name="utf8_esperanto_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="165" parent="1" name="utf8_estonian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="166" parent="1" name="utf8_general_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="167" parent="1" name="utf8_general_mysql500_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="168" parent="1" name="utf8_hungarian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="169" parent="1" name="utf8_icelandic_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="170" parent="1" name="utf8_latvian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="171" parent="1" name="utf8_lithuanian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="172" parent="1" name="utf8_persian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="173" parent="1" name="utf8_polish_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="174" parent="1" name="utf8_roman_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="175" parent="1" name="utf8_romanian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="176" parent="1" name="utf8_sinhala_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="177" parent="1" name="utf8_slovak_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="178" parent="1" name="utf8_slovenian_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="179" parent="1" name="utf8_spanish2_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="180" parent="1" name="utf8_spanish_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="181" parent="1" name="utf8_swedish_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="182" parent="1" name="utf8_turkish_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="183" parent="1" name="utf8_unicode_ci">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="184" parent="1" name="utf8mb4_bin">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="185" parent="1" name="utf8mb4_czech_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="186" parent="1" name="utf8mb4_danish_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="187" parent="1" name="utf8mb4_esperanto_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="188" parent="1" name="utf8mb4_estonian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="189" parent="1" name="utf8mb4_general_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="190" parent="1" name="utf8mb4_hungarian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="191" parent="1" name="utf8mb4_icelandic_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="192" parent="1" name="utf8mb4_latvian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="193" parent="1" name="utf8mb4_lithuanian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="194" parent="1" name="utf8mb4_persian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="195" parent="1" name="utf8mb4_polish_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="196" parent="1" name="utf8mb4_roman_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="197" parent="1" name="utf8mb4_romanian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="198" parent="1" name="utf8mb4_sinhala_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="199" parent="1" name="utf8mb4_slovak_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="200" parent="1" name="utf8mb4_slovenian_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="201" parent="1" name="utf8mb4_spanish2_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="202" parent="1" name="utf8mb4_spanish_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="203" parent="1" name="utf8mb4_swedish_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="204" parent="1" name="utf8mb4_turkish_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <collation id="205" parent="1" name="utf8mb4_unicode_ci">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>0</DefaultForCharset>
+    </collation>
+    <table id="206" parent="5" name="accident_case">
+      <Comment>事故案例表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="207" parent="5" name="app_message_push_history">
+      <Comment>app消息推送历史表(标准报表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="208" parent="5" name="app_push_settings">
+      <Comment>app推送设置表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="209" parent="5" name="app_push_settings_role">
+      <Comment>app推送设置-角色表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="210" parent="5" name="company">
+      <Comment>公司表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="211" parent="5" name="company_show_role">
+      <Comment>公司展示出的角色表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="212" parent="5" name="contingency_plan">
+      <Comment>应急预案表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="213" parent="5" name="dangerous_characteristic">
+      <Comment>(危险化学品)危险特性表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="214" parent="5" name="dangerous_chemical_children_type">
+      <Comment>危险化学品子类表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="215" parent="5" name="dangerous_chemical_children_type_dangerous_characteristic">
+      <Comment>危险化学品子类-危险特性表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="216" parent="5" name="dangeroussource">
+      <Comment>危险源表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="217" parent="5" name="dangeroussource_accident_case">
+      <Comment>危险源-事故案例表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="218" parent="5" name="dangeroussource_details">
+      <Comment>危险源详情表(危险品表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="219" parent="5" name="dangeroussource_place">
+      <Comment>危险源地点表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="220" parent="5" name="dangeroussource_place_contingency_plan">
+      <Comment>危险源地点-应急预案表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="221" parent="5" name="dangeroussource_place_energy_source">
+      <Comment>危险源地点-能量源表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="222" parent="5" name="dangeroussource_place_inspect_type">
+      <Comment>危险源-检查类型表(复合中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="223" parent="5" name="dangeroussource_place_trouble_type">
+      <Comment>危险源地点-事故类型表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="224" parent="5" name="dangeroussource_type">
+      <Comment>危险源种类表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="225" parent="5" name="department">
+      <Comment>部门表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="226" parent="5" name="department_user">
+      <Comment>部门-用户表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="227" parent="5" name="energy_source">
+      <Comment>能量源表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="228" parent="5" name="factory_area_map">
+      <Comment>厂区地图表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="229" parent="5" name="factory_area_map_dangeroussource">
+      <Comment>厂区地图-危险源表(复合中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="230" parent="5" name="factory_area_map_dangeroussource_place">
+      <Comment>厂区地图-危险源地点表(复合中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="231" parent="5" name="function">
+      <Comment>权限表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="232" parent="5" name="function_department">
+      <Comment>权限-部门表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="233" parent="5" name="inspect">
+      <Comment>巡检(任务)表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="234" parent="5" name="inspect_attendance">
+      <Comment>巡检出勤表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="235" parent="5" name="inspect_history">
+      <Comment>巡检历史表(标准报表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="236" parent="5" name="inspect_inspect_term">
+      <Comment>巡检(任务)-检查项表(复合中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="237" parent="5" name="inspect_inspect_term_history">
+      <Comment>巡检(任务)-检查项历史表(复合历史中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="238" parent="5" name="inspect_picture">
+      <Comment>巡检(任务)图片表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="239" parent="5" name="inspect_term">
+      <Comment>检查项表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="240" parent="5" name="inspect_term_history">
+      <Comment>检查项历史表(标准报表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="241" parent="5" name="inspect_type">
+      <Comment>检查类型表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="242" parent="5" name="rectify">
+      <Comment>整改(任务)表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="243" parent="5" name="rectify_history">
+      <Comment>整改历史表(标准报表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="244" parent="5" name="rectify_picture">
+      <Comment>整改图片表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="245" parent="5" name="review">
+      <Comment>审核(任务)表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="246" parent="5" name="review_history">
+      <Comment>审核历史表(标准报表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="247" parent="5" name="review_picture">
+      <Comment>审核图片表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="248" parent="5" name="risk_rank">
+      <Comment>风险等级表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="249" parent="5" name="role">
+      <Comment>角色表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="250" parent="5" name="role_function">
+      <Comment>角色-权限表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="251" parent="5" name="role_function_companyx">
+      <Comment>(角色-权限)-公司标记表(标记中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="252" parent="5" name="role_function_departmentx">
+      <Comment>(角色-权限)-部门标记表(标记中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="253" parent="5" name="role_function_risk_rankx">
+      <Comment>(角色-权限)-风险等级标记表(标记中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="254" parent="5" name="supplies">
+      <Comment>(危险源地点)应急物资表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="255" parent="5" name="supplies_allocation">
+      <Comment>(公司)应急物资调拨表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="256" parent="5" name="supplies_inventory_history">
+      <Comment>应急物资盘点历史表(标准报表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="257" parent="5" name="sys_user_log">
+      <Comment>用户操作记录表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="258" parent="5" name="trouble_type">
+      <Comment>事故类型表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="259" parent="5" name="user">
+      <Comment>用户表</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="260" parent="5" name="user_role">
+      <Comment>用户-角色表(中间表)</Comment>
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="261" parent="206" name="accident_case_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="206" name="accident_case_file_name">
+      <Position>2</Position>
+      <Comment>文件名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="206" name="accident_case_file_url">
+      <Position>3</Position>
+      <Comment>文件访问地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="264" parent="206" name="accident_case_file_path">
+      <Position>4</Position>
+      <Comment>文件本地路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="265" parent="206" name="create_time">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="206" name="status">
+      <Position>6</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="267" parent="206" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>accident_case_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="268" parent="207" name="app_message_push_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="269" parent="207" name="app_message_push_history_send_datetime">
+      <Position>2</Position>
+      <Comment>消息推送时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="270" parent="207" name="app_message_push_history_settings_name">
+      <Position>3</Position>
+      <Comment>消息推送类型</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="207" name="app_message_push_history_content">
+      <Position>4</Position>
+      <Comment>消息内容</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="207" name="user_realname">
+      <Position>5</Position>
+      <Comment>接收人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="207" name="company_name">
+      <Position>6</Position>
+      <Comment>公司名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="207" name="user_id">
+      <Position>7</Position>
+      <Comment>用户ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="207" name="company_id">
+      <Position>8</Position>
+      <Comment>公司ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="207" name="create_time">
+      <Position>9</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="207" name="status">
+      <Position>10</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="278" parent="207" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>app_message_push_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="279" parent="208" name="app_push_settings_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="280" parent="208" name="app_push_settings_name">
+      <Position>2</Position>
+      <Comment>推送类型</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="281" parent="208" name="app_push_settings_content">
+      <Position>3</Position>
+      <Comment>推送内容</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="282" parent="208" name="app_push_settings_content2">
+      <Position>4</Position>
+      <Comment>推送内容2</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="283" parent="208" name="app_push_settings_describe">
+      <Position>5</Position>
+      <Comment>推送描述</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="284" parent="208" name="app_push_settings_status">
+      <Position>6</Position>
+      <Comment>业务状态</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="285" parent="208" name="create_time">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="286" parent="208" name="status">
+      <Position>8</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="287" parent="208" name="company_id">
+      <Position>9</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="288" parent="208" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>app_push_settings_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="289" parent="209" name="app_push_settings_role_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="290" parent="209" name="app_push_settings_id">
+      <Position>2</Position>
+      <Comment>app推送设置ID(关联app_push_settings表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="291" parent="209" name="role_id">
+      <Position>3</Position>
+      <Comment>角色ID(关联role表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="292" parent="209" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>app_push_settings_role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="293" parent="210" name="company_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="294" parent="210" name="company_name">
+      <Position>2</Position>
+      <Comment>公司名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="210" name="create_time">
+      <Position>3</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="296" parent="210" name="status">
+      <Position>4</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="297" parent="210" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>company_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="298" parent="211" name="company_show_role_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="299" parent="211" name="company_id">
+      <Position>2</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="211" name="role_id">
+      <Position>3</Position>
+      <Comment>角色ID(role表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="211" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="302" parent="211" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="303" parent="211" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>company_show_role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="304" parent="212" name="contingency_plan_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="305" parent="212" name="contingency_plan_file_name">
+      <Position>2</Position>
+      <Comment>文件名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="306" parent="212" name="contingency_plan_file_url">
+      <Position>3</Position>
+      <Comment>文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="307" parent="212" name="contingency_plan_file_path">
+      <Position>4</Position>
+      <Comment>文件本地地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="308" parent="212" name="create_time">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="309" parent="212" name="status">
+      <Position>6</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="310" parent="212" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>contingency_plan_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="311" parent="213" name="dangerous_characteristic_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="312" parent="213" name="dangerous_characteristic_name">
+      <Position>2</Position>
+      <Comment>危险特性名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="313" parent="213" name="dangerous_characteristic_describe">
+      <Position>3</Position>
+      <Comment>危险特性描述</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="314" parent="213" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="213" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="316" parent="213" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangerous_characteristic_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="317" parent="214" name="dangerous_chemical_children_type_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="318" parent="214" name="dangerous_chemical_children_type_name">
+      <Position>2</Position>
+      <Comment>危险化学品子类名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="319" parent="214" name="dangerous_chemical_children_type_msds_url">
+      <Position>3</Position>
+      <Comment>危险化学品子类msds卡的访问地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="320" parent="214" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="321" parent="214" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="322" parent="214" name="dangeroussource_type_id">
+      <Position>6</Position>
+      <Comment>危险源种类ID(dangeroussource_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="323" parent="214" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangerous_chemical_children_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="324" parent="215" name="dangerous_chemical_children_type_dangerous_characteristic_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="325" parent="215" name="dangerous_chemical_children_type_id">
+      <Position>2</Position>
+      <Comment>危险化学品子类ID(dangerous_chemical_children_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="326" parent="215" name="dangerous_characteristic_id">
+      <Position>3</Position>
+      <Comment>(危险化学品)危险特性ID(dangerous_characteristic表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="327" parent="215" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangerous_chemical_children_type_dangerous_characteristic_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="328" parent="216" name="dangeroussource_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="329" parent="216" name="dangeroussource_name">
+      <Position>2</Position>
+      <Comment>危险源名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="330" parent="216" name="dangeroussource_describe">
+      <Position>3</Position>
+      <Comment>危险源描述</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="331" parent="216" name="dangeroussource_injure">
+      <Position>4</Position>
+      <Comment>造成的伤害</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="332" parent="216" name="dangeroussource_injure_object">
+      <Position>5</Position>
+      <Comment>伤害对象</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="333" parent="216" name="dangeroussource_l">
+      <Position>6</Position>
+      <Comment>风险指数值L</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="334" parent="216" name="dangeroussource_e">
+      <Position>7</Position>
+      <Comment>风险指数值E</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="335" parent="216" name="dangeroussource_c">
+      <Position>8</Position>
+      <Comment>风险指数值C</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="216" name="dangeroussource_d">
+      <Position>9</Position>
+      <Comment>风险评价值D</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="337" parent="216" name="dangeroussource_control_measures">
+      <Position>10</Position>
+      <Comment>控制措施</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="338" parent="216" name="dangeroussource_content">
+      <Position>11</Position>
+      <Comment>备注</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="339" parent="216" name="dangeroussource_qrcode_url">
+      <Position>12</Position>
+      <Comment>二维码图片文件地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="340" parent="216" name="dangeroussource_status">
+      <Position>13</Position>
+      <Comment>危险源状态</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="341" parent="216" name="create_time">
+      <Position>14</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="342" parent="216" name="status">
+      <Position>15</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="343" parent="216" name="dangeroussource_place_id">
+      <Position>16</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="344" parent="216" name="dangeroussource_type_id">
+      <Position>17</Position>
+      <Comment>危险源种类ID(dangeroussource_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="345" parent="216" name="risk_rank_id">
+      <Position>18</Position>
+      <Comment>风险等级ID(risk_rank表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="346" parent="216" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="347" parent="217" name="dangeroussource_accident_case_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="348" parent="217" name="dangeroussource_id">
+      <Position>2</Position>
+      <Comment>危险源ID(dangeroussource表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="349" parent="217" name="accident_case_id">
+      <Position>3</Position>
+      <Comment>事故案例ID(accident_case表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="350" parent="217" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_accident_case_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="351" parent="218" name="dangeroussource_details_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="352" parent="218" name="dangeroussource_details_name">
+      <Position>2</Position>
+      <Comment>名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="353" parent="218" name="dangeroussource_details_code">
+      <Position>3</Position>
+      <Comment>设备代码</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="354" parent="218" name="dangeroussource_details_type">
+      <Position>4</Position>
+      <Comment>规格型号</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="355" parent="218" name="dangeroussource_details_amount">
+      <Position>5</Position>
+      <Comment>总存量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="356" parent="218" name="dangeroussource_details_max_amount">
+      <Position>6</Position>
+      <Comment>最大存量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="357" parent="218" name="dangeroussource_details_min_amount">
+      <Position>7</Position>
+      <Comment>最小存量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="358" parent="218" name="dangeroussource_details_use_type">
+      <Position>8</Position>
+      <Comment>使用方式</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="359" parent="218" name="dangeroussource_details_use_place">
+      <Position>9</Position>
+      <Comment>使用场所</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="360" parent="218" name="dangeroussource_details_inspect_date">
+      <Position>10</Position>
+      <Comment>检验日期</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="218" name="dangeroussource_details_inspect_next_date">
+      <Position>11</Position>
+      <Comment>下次检验日期</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="362" parent="218" name="dangeroussource_details_inspect_validity_term">
+      <Position>12</Position>
+      <Comment>检验有效期</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="363" parent="218" name="dangeroussource_details_certificate_code">
+      <Position>13</Position>
+      <Comment>检验合格证号</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="364" parent="218" name="dangeroussource_details_registration_code">
+      <Position>14</Position>
+      <Comment>使用登记证号</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="365" parent="218" name="dangeroussource_details_unit">
+      <Position>15</Position>
+      <Comment>单位</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="366" parent="218" name="dangeroussource_details_value">
+      <Position>16</Position>
+      <Comment>额外值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="367" parent="218" name="dangeroussource_details_content">
+      <Position>17</Position>
+      <Comment>备注</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="368" parent="218" name="create_time">
+      <Position>18</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="369" parent="218" name="status">
+      <Position>19</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="370" parent="218" name="dangeroussource_id">
+      <Position>20</Position>
+      <Comment>危险源ID(dangeroussource表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="371" parent="218" name="dangerous_chemical_children_type_id">
+      <Position>21</Position>
+      <Comment>危险源化学品子类ID(dangerous_chemical_children_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="372" parent="218" name="dangeroussource_place_department_user_id">
+      <Position>22</Position>
+      <Comment>危险源地点所属部门的员工ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="373" parent="218" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_details_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="374" parent="219" name="dangeroussource_place_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="375" parent="219" name="dangeroussource_place_name">
+      <Position>2</Position>
+      <Comment>危险源地点名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="376" parent="219" name="dangeroussource_place_place">
+      <Position>3</Position>
+      <Comment>场所</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="377" parent="219" name="dangeroussource_place_technology_control">
+      <Position>4</Position>
+      <Comment>技术控制</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="378" parent="219" name="dangeroussource_place_artificial_control">
+      <Position>5</Position>
+      <Comment>人行为控制</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="379" parent="219" name="dangeroussource_place_management_control">
+      <Position>6</Position>
+      <Comment>管理控制</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="380" parent="219" name="dangeroussource_place_content">
+      <Position>7</Position>
+      <Comment>备注</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="381" parent="219" name="dangeroussource_place_attendance_workday_frequency">
+      <Position>8</Position>
+      <Comment>出勤日巡检频率</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="382" parent="219" name="dangeroussource_place_attendance_restday_frequency">
+      <Position>9</Position>
+      <Comment>非出勤日巡检频率</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="383" parent="219" name="create_time">
+      <Position>10</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="384" parent="219" name="status">
+      <Position>11</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="385" parent="219" name="department_id_inspect">
+      <Position>12</Position>
+      <Comment>巡检部门ID(department表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="386" parent="219" name="inspect_attendance_id">
+      <Position>13</Position>
+      <Comment>巡检出勤ID(inspect_attendance表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="387" parent="219" name="company_id">
+      <Position>14</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="388" parent="219" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_place_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="389" parent="220" name="dangeroussource_place_contingency_plan_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="390" parent="220" name="dangeroussource_place_id">
+      <Position>2</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="391" parent="220" name="contingency_plan_id">
+      <Position>3</Position>
+      <Comment>应急预案ID(contingency_plan表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="392" parent="220" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_place_contingency_plan_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="393" parent="221" name="dangeroussource_place_energy_source_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="394" parent="221" name="dangeroussource_place_id">
+      <Position>2</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="395" parent="221" name="energy_source_id">
+      <Position>3</Position>
+      <Comment>能量源ID(energy_source表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="396" parent="221" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_place_energy_source_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="397" parent="222" name="dangeroussource_place_inspect_type_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="398" parent="222" name="dangeroussource_place_id">
+      <Position>2</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="399" parent="222" name="inspect_type_id">
+      <Position>3</Position>
+      <Comment>检查类型ID(inspect_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="400" parent="222" name="rectify_department_id">
+      <Position>4</Position>
+      <Comment>整改部门ID(department表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="401" parent="222" name="company_id">
+      <Position>5</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="402" parent="222" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_place_inspect_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="403" parent="223" name="dangeroussource_place_trouble_type_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="404" parent="223" name="dangeroussource_place_id">
+      <Position>2</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="405" parent="223" name="trouble_type_id">
+      <Position>3</Position>
+      <Comment>事故类型ID(trouble_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="406" parent="223" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_place_trouble_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="407" parent="224" name="dangeroussource_type_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="408" parent="224" name="dangeroussource_type_name">
+      <Position>2</Position>
+      <Comment>危险源种类名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="409" parent="224" name="dangeroussource_type_describe">
+      <Position>3</Position>
+      <Comment>描述信息</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="410" parent="224" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="411" parent="224" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="412" parent="224" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dangeroussource_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="413" parent="225" name="department_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="414" parent="225" name="department_name">
+      <Position>2</Position>
+      <Comment>部门名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="415" parent="225" name="department_phone_number">
+      <Position>3</Position>
+      <Comment>部门电话(座机)</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="416" parent="225" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="417" parent="225" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="418" parent="225" name="company_id">
+      <Position>6</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="419" parent="225" name="user_id">
+      <Position>7</Position>
+      <Comment>用户ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="420" parent="225" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>department_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="421" parent="226" name="department_user_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="422" parent="226" name="department_id">
+      <Position>2</Position>
+      <Comment>部门ID(department表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="423" parent="226" name="user_id">
+      <Position>3</Position>
+      <Comment>用户ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="424" parent="226" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>department_user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="425" parent="227" name="energy_source_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="426" parent="227" name="energy_source_name">
+      <Position>2</Position>
+      <Comment>能量源名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="427" parent="227" name="energy_source_describe">
+      <Position>3</Position>
+      <Comment>描述信息</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="428" parent="227" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="429" parent="227" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="430" parent="227" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>energy_source_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="431" parent="228" name="factory_area_map_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="432" parent="228" name="factory_area_map_name">
+      <Position>2</Position>
+      <Comment>厂区地图名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="433" parent="228" name="factory_area_map_filename">
+      <Position>3</Position>
+      <Comment>厂区地图文件名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="434" parent="228" name="factory_area_map_fileurl">
+      <Position>4</Position>
+      <Comment>厂区地图文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="435" parent="228" name="factory_area_map_filepath">
+      <Position>5</Position>
+      <Comment>厂区地图文件本地地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="436" parent="228" name="create_time">
+      <Position>6</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="437" parent="228" name="status">
+      <Position>7</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="438" parent="228" name="company_id">
+      <Position>8</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="439" parent="228" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>factory_area_map_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="440" parent="229" name="factory_area_map_dangeroussource_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="441" parent="229" name="factory_area_map_dangeroussource_code">
+      <Position>2</Position>
+      <Comment>厂区地图-危险源编号</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="442" parent="229" name="factory_area_map_id">
+      <Position>3</Position>
+      <Comment>厂区地图ID(factory_area_map表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="443" parent="229" name="dangeroussource_id">
+      <Position>4</Position>
+      <Comment>危险源ID(dangeroussource表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="444" parent="229" name="dangeroussource_x">
+      <Position>5</Position>
+      <Comment>在地图的x坐标</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="445" parent="229" name="dangeroussource_y">
+      <Position>6</Position>
+      <Comment>在地图上的y坐标</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="446" parent="229" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>factory_area_map_dangeroussource_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="447" parent="230" name="factory_area_map_dangeroussource_place_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="448" parent="230" name="factory_area_map_dangeroussource_place_code">
+      <Position>2</Position>
+      <Comment>厂区地图-危险源地点编号</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="449" parent="230" name="factory_area_map_id">
+      <Position>3</Position>
+      <Comment>厂区地图ID(factory_area_map表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="450" parent="230" name="dangeroussource_place_id">
+      <Position>4</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="451" parent="230" name="dangeroussource_place_x">
+      <Position>5</Position>
+      <Comment>x坐标</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="452" parent="230" name="dangeroussource_place_y">
+      <Position>6</Position>
+      <Comment>y坐标</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="453" parent="230" name="dangeroussource_place_width">
+      <Position>7</Position>
+      <Comment>地图中的宽度</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="454" parent="230" name="dangeroussource_place_height">
+      <Position>8</Position>
+      <Comment>地图中的高度</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="455" parent="230" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>factory_area_map_dangeroussource_place_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="456" parent="231" name="function_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="457" parent="231" name="function_name">
+      <Position>2</Position>
+      <Comment>权限名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="458" parent="231" name="function_url">
+      <Position>3</Position>
+      <Comment>权限前端页面跳转路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="459" parent="231" name="function_server_url">
+      <Position>4</Position>
+      <Comment>权限访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="460" parent="231" name="type">
+      <Position>5</Position>
+      <Comment>级别</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="461" parent="231" name="parent_id">
+      <Position>6</Position>
+      <Comment>父级ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="462" parent="231" name="create_time">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="463" parent="231" name="status">
+      <Position>8</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="464" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>function_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="465" parent="232" name="function_department_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="466" parent="232" name="function_id">
+      <Position>2</Position>
+      <Comment>权限ID(function表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="467" parent="232" name="department_id">
+      <Position>3</Position>
+      <Comment>部门ID(department表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="468" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>function_department_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="469" parent="233" name="inspect_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="470" parent="233" name="inspect_datetime">
+      <Position>2</Position>
+      <Comment>巡检时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="471" parent="233" name="inspect_deadline">
+      <Position>3</Position>
+      <Comment>巡检期限</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="472" parent="233" name="inspect_status">
+      <Position>4</Position>
+      <Comment>巡检状态</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="473" parent="233" name="inspect_result">
+      <Position>5</Position>
+      <Comment>巡检结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="474" parent="233" name="inspect_question_describe">
+      <Position>6</Position>
+      <Comment>问题描述</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="475" parent="233" name="inspect_rectify_advise">
+      <Position>7</Position>
+      <Comment>整改建议</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="476" parent="233" name="inspect_rectify_deadline">
+      <Position>8</Position>
+      <Comment>整改期限</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="477" parent="233" name="inspect_start">
+      <Position>9</Position>
+      <Comment>巡检开始通知标记</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="478" parent="233" name="inspect_rectify_deadline_status">
+      <Position>10</Position>
+      <Comment>巡检期限确定状态</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="479" parent="233" name="create_time">
+      <Position>11</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="480" parent="233" name="status">
+      <Position>12</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="481" parent="233" name="dangeroussource_id">
+      <Position>13</Position>
+      <Comment>危险源ID(dangeroussource表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="482" parent="233" name="trouble_type_id">
+      <Position>14</Position>
+      <Comment>事故类型ID(trouble_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="483" parent="233" name="dangeroussource_place_inspect_type_id">
+      <Position>15</Position>
+      <Comment>危险源-检查类型(复合中间表)ID(dangeroussource_place_inspect_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="484" parent="233" name="user_id">
+      <Position>16</Position>
+      <Comment>(巡检人)用户ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="485" parent="233" name="inspect_type_id">
+      <Position>17</Position>
+      <Comment>检查类型ID(inspect_type表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="486" parent="233" name="rectify_user_id">
+      <Position>18</Position>
+      <Comment>当前巡检任务对应的整改人ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="487" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="488" parent="234" name="inspect_attendance_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="489" parent="234" name="inspect_attendance_date">
+      <Position>2</Position>
+      <Comment>对应的日期</Comment>
+      <DataType>date|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="490" parent="234" name="inspect_attendance_workday_starttime">
+      <Position>3</Position>
+      <Comment>出勤日开始巡检时间</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="491" parent="234" name="inspect_attendance_workday_endtime">
+      <Position>4</Position>
+      <Comment>出勤日结束巡检时间</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="492" parent="234" name="inspect_attendance_restday_starttime">
+      <Position>5</Position>
+      <Comment>非出勤日开始巡检时间</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="493" parent="234" name="inspect_attendance_restday_endtime">
+      <Position>6</Position>
+      <Comment>非出勤日结束巡检时间</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="494" parent="234" name="inspect_attendance_status">
+      <Position>7</Position>
+      <Comment>出勤日状态(出勤日/非出勤日)</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="495" parent="234" name="create_time">
+      <Position>8</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="496" parent="234" name="status">
+      <Position>9</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="497" parent="234" name="company_id">
+      <Position>10</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="498" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_attendance_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="499" parent="235" name="inspect_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="500" parent="235" name="user_realname">
+      <Position>2</Position>
+      <Comment>巡检人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="501" parent="235" name="dangeroussource_name">
+      <Position>3</Position>
+      <Comment>危险源名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="502" parent="235" name="dangeroussource_id">
+      <Position>4</Position>
+      <Comment>危险源ID(dangeroussource表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="503" parent="235" name="dangeroussource_place_name">
+      <Position>5</Position>
+      <Comment>危险源地点名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="504" parent="235" name="dangeroussource_place_place">
+      <Position>6</Position>
+      <Comment>危险源地点的场所</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="505" parent="235" name="dangeroussource_place_attendance_workday_frequency">
+      <Position>7</Position>
+      <Comment>危险源地点的出勤日巡检频率</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="506" parent="235" name="dangeroussource_place_attendance_restday_frequency">
+      <Position>8</Position>
+      <Comment>危险源地点的非出勤日巡检频率</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="507" parent="235" name="inspect_id">
+      <Position>9</Position>
+      <Comment>巡检任务ID(inspect表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="508" parent="235" name="inspect_result">
+      <Position>10</Position>
+      <Comment>巡检结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="509" parent="235" name="inspect_question_describe">
+      <Position>11</Position>
+      <Comment>问题描述</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="510" parent="235" name="department_name">
+      <Position>12</Position>
+      <Comment>巡检部门名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="511" parent="235" name="inspect_datetime">
+      <Position>13</Position>
+      <Comment>巡检时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="512" parent="235" name="user_phone_number">
+      <Position>14</Position>
+      <Comment>巡检人电话</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="513" parent="235" name="create_time">
+      <Position>15</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="514" parent="235" name="status">
+      <Position>16</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="515" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="516" parent="236" name="inspect_inspect_term_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="517" parent="236" name="inspect_id">
+      <Position>2</Position>
+      <Comment>巡检(任务)ID(inspect表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="518" parent="236" name="inspect_term_id">
+      <Position>3</Position>
+      <Comment>检查项ID(inspect_term表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="519" parent="236" name="inspect_term_result">
+      <Position>4</Position>
+      <Comment>巡检项结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="520" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_inspect_term_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="521" parent="237" name="inspect_inspect_term_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="522" parent="237" name="inspect_history_id">
+      <Position>2</Position>
+      <Comment>巡检历史ID(inspect_history表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="523" parent="237" name="inspect_term_history_id">
+      <Position>3</Position>
+      <Comment>检查项历史ID(inspect_term_history表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="524" parent="237" name="inspect_history_result">
+      <Position>4</Position>
+      <Comment>巡检(任务)结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="525" parent="237" name="inspect_term_history_name">
+      <Position>5</Position>
+      <Comment>检查项名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="526" parent="237" name="inspect_term_history_describe">
+      <Position>6</Position>
+      <Comment>检查项描述</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="527" parent="237" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_inspect_term_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="528" parent="238" name="inspect_picture_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="529" parent="238" name="inspect_picture_filename">
+      <Position>2</Position>
+      <Comment>巡检图片文件名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="530" parent="238" name="inspect_picture_fileurl">
+      <Position>3</Position>
+      <Comment>巡检图片文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="531" parent="238" name="inspect_picture_filepath">
+      <Position>4</Position>
+      <Comment>巡检图片文件本地地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="532" parent="238" name="create_time">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="533" parent="238" name="status">
+      <Position>6</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="534" parent="238" name="inspect_id">
+      <Position>7</Position>
+      <Comment>巡检(任务)ID(inspect表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="535" parent="238" name="inspect_history_id">
+      <Position>8</Position>
+      <Comment>巡检历史ID(inspect_history表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="536" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_picture_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="537" parent="239" name="inspect_term_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="538" parent="239" name="inspect_term_name">
+      <Position>2</Position>
+      <Comment>检查项名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="539" parent="239" name="inspect_term_describe">
+      <Position>3</Position>
+      <Comment>描述信息</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="540" parent="239" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="541" parent="239" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="542" parent="239" name="dangeroussource_id">
+      <Position>6</Position>
+      <Comment>危险源ID(dangeroussource表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="543" parent="239" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_term_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="544" parent="240" name="inspect_term_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="545" parent="240" name="inspect_term_history_name">
+      <Position>2</Position>
+      <Comment>检查项历史名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="546" parent="240" name="inspect_term_history_describe">
+      <Position>3</Position>
+      <Comment>描述信息</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="547" parent="240" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="548" parent="240" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="549" parent="240" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_term_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="550" parent="241" name="inspect_type_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="551" parent="241" name="inspect_type_name">
+      <Position>2</Position>
+      <Comment>检查类型名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="552" parent="241" name="inspect_type_describe">
+      <Position>3</Position>
+      <Comment>描述信息</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="553" parent="241" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="554" parent="241" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="555" parent="241" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>inspect_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="556" parent="242" name="rectify_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="557" parent="242" name="rectify_datetime">
+      <Position>2</Position>
+      <Comment>整改时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="558" parent="242" name="rectify_reserve_deadline">
+      <Position>3</Position>
+      <Comment>预整改期限</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="559" parent="242" name="rectify_deadline">
+      <Position>4</Position>
+      <Comment>整改期限</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="560" parent="242" name="rectify_status">
+      <Position>5</Position>
+      <Comment>整改状态</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="561" parent="242" name="rectify_result">
+      <Position>6</Position>
+      <Comment>整改结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="562" parent="242" name="rectify_explain">
+      <Position>7</Position>
+      <Comment>整改说明</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="563" parent="242" name="rectify_prevent_accident">
+      <Position>8</Position>
+      <Comment>防止再发生的对策</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="564" parent="242" name="create_time">
+      <Position>9</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="565" parent="242" name="status">
+      <Position>10</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="566" parent="242" name="inspect_id">
+      <Position>11</Position>
+      <Comment>巡检(任务)ID(inspect表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="567" parent="242" name="review_id">
+      <Position>12</Position>
+      <Comment>审核(任务)ID(review表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="568" parent="242" name="user_id">
+      <Position>13</Position>
+      <Comment>(整改人)用户ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="569" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rectify_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="570" parent="243" name="rectify_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="571" parent="243" name="user_realname">
+      <Position>2</Position>
+      <Comment>整改人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="572" parent="243" name="dangeroussource_name">
+      <Position>3</Position>
+      <Comment>危险源名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="573" parent="243" name="dangeroussource_place_name">
+      <Position>4</Position>
+      <Comment>危险源地点名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="574" parent="243" name="dangeroussource_place_place">
+      <Position>5</Position>
+      <Comment>危险源地点的场所</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="575" parent="243" name="rectify_id">
+      <Position>6</Position>
+      <Comment>整改任务ID(rectify表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="576" parent="243" name="rectify_explain">
+      <Position>7</Position>
+      <Comment>整改说明</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="577" parent="243" name="rectify_result">
+      <Position>8</Position>
+      <Comment>整改结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="578" parent="243" name="department_name">
+      <Position>9</Position>
+      <Comment>整改部门名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="579" parent="243" name="rectify_datetime">
+      <Position>10</Position>
+      <Comment>整改时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="580" parent="243" name="rectify_deadline">
+      <Position>11</Position>
+      <Comment>整改期限</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="581" parent="243" name="user_phone_number">
+      <Position>12</Position>
+      <Comment>整改人电话</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="582" parent="243" name="review_id">
+      <Position>13</Position>
+      <Comment>审核任务ID(review表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="583" parent="243" name="review_user_realname">
+      <Position>14</Position>
+      <Comment>审核人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="584" parent="243" name="review_department_name">
+      <Position>15</Position>
+      <Comment>审核部门名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="585" parent="243" name="review_datetime">
+      <Position>16</Position>
+      <Comment>审核时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="586" parent="243" name="review_user_phone_number">
+      <Position>17</Position>
+      <Comment>审核人电话</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="587" parent="243" name="review_fail_reason">
+      <Position>18</Position>
+      <Comment>审核不通过原因</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="588" parent="243" name="create_time">
+      <Position>19</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="589" parent="243" name="status">
+      <Position>20</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="590" parent="243" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rectify_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="591" parent="244" name="rectify_picture_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="592" parent="244" name="rectify_picture_filename">
+      <Position>2</Position>
+      <Comment>整改图片文件名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="593" parent="244" name="rectify_picture_fileurl">
+      <Position>3</Position>
+      <Comment>整改图片文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="594" parent="244" name="rectify_picture_filepath">
+      <Position>4</Position>
+      <Comment>整改图片文件本地地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="595" parent="244" name="create_time">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="596" parent="244" name="status">
+      <Position>6</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="597" parent="244" name="rectify_id">
+      <Position>7</Position>
+      <Comment>整改(任务)ID(rectify表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="598" parent="244" name="rectify_history_id">
+      <Position>8</Position>
+      <Comment>整改历史记录ID(rectify_history表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="599" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rectify_picture_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="600" parent="245" name="review_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="601" parent="245" name="review_datetime">
+      <Position>2</Position>
+      <Comment>审核时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="602" parent="245" name="review_status">
+      <Position>3</Position>
+      <Comment>审核状态</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="603" parent="245" name="review_result">
+      <Position>4</Position>
+      <Comment>审核结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="604" parent="245" name="review_fail_reason">
+      <Position>5</Position>
+      <Comment>审核不通过理原因</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="605" parent="245" name="create_time">
+      <Position>6</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="606" parent="245" name="status">
+      <Position>7</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="607" parent="245" name="user_id">
+      <Position>8</Position>
+      <Comment>审核人ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="608" parent="245" name="rectify_id">
+      <Position>9</Position>
+      <Comment>整改(任务)ID(rectify表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="609" parent="245" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>review_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="610" parent="246" name="review_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="611" parent="246" name="dangeroussource_name">
+      <Position>2</Position>
+      <Comment>危险源名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="612" parent="246" name="dangeroussource_describe">
+      <Position>3</Position>
+      <Comment>危险源描述</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="613" parent="246" name="dangeroussource_place_name">
+      <Position>4</Position>
+      <Comment>危险源地点名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="614" parent="246" name="dangeroussource_place_place">
+      <Position>5</Position>
+      <Comment>危险源地点地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="615" parent="246" name="inspect_trouble_type_name">
+      <Position>6</Position>
+      <Comment>巡检任务的风险类型</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="616" parent="246" name="inspect_question_describe">
+      <Position>7</Position>
+      <Comment>巡检任务的问题描述</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="617" parent="246" name="inspect_datetime">
+      <Position>8</Position>
+      <Comment>巡检任务的巡检时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="618" parent="246" name="rectify_user_realname">
+      <Position>9</Position>
+      <Comment>整改任务的整改人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="619" parent="246" name="rectify_datetime">
+      <Position>10</Position>
+      <Comment>整改历史的整改时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="620" parent="246" name="rectify_explain">
+      <Position>11</Position>
+      <Comment>整改历史的整改建议</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="621" parent="246" name="review_result">
+      <Position>12</Position>
+      <Comment>审核结果</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="622" parent="246" name="review_fail_reason">
+      <Position>13</Position>
+      <Comment>问题描述(审核不通过原因)</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="623" parent="246" name="review_user_realname">
+      <Position>14</Position>
+      <Comment>审核人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="624" parent="246" name="create_time">
+      <Position>15</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="625" parent="246" name="status">
+      <Position>16</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="626" parent="246" name="review_id">
+      <Position>17</Position>
+      <Comment>审核任务ID(review表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="627" parent="246" name="inspect_id">
+      <Position>18</Position>
+      <Comment>巡检任务ID(inspect表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="628" parent="246" name="rectify_history_id">
+      <Position>19</Position>
+      <Comment>整改历史ID(rectify_history表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="629" parent="246" name="review_user_id">
+      <Position>20</Position>
+      <Comment>审核人ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="630" parent="246" name="company_id">
+      <Position>21</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="631" parent="246" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>review_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="632" parent="247" name="review_picture_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="633" parent="247" name="review_picture_filename">
+      <Position>2</Position>
+      <Comment>审核图片文件名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="634" parent="247" name="review_picture_fileurl">
+      <Position>3</Position>
+      <Comment>审核图片文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="635" parent="247" name="review_picture_filepath">
+      <Position>4</Position>
+      <Comment>审核图片文件本地地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="636" parent="247" name="create_time">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="637" parent="247" name="status">
+      <Position>6</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="638" parent="247" name="review_id">
+      <Position>7</Position>
+      <Comment>审核(任务)ID(review表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="639" parent="247" name="review_history_id">
+      <Position>8</Position>
+      <Comment>审核历史ID(review_history表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="640" parent="247" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>review_picture_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="641" parent="248" name="risk_rank_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="642" parent="248" name="risk_rank_name">
+      <Position>2</Position>
+      <Comment>风险等级名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="643" parent="248" name="risk_rank_upper_limit">
+      <Position>3</Position>
+      <Comment>分数上限值</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="644" parent="248" name="risk_rank_lower_limit">
+      <Position>4</Position>
+      <Comment>分数下限值</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="645" parent="248" name="risk_rank_describe">
+      <Position>5</Position>
+      <Comment>描述信息</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="646" parent="248" name="risk_rank_dangerous_level">
+      <Position>6</Position>
+      <Comment>危险等级级别</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="647" parent="248" name="risk_rank_color_code">
+      <Position>7</Position>
+      <Comment>风险等级颜色编码</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="648" parent="248" name="create_time">
+      <Position>8</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="649" parent="248" name="status">
+      <Position>9</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="650" parent="248" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>risk_rank_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="651" parent="249" name="role_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="652" parent="249" name="role_name">
+      <Position>2</Position>
+      <Comment>角色名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="653" parent="249" name="role_show_number">
+      <Position>3</Position>
+      <Comment>展示角色的顺序</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="654" parent="249" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="655" parent="249" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="656" parent="249" name="company_id">
+      <Position>6</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="657" parent="249" name="show_company_id">
+      <Position>7</Position>
+      <Comment>展示角色的公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="658" parent="249" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="659" parent="250" name="role_function_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="660" parent="250" name="role_id">
+      <Position>2</Position>
+      <Comment>角色ID(role表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="661" parent="250" name="function_id">
+      <Position>3</Position>
+      <Comment>权限ID(function表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="662" parent="250" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_function_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="663" parent="251" name="role_function_companyx_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="664" parent="251" name="role_function_id">
+      <Position>2</Position>
+      <Comment>角色-权限ID(role_function表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="665" parent="251" name="company_id">
+      <Position>3</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="666" parent="251" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_function_companyx_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="667" parent="252" name="role_function_departmentx_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="668" parent="252" name="role_function_id">
+      <Position>2</Position>
+      <Comment>角色-权限ID(role_function表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="669" parent="252" name="department_id">
+      <Position>3</Position>
+      <Comment>部门ID(department表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="670" parent="252" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_function_departmentx_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="671" parent="253" name="role_function_risk_rankx_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="672" parent="253" name="role_function_id">
+      <Position>2</Position>
+      <Comment>角色-权限ID(role_function表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="673" parent="253" name="risk_rank_id">
+      <Position>3</Position>
+      <Comment>风险等级ID(risk_rank表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="674" parent="253" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_function_risk_rankx_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="675" parent="254" name="supplies_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="676" parent="254" name="supplies_name">
+      <Position>2</Position>
+      <Comment>应急物资名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="677" parent="254" name="supplies_type">
+      <Position>3</Position>
+      <Comment>应急物资分类</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="678" parent="254" name="supplies_specifications">
+      <Position>4</Position>
+      <Comment>规格</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="679" parent="254" name="supplies_initial_amount">
+      <Position>5</Position>
+      <Comment>初始库存总量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="680" parent="254" name="supplies_amount">
+      <Position>6</Position>
+      <Comment>当前库存总量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="681" parent="254" name="supplies_unit">
+      <Position>7</Position>
+      <Comment>单位</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="682" parent="254" name="supplies_department_name">
+      <Position>8</Position>
+      <Comment>管理部门名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="683" parent="254" name="supplies_create_time">
+      <Position>9</Position>
+      <Comment>生产日期</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="684" parent="254" name="supplies_validity_term">
+      <Position>10</Position>
+      <Comment>有效期</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="685" parent="254" name="supplies_picture_url">
+      <Position>11</Position>
+      <Comment>图片文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="686" parent="254" name="supplies_content">
+      <Position>12</Position>
+      <Comment>备注</Comment>
+      <DataType>text|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="687" parent="254" name="create_time">
+      <Position>13</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="688" parent="254" name="status">
+      <Position>14</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="689" parent="254" name="dangeroussource_place_id">
+      <Position>15</Position>
+      <Comment>危险源地点ID(dangeroussource_place表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="690" parent="254" name="company_id">
+      <Position>16</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="691" parent="254" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>supplies_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="692" parent="255" name="supplies_allocation_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="693" parent="255" name="supplies_allocation_name">
+      <Position>2</Position>
+      <Comment>调拨的应急物资名称（应急物资名称-规格）</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="694" parent="255" name="supplies_allocation_unit">
+      <Position>3</Position>
+      <Comment>调拨的应急物资的单位</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="695" parent="255" name="supplies_allocation_amount">
+      <Position>4</Position>
+      <Comment>调拨量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="696" parent="255" name="supplies_allocation_apply_datetime">
+      <Position>5</Position>
+      <Comment>申请时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="697" parent="255" name="supplies_allocation_status">
+      <Position>6</Position>
+      <Comment>申请状态(1申请中;2已同意;3已拒绝)</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="698" parent="255" name="create_time">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="699" parent="255" name="status">
+      <Position>8</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="700" parent="255" name="company_id_apply_company">
+      <Position>9</Position>
+      <Comment>申请公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="701" parent="255" name="company_id_applied_company">
+      <Position>10</Position>
+      <Comment>被申请公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="702" parent="255" name="user_id">
+      <Position>11</Position>
+      <Comment>申请人ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="703" parent="255" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>supplies_allocation_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="704" parent="256" name="supplies_inventory_history_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="705" parent="256" name="inventory_amount">
+      <Position>2</Position>
+      <Comment>实际盘点总量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="706" parent="256" name="inventory_datetime">
+      <Position>3</Position>
+      <Comment>盘点时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="707" parent="256" name="supplies_name">
+      <Position>4</Position>
+      <Comment>应急物资名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="708" parent="256" name="supplies_specifications">
+      <Position>5</Position>
+      <Comment>应急物资规格</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="709" parent="256" name="supplies_amount">
+      <Position>6</Position>
+      <Comment>当前库存总量</Comment>
+      <DataType>double|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="710" parent="256" name="supplies_unit">
+      <Position>7</Position>
+      <Comment>应急物资单位</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="711" parent="256" name="company_name">
+      <Position>8</Position>
+      <Comment>公司名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="712" parent="256" name="user_realname">
+      <Position>9</Position>
+      <Comment>经手人真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="713" parent="256" name="supplies_type">
+      <Position>10</Position>
+      <Comment>应急物资分类</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="714" parent="256" name="dangeroussource_place_name">
+      <Position>11</Position>
+      <Comment>危险源地点名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="715" parent="256" name="supplies_picture_url">
+      <Position>12</Position>
+      <Comment>图片文件访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="716" parent="256" name="supplies_create_time">
+      <Position>13</Position>
+      <Comment>生产日期</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="717" parent="256" name="supplies_validity_term">
+      <Position>14</Position>
+      <Comment>有效期</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="718" parent="256" name="create_time">
+      <Position>15</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="719" parent="256" name="status">
+      <Position>16</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="720" parent="256" name="company_id">
+      <Position>17</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="721" parent="256" name="supplies_id">
+      <Position>18</Position>
+      <Comment>应急物资ID(supplies表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="722" parent="256" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>supplies_inventory_history_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="723" parent="257" name="user_log_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="724" parent="257" name="user_name">
+      <Position>2</Position>
+      <Comment>记录当前用户真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="725" parent="257" name="operation">
+      <Position>3</Position>
+      <Comment>记录当前用户操作</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="726" parent="257" name="method">
+      <Position>4</Position>
+      <Comment>记录当前调用的方法</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="727" parent="257" name="params">
+      <Position>5</Position>
+      <Comment>记录当前参数</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="728" parent="257" name="user_ip_address">
+      <Position>6</Position>
+      <Comment>记录当前用户的ip地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="729" parent="257" name="create_time">
+      <Position>7</Position>
+      <Comment>记录当前操作的时间</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="730" parent="257" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_log_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="731" parent="258" name="trouble_type_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="732" parent="258" name="trouble_type_name">
+      <Position>2</Position>
+      <Comment>事故类型名称</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="733" parent="258" name="trouble_type_describe">
+      <Position>3</Position>
+      <Comment>描述信息</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="734" parent="258" name="create_time">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="735" parent="258" name="status">
+      <Position>5</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="736" parent="258" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>trouble_type_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="737" parent="259" name="user_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="738" parent="259" name="user_name">
+      <Position>2</Position>
+      <Comment>用户名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="739" parent="259" name="user_password">
+      <Position>3</Position>
+      <Comment>密码</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="740" parent="259" name="user_realname">
+      <Position>4</Position>
+      <Comment>真实姓名</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="741" parent="259" name="user_age">
+      <Position>5</Position>
+      <Comment>年龄</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="742" parent="259" name="user_gender">
+      <Position>6</Position>
+      <Comment>性别</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="743" parent="259" name="user_phone_number">
+      <Position>7</Position>
+      <Comment>电话</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="744" parent="259" name="user_position">
+      <Position>8</Position>
+      <Comment>职务</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="745" parent="259" name="user_picture_url">
+      <Position>9</Position>
+      <Comment>用户头像图片的访问路径</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="746" parent="259" name="create_time">
+      <Position>10</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="747" parent="259" name="status">
+      <Position>11</Position>
+      <Comment>状态值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="748" parent="259" name="company_id">
+      <Position>12</Position>
+      <Comment>公司ID(company表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="749" parent="259" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="750" parent="260" name="user_role_id">
+      <Position>1</Position>
+      <Comment>ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="751" parent="260" name="user_id">
+      <Position>2</Position>
+      <Comment>用户ID(user表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="752" parent="260" name="role_id">
+      <Position>3</Position>
+      <Comment>角色ID(role表)</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="753" parent="260" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

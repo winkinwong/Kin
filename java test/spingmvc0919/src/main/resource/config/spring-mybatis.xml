@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/aop
+               http://www.springframework.org/schema/aop/spring-aop.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context.xsd
+               http://www.springframework.org/schema/mvc
+               http://www.springframework.org/schema/mvc/spring-mvc.xsd
+               http://www.springframework.org/schema/util
+               http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+      <util:properties id="config" location="classpath:/config/db.properties" />
+    <!-- 配置连接池 -->
+    <bean id="ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="#{config.classname}"/>
+        <property name="url" value="#{config.url}"/>
+        <property name="username" value="#{config.username}"/>
+        <property name="password" value="#{config.password}"/>
+
+        <!-- 池启动时创建的连接数量 -->
+        <property name="initialSize" value="5"/>
+        <!-- 同一时间可以从池分配的最多连接数量。设置为0时表示无限制。 -->
+        <property name="maxActive" value="30"/>
+        <!-- 池里不会被释放的最多空闲连接数量。设置为0时表示无限制。 -->
+        <property name="maxIdle" value="20"/>
+        <!-- 在不新建连接的条件下，池中保持空闲的最少连接数。 -->
+        <property name="minIdle" value="3"/>
+        <!-- 设置自动回收超时连接 -->
+        <property name="removeAbandoned" value="true" />
+        <!-- 自动回收超时时间(以秒数为单位) -->
+        <property name="removeAbandonedTimeout" value="200"/>
+        <!-- 设置在自动回收超时连接的时候打印连接的超时错误  -->
+        <property name="logAbandoned" value="true"/>
+        <!-- 等待超时以毫秒为单位，在抛出异常之前，池等待连接被回收的最长时间（当没有可用连接时）。设置为-1表示无限等待。  -->
+        <property name="maxWait" value="100"/>
+        <property name="validationQuery" value="select current_date()" />
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <property name="testWhileIdle" value="true" />
+        <property name="timeBetweenEvictionRunsMillis" value="30000" />
+        <property name="numTestsPerEvictionRun" value="30" />
+        <property name="minEvictableIdleTimeMillis" value="1800000" />
+    </bean>
+    <!-- 配置SqlSessionFactoryBean(相当于添加MyBatis主配置文件) -->
+    <bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入连接池配置 -->
+        <property name="dataSource" ref="ds"/>
+        <!-- 指定映射定义文件的位置 -->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!-- 打印sql语句的设置 -->
+        <property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
+    </bean>
+    <!--配置MapperScannerConfigurer-->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.bd.test.springmvc.dao.**"/>
+    </bean>
+    <!--启动spring扫描组件-->
+    <context:component-scan base-package="cn"/>
+    <!--配置fastjsonconfig-->
+    <bean name="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">
+        <property name="serializerFeatures">
+            <array>
+                <!--输出key时是否使用双引号,默认为true-->
+                <value>QuoteFieldNames</value>
+                <!--全局修改日期格式-->
+                <value>WriteDateUseDateFormat</value>
+                <!--按照toString方式获取对象字面值-->
+                <value>WriteNonStringValueAsString</value>
+                <!-- 字段如果为null,输出为"",而非null -->
+                <!--<value>WriteNullStringAsEmpty</value>-->
+            </array>
+        </property>
+    </bean>
+    <!--启动mvc注解扫描-->
+    <mvc:annotation-driven>
+        <!-- 消息转换器 -->
+        <mvc:message-converters register-defaults="true">
+            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                &lt;!&ndash;解决response返回结果乱码问题&ndash;&gt;
+                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+            </bean>-->
+            <!--处理返回json结果null值-->
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <description>JSON转换器</description>
+                <property name="supportedMediaTypes">
+                    <!--解决乱码问题，如果不处理null值，需要上面被注释的Converter解决乱码-->
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+                <property name="fastJsonConfig" ref="fastJsonConfig"></property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--配置视图解析器-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

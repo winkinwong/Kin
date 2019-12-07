@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bd.test.springmvc.dao.UserMapper">
+    <sql id="START">
+        <![CDATA[
+
+        ]]>
+    </sql>
+    <sql id="END">
+        <![CDATA[
+       	  LIMIT #{pageNo},#{pageSize}
+       	]]>
+    </sql>
+    <sql id="ORDERBY">
+      <choose>
+          <when test="userId !=null and userId !=''">
+              ORDER BY ${userId} DESC
+          </when>
+          <otherwise>
+
+          </otherwise>
+      </choose>
+    </sql>
+    <sql id="SELECT_CONTENT">
+        <![CDATA[
+        SELECT
+        user_id AS userId,
+        user_name AS userName,
+        user_password AS userPassword,
+        user_address AS address,
+        user_phone AS phone,
+        create_time AS createTime,
+        update_time AS updateTime,
+        version
+        FROM
+        user
+        ]]>
+    </sql>
+    <sql id="SELECT_PARM">
+        <where>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null and userName != ''">
+                and user_name = #{userName}
+            </if>
+
+            <if test="userPassword != null and userPassword != ''">
+                and user_password = #{userPassword}
+            </if>
+            <if test="address != null and address != ''">
+                and user_address = #{address}
+            </if>
+            <if test="phone != null and phone != ''">
+                and user_phone = #{phone}
+            </if>
+            <if test="createTime != null and createTime != ''">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                and update_time = #{updateTime}
+            </if>
+            <if test="version != null and version != ''">
+                and version = #{version}
+            </if>
+        </where>
+    </sql>
+
+    <resultMap id="UserMap" type="cn.bd.test.springmvc.entity.User">
+        <id property="userId" column="user_id" />
+        <result property="userName" column="user_name"/>
+        <result property="userPassword" column="user_password"/>
+        <result property="address" column="user_address"/>
+        <result property="phone" column="user_phone"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="version" column="version"/>
+    </resultMap>
+    <select id="getUserByUserName" resultMap="UserMap">
+       SELECT
+       user_id AS userId,
+       user_name AS userName,
+       user_phone AS phone,
+       user_password AS userPassword,
+       user_address AS address,
+       create_time AS createTime,
+       update_time AS updateTime,
+       version
+       FROM
+       user
+       WHERE
+       user_name = #{userName}
+    </select>
+    <select id="login" resultMap="UserMap">
+        SELECT
+        user_id AS userId,
+        user_name AS userName,
+        user_phone AS phone,
+        user_password AS userPassword,
+        user_address AS address,
+        create_time AS createTime,
+        update_time AS updateTime,
+        version
+        FROM
+        user
+        WHERE
+        user_name = #{userName} AND user_password = #{userPassword}
+    </select>
+    <insert id="register" parameterType="cn.bd.test.springmvc.entity.User" keyProperty="userId" useGeneratedKeys="true" keyColumn="user_id">
+        INSERT INTO  user(user_name, user_password, user_address, user_phone, create_time)
+        VALUES (#{userName},#{userPassword},#{address},#{phone},#{createTime})
+    </insert>
+    <update id="updatePassword" keyColumn="user_id" keyProperty="userId" parameterType="String">
+        UPDATE  user
+        SET user_password = #{userPassword}
+        WHERE user_name = #{userName}
+    </update>
+    <select id="selectUserByConditions" resultMap="UserMap">
+         SELECT
+        user_id AS userId,
+        user_name AS userName,
+        user_phone AS phone,
+        user_password AS userPassword,
+        user_address AS address,
+        create_time AS createTime,
+        update_time AS updateTime,
+        version
+        FROM
+        user
+        <where>
+            <if test="lowerLimit != null">
+            AND user_id &gt;= #{lowerLimit}
+            </if>
+            <if test="upperLimit != null">
+            AND user_id &lt;= #{upperLimit}
+            </if>
+        </where>
+    </select>
+</mapper>

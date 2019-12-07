@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kin.test.springboot.dao.InspectDao">
+
+	
+	<select id="selectInspectSummarySum" resultType="java.lang.Integer" parameterType="com.kin.test.springboot.model.Inspect">
+		SELECT COUNT(*) FROM inspect 
+			LEFT OUTER JOIN dangeroussource ON(inspect.dangeroussource_id=dangeroussource.dangeroussource_id) 
+			WHERE inspect.inspect_status!='1' AND dangeroussource.dangeroussource_id IN 
+		(SELECT dangeroussource_id FROM dangeroussource WHERE dangeroussource.dangeroussource_place_id=#{dangeroussourcePlaceId}) 
+		<if test="inspectDatetimeBegin != null and inspectDatetimeBegin != ''">
+	    	<![CDATA[ and date_format(inspect.inspect_datetime,'%Y-%m-%d') >= #{inspectDatetimeBegin} ]]>
+	    </if>
+	    <if test="inspectDatetimeEnd != null and inspectDatetimeEnd != ''">
+	  		<![CDATA[ and date_format(inspect.inspect_datetime,'%Y-%m-%d') <= #{inspectDatetimeEnd} ]]>
+	    </if>
+	    <if test="inspectTypeId!=null and inspectTypeId!=0">
+	    and inspect.inspect_type_id=#{inspectTypeId} 
+	    </if>
+	    <!-- 查询除了日常巡检的其他类型的巡检 -->
+	    <if test="inspectTypeId!=null and inspectTypeId==0">
+	    and inspect.inspect_type_id!=1 
+	    </if>
+	</select>
+	
+	<select id="selectRectifedSummarySum" resultType="java.lang.Integer" parameterType="com.kin.test.springboot.model.Inspect">
+		SELECT COUNT(inspect.inspect_id) FROM inspect 
+		LEFT OUTER JOIN dangeroussource_place_inspect_type dpit ON(inspect.dangeroussource_place_inspect_type_id=dpit.dangeroussource_place_inspect_type_id) 
+		WHERE inspect.inspect_status='3' 
+		AND inspect.inspect_result='通过'
+		AND dpit.dangeroussource_place_id=#{dangeroussourcePlaceId} 
+		<if test="inspectDatetimeBegin != null and inspectDatetimeBegin != ''">
+	    	<![CDATA[ and date_format(inspect.inspect_datetime,'%Y-%m-%d') >= #{inspectDatetimeBegin} ]]>
+	    </if>
+	    <if test="inspectDatetimeEnd != null and inspectDatetimeEnd != ''">
+	  		<![CDATA[ and date_format(inspect.inspect_datetime,'%Y-%m-%d') <= #{inspectDatetimeEnd} ]]>
+	    </if>
+	    <if test="inspectTypeId!=null and inspectTypeId!=0">
+	    and dpit.inspect_type_id=#{inspectTypeId} 
+	    </if>
+	    <!-- 查询除了日常巡检的其他类型的巡检 -->
+	    <if test="inspectTypeId!=null and inspectTypeId==0">
+	    and dpit.inspect_type_id!=1 
+	    </if>
+	</select>
+	
+	<select id="selectInspectUsers" resultType="com.kin.test.springboot.model.User2" parameterType="com.kin.test.springboot.model.Inspect">
+		SELECT 
+		user.user_id AS userId,
+		user.user_realname AS userRealname
+		FROM USER 
+		LEFT OUTER JOIN inspect ON(user.user_id=inspect.user_id) 
+		WHERE inspect.inspect_id IN 
+		(
+			SELECT inspect.inspect_id FROM inspect 
+				LEFT OUTER JOIN dangeroussource ON(inspect.dangeroussource_id=dangeroussource.dangeroussource_id) 
+				WHERE inspect.inspect_status!='1' AND dangeroussource.dangeroussource_id IN 
+			(SELECT dangeroussource_id FROM dangeroussource WHERE dangeroussource.dangeroussource_place_id=#{dangeroussourcePlaceId}) 
+			<if test="inspectDatetimeBegin != null and inspectDatetimeBegin != ''">
+		    	<![CDATA[ and date_format(inspect.inspect_datetime,'%Y-%m-%d') >= #{inspectDatetimeBegin} ]]>
+		    </if>
+		    <if test="inspectDatetimeEnd != null and inspectDatetimeEnd != ''">
+		  		<![CDATA[ and date_format(inspect.inspect_datetime,'%Y-%m-%d') <= #{inspectDatetimeEnd} ]]>
+		    </if>
+		    <if test="inspectTypeId!=null and inspectTypeId!=0">
+		    and inspect.inspect_type_id=#{inspectTypeId} 
+		    </if>
+		    <!-- 查询除了日常巡检的其他类型的巡检 -->
+		    <if test="inspectTypeId!=null and inspectTypeId==0">
+		    and inspect.inspect_type_id!=1 
+		    </if>
+		)
+		GROUP BY user.user_id 
+	</select>
+
+	
+	
+</mapper>

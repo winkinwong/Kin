@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    username: Kin
+    password: Jian75258
+    url: jdbc:mysql://localhost:3306/kin
+    driver-class-name: com.mysql.jdbc.Driver
+
+  http:
+    converters:
+      preferred-json-mapper: jackson
+
+# freemarker 页面模板配置
+spring.freemarker.allow-request-override: false
+spring.freemarker.cache: false
+spring.freemarker.check-template-location: true
+spring.freemarker.charset: UTF-8
+spring.freemarker.content-type: text/html
+spring.freemarker.expose-request-attributes: false
+spring.freemarker.expose-session-attributes: false
+spring.freemarker.expose-spring-macro-helpers: false
+spring.freemarker.template-loader-path: classpath:/templates/
+#spring.freemarker.prefix=
+spring.freemarker.suffix: .ftl
+
+# thymeleaf 页面模板配置
+spring.thymeleaf.prefix: classpath:/templates/
+#spring.thymeleaf.suffix=.html
+#spring.thymeleaf.mode=HTML5
+#spring.thymeleaf.encoding=UTF-8
+# ;charset=<encoding> is added
+#spring.thymeleaf.content-type=text/html
+# set to false for hot refresh
+
+spring.thymeleaf.cache: false
+
+mybatis:
+  type-handlers-package: com.kin.maven.springboot.global.TypeHandler
+logback.level: info
+logback.maxHistory: 30
+## 蛇形（a_b_c）的参数 是不是转换成 aBC
+mybatis.configuration.mapUnderscoreToCamelCase: true
+## mybatis 日志配置，将sql执行过程在控制台上输出
+mybatis.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

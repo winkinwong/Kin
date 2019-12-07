@@ -1,0 +1,849 @@
+2019-08-26 19:48:37.469 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 608 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 19:48:37.532 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 19:48:43.818 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 19:48:43.959 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 19:48:43.959 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 19:48:44.240 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 19:48:44.240 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5570 ms
+2019-08-26 19:48:46.377 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 19:48:46.938 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 19:48:46.954 [main] INFO  com.kin.maven.springboot.App - Started App in 15.444 seconds (JVM running for 21.616)
+2019-08-26 20:12:12.761 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 20:12:12.823 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 20:12:12.824 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 20:12:12.957 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 133 ms
+2019-08-26 20:46:54.741 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 2540 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 20:46:54.772 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 20:46:57.783 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 20:46:57.971 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 20:46:57.971 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 20:46:58.221 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 20:46:58.221 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3231 ms
+2019-08-26 20:46:59.627 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 20:46:59.971 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 20:46:59.971 [main] INFO  com.kin.maven.springboot.App - Started App in 6.931 seconds (JVM running for 12.955)
+2019-08-26 20:47:25.736 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=76B01185174458BFD9E7C308CD219AA8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 20:47:25.751 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 20:47:25.752 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 20:47:25.762 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2019-08-26 20:48:04.640 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"2858c9a3-3ddd-4f25-8118-ba6ddeba3350","url":"/api/user/login"}
+2019-08-26 20:48:25.256 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"2858c9a3-3ddd-4f25-8118-ba6ddeba3350","responseStatus":200}
+2019-08-26 20:48:45.640 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"2e42714b-2cad-4ea5-85b4-6eef51cfd4a2","url":"/favicon.ico"}
+2019-08-26 20:48:45.750 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"2e42714b-2cad-4ea5-85b4-6eef51cfd4a2","responseStatus":200}
+2019-08-26 20:52:45.145 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 6012 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 20:52:45.145 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 20:52:46.943 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 20:52:46.975 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 20:52:46.975 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 20:52:47.115 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 20:52:47.115 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1860 ms
+2019-08-26 20:52:47.995 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 20:52:48.291 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 20:52:48.307 [main] INFO  com.kin.maven.springboot.App - Started App in 4.774 seconds (JVM running for 6.163)
+2019-08-26 20:53:02.755 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=E1B18A5AFDC004AF5DFB99FF8D7385EA] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 20:53:02.755 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 20:53:02.755 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 20:53:02.782 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 26 ms
+2019-08-26 20:53:56.724 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"ae8fb11e-bf77-437c-8ba4-3d2025c2c747","url":"/api/user/login"}
+2019-08-26 20:54:19.501 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"ae8fb11e-bf77-437c-8ba4-3d2025c2c747","responseStatus":200}
+2019-08-26 20:54:39.381 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"f454ca95-644b-4e1d-90c0-7584e39dd672","url":"/favicon.ico"}
+2019-08-26 20:54:53.163 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"f454ca95-644b-4e1d-90c0-7584e39dd672","responseStatus":200}
+2019-08-26 21:07:50.286 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 4688 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:07:50.286 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:07:52.222 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:07:52.268 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:07:52.268 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:07:52.379 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:07:52.379 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1999 ms
+2019-08-26 21:07:53.222 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:07:53.659 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:07:53.659 [main] INFO  com.kin.maven.springboot.App - Started App in 4.372 seconds (JVM running for 5.491)
+2019-08-26 21:07:57.937 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=4731A2A12552386A401DAA51977A9E2B] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:07:57.967 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:07:57.967 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:07:57.983 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2019-08-26 21:07:58.034 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"f2110426-089c-4138-9ab3-05ddd77cf0cd","url":"/api/user/login"}
+2019-08-26 21:07:58.566 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"f2110426-089c-4138-9ab3-05ddd77cf0cd","responseStatus":200}
+2019-08-26 21:07:58.607 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"0f60f19b-5ba9-4f7d-aa57-f9caef4935bd","url":"/favicon.ico"}
+2019-08-26 21:07:58.635 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"0f60f19b-5ba9-4f7d-aa57-f9caef4935bd","responseStatus":200}
+2019-08-26 21:12:25.371 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 6052 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:12:25.402 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:12:27.292 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:12:27.416 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:12:27.416 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:12:27.635 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:12:27.635 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2139 ms
+2019-08-26 21:12:28.686 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:12:29.140 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:12:29.140 [main] INFO  com.kin.maven.springboot.App - Started App in 6.566 seconds (JVM running for 10.852)
+2019-08-26 21:12:32.381 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=419AD584211F27D5EB8C2776A3F20CD9] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:12:32.401 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:12:32.401 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:12:32.409 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2019-08-26 21:12:32.431 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"29beaa5e-143c-4200-8496-b8ac23538711","url":"/api/user/login"}
+2019-08-26 21:12:32.972 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"29beaa5e-143c-4200-8496-b8ac23538711","responseStatus":200}
+2019-08-26 21:12:33.035 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"cc674ef2-d46f-4b53-910e-75a71f0bb72d","url":"/favicon.ico"}
+2019-08-26 21:12:33.069 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"cc674ef2-d46f-4b53-910e-75a71f0bb72d","responseStatus":200}
+2019-08-26 21:34:14.438 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 4844 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:34:14.500 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:34:21.006 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:34:21.162 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:34:21.162 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:34:21.475 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:34:21.475 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6666 ms
+2019-08-26 21:34:23.493 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:34:23.983 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:34:23.983 [main] INFO  com.kin.maven.springboot.App - Started App in 14.564 seconds (JVM running for 19.065)
+2019-08-26 21:35:13.928 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 5900 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:35:13.943 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:35:15.219 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:35:15.250 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:35:15.250 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:35:15.375 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:35:15.375 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1330 ms
+2019-08-26 21:35:16.096 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:35:16.333 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:35:16.333 [main] INFO  com.kin.maven.springboot.App - Started App in 3.823 seconds (JVM running for 5.193)
+2019-08-26 21:35:29.258 [http-nio-8080-exec-2] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=62388A48FD1DA764E2D88991D9142B01] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:35:29.274 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:35:29.274 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:35:29.308 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 34 ms
+2019-08-26 21:35:29.375 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"4cab818d-ab93-4551-b24a-725f72ea2f82","url":"/api/user/login"}
+2019-08-26 21:35:30.671 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"4cab818d-ab93-4551-b24a-725f72ea2f82","responseStatus":200}
+2019-08-26 21:35:30.701 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"a982135c-2fdc-467f-8ca7-d2050ffe7e71","url":"/favicon.ico"}
+2019-08-26 21:35:30.754 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"a982135c-2fdc-467f-8ca7-d2050ffe7e71","responseStatus":200}
+2019-08-26 21:36:16.543 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 5576 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:36:16.574 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:36:18.038 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:36:18.070 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:36:18.070 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:36:18.194 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:36:18.194 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1557 ms
+2019-08-26 21:36:18.869 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:36:19.136 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:36:19.136 [main] INFO  com.kin.maven.springboot.App - Started App in 3.739 seconds (JVM running for 4.805)
+2019-08-26 21:36:24.776 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=49113BEE18287C218EC3D17929517013] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:36:24.792 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:36:24.792 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:36:24.810 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 18 ms
+2019-08-26 21:36:24.837 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"41b6d193-1748-4288-bc1f-29da6e4ea8e5","url":"/api/user/login"}
+2019-08-26 21:36:25.273 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"41b6d193-1748-4288-bc1f-29da6e4ea8e5","responseStatus":200}
+2019-08-26 21:36:25.317 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"c6d02010-ae78-4900-9ae3-62da19002e17","url":"/favicon.ico"}
+2019-08-26 21:36:25.375 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"c6d02010-ae78-4900-9ae3-62da19002e17","responseStatus":200}
+2019-08-26 21:42:25.417 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 5588 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:42:25.433 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:42:26.693 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:42:26.724 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:42:26.724 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:42:26.834 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:42:26.834 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1277 ms
+2019-08-26 21:42:27.483 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:42:27.733 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:42:27.749 [main] INFO  com.kin.maven.springboot.App - Started App in 3.803 seconds (JVM running for 4.909)
+2019-08-26 21:42:46.960 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=7D815A738026F56842888E7E3E11C64A] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:42:46.969 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:42:46.970 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:42:46.978 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2019-08-26 21:42:47.002 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"a2edea21-9c20-43eb-841e-41143695125f","url":"/api/user/getcurrentuser"}
+2019-08-26 21:42:47.088 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"a2edea21-9c20-43eb-841e-41143695125f","responseStatus":400}
+2019-08-26 21:42:51.593 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"],"password":["123"]},"requestId":"7675f3af-09ea-44d3-8626-6c617e44481a","url":"/api/user/login"}
+2019-08-26 21:42:51.993 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"7675f3af-09ea-44d3-8626-6c617e44481a","responseStatus":200}
+2019-08-26 21:42:52.012 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"d2179df3-a523-418f-88f5-661ff2e945f7","url":"/favicon.ico"}
+2019-08-26 21:42:52.041 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"d2179df3-a523-418f-88f5-661ff2e945f7","responseStatus":200}
+2019-08-26 21:42:53.742 [http-nio-8080-exec-4] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"df41b2f8-be58-410d-baaf-8b8ace5adf9e","url":"/api/user/getcurrentuser"}
+2019-08-26 21:42:53.742 [http-nio-8080-exec-4] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"df41b2f8-be58-410d-baaf-8b8ace5adf9e","responseStatus":200}
+2019-08-26 21:42:53.774 [http-nio-8080-exec-5] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"cb09c075-86c8-4248-84ed-7726d3c7e62b","url":"/favicon.ico"}
+2019-08-26 21:42:53.778 [http-nio-8080-exec-5] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"cb09c075-86c8-4248-84ed-7726d3c7e62b","responseStatus":200}
+2019-08-26 21:43:23.705 [http-nio-8080-exec-7] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"6947e670-21f4-424f-b1d7-6671dad54b8b","url":"/api/user/getcurrentuser"}
+2019-08-26 21:43:23.705 [http-nio-8080-exec-7] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"6947e670-21f4-424f-b1d7-6671dad54b8b","responseStatus":200}
+2019-08-26 21:43:23.742 [http-nio-8080-exec-8] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"60ee9919-5782-4453-a499-56ad5b73ddf6","url":"/favicon.ico"}
+2019-08-26 21:43:23.785 [http-nio-8080-exec-8] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"60ee9919-5782-4453-a499-56ad5b73ddf6","responseStatus":200}
+2019-08-26 21:55:37.887 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 1068 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:55:37.887 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:55:39.152 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:55:39.184 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:55:39.184 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:55:39.324 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:55:39.324 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1375 ms
+2019-08-26 21:55:39.983 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:55:40.233 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:55:40.248 [main] INFO  com.kin.maven.springboot.App - Started App in 3.606 seconds (JVM running for 4.753)
+2019-08-26 21:55:59.885 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=885BFE8CEFC0ADB0B1F60C12388AAD7E] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:55:59.886 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:55:59.886 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:55:59.886 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2019-08-26 21:55:59.917 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"820776c6-19f8-4832-bdd0-60cd1d624b16","url":"/user/info"}
+2019-08-26 21:56:00.354 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"820776c6-19f8-4832-bdd0-60cd1d624b16","responseStatus":400}
+2019-08-26 21:56:09.613 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"7168ecd8-fc56-4027-a79c-f8e59343b94d","url":"/user/info"}
+2019-08-26 21:56:09.673 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"7168ecd8-fc56-4027-a79c-f8e59343b94d","responseStatus":404}
+2019-08-26 21:56:59.119 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 5440 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:56:59.197 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:57:00.971 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:57:01.003 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:57:01.003 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:57:01.143 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:57:01.143 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1775 ms
+2019-08-26 21:57:01.846 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:57:02.093 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:57:02.093 [main] INFO  com.kin.maven.springboot.App - Started App in 3.934 seconds (JVM running for 5.05)
+2019-08-26 21:57:09.020 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=5CEEBF8D8D918BF7C37AFABED0AE71FE] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:57:09.020 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:57:09.020 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:57:09.036 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2019-08-26 21:57:09.052 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"b2e8185a-3a81-415e-aa3f-cea08b2e7352","url":"/user/info"}
+2019-08-26 21:57:09.448 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"b2e8185a-3a81-415e-aa3f-cea08b2e7352","responseStatus":404}
+2019-08-26 21:57:09.485 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"80d99900-08ee-4efb-bc32-d3325e807273","url":"/favicon.ico"}
+2019-08-26 21:57:09.522 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"80d99900-08ee-4efb-bc32-d3325e807273","responseStatus":200}
+2019-08-26 21:59:32.903 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 4524 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 21:59:32.918 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 21:59:34.318 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 21:59:34.335 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 21:59:34.335 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 21:59:34.460 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 21:59:34.460 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1479 ms
+2019-08-26 21:59:35.138 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 21:59:35.372 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 21:59:35.388 [main] INFO  com.kin.maven.springboot.App - Started App in 3.631 seconds (JVM running for 4.763)
+2019-08-26 21:59:38.674 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=CD75A6F8DAD5859146B2214762259D28] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 21:59:38.674 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 21:59:38.674 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 21:59:38.674 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2019-08-26 21:59:38.705 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"aa78eb10-fde9-4416-a5fb-4dc66d3de24e","url":"/user/info"}
+2019-08-26 21:59:39.058 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"aa78eb10-fde9-4416-a5fb-4dc66d3de24e","responseStatus":404}
+2019-08-26 21:59:39.105 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"a40fd368-8d23-4609-8b7a-ae298621d78e","url":"/favicon.ico"}
+2019-08-26 21:59:39.150 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"a40fd368-8d23-4609-8b7a-ae298621d78e","responseStatus":200}
+2019-08-26 22:00:16.049 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 3952 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:00:16.065 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:00:17.892 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:00:17.924 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 22:00:17.924 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 22:00:18.097 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:00:18.097 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1970 ms
+2019-08-26 22:00:18.808 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 22:00:19.046 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 22:00:19.046 [main] INFO  com.kin.maven.springboot.App - Started App in 4.109 seconds (JVM running for 5.219)
+2019-08-26 22:00:23.571 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=05264581A808D1A70822A29184F5DDC5] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:00:23.571 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 22:00:23.571 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 22:00:23.586 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2019-08-26 22:00:23.609 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"25256cc4-bc19-4566-9d3f-da93d6f0294b","url":"/user/info"}
+2019-08-26 22:00:24.034 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"25256cc4-bc19-4566-9d3f-da93d6f0294b","responseStatus":404}
+2019-08-26 22:00:24.080 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"b855cd6b-077c-4901-b30c-f00c9ce51e08","url":"/favicon.ico"}
+2019-08-26 22:00:24.116 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"b855cd6b-077c-4901-b30c-f00c9ce51e08","responseStatus":200}
+2019-08-26 22:00:48.887 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 1720 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:00:48.903 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:00:50.801 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:00:50.848 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 22:00:50.848 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 22:00:50.991 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:00:50.991 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2010 ms
+2019-08-26 22:00:51.646 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 22:00:51.881 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 22:00:51.881 [main] INFO  com.kin.maven.springboot.App - Started App in 4.529 seconds (JVM running for 5.609)
+2019-08-26 22:01:35.581 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=70C572F78D5AF7F350ED377B67E57045] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:01:35.588 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 22:01:35.589 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 22:01:35.600 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2019-08-26 22:01:35.630 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"87402853-5bc6-4bdc-af57-0d882d3a6294","url":"/user/info"}
+2019-08-26 22:01:36.114 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"87402853-5bc6-4bdc-af57-0d882d3a6294","responseStatus":404}
+2019-08-26 22:01:36.157 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"3d44b369-2446-40f6-a2ce-cb1099c4186d","url":"/favicon.ico"}
+2019-08-26 22:01:36.188 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"3d44b369-2446-40f6-a2ce-cb1099c4186d","responseStatus":200}
+2019-08-26 22:01:57.379 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 3996 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:01:57.379 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:01:59.019 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:01:59.056 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 22:01:59.056 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 22:01:59.181 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:01:59.196 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1755 ms
+2019-08-26 22:02:04.613 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 22:02:04.895 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 22:02:04.895 [main] INFO  com.kin.maven.springboot.App - Started App in 9.146 seconds (JVM running for 10.574)
+2019-08-26 22:02:12.307 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=FF594576C27FE615EEEF429C9D2C3D0B] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:02:12.307 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 22:02:12.307 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 22:02:12.323 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2019-08-26 22:02:17.154 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"6e53a28e-75e1-4dd6-9828-5d1d43ea0b5d","url":"/user/info"}
+2019-08-26 22:02:20.578 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"6e53a28e-75e1-4dd6-9828-5d1d43ea0b5d","responseStatus":404}
+2019-08-26 22:02:22.688 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"d3ccbeac-d49c-45bd-bf82-512f44841fde","url":"/favicon.ico"}
+2019-08-26 22:02:23.273 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"d3ccbeac-d49c-45bd-bf82-512f44841fde","responseStatus":200}
+2019-08-26 22:03:11.234 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 5136 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:03:11.250 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:03:12.727 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:03:12.759 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 22:03:12.759 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 22:03:12.869 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:03:12.869 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1526 ms
+2019-08-26 22:03:13.558 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 22:03:13.839 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 22:03:13.839 [main] INFO  com.kin.maven.springboot.App - Started App in 3.861 seconds (JVM running for 4.985)
+2019-08-26 22:03:40.979 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=81EDC15C66D129704482CF0C21273547] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:03:40.985 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 22:03:40.985 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 22:03:40.985 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2019-08-26 22:03:41.016 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"c94528df-fdcf-404b-ba6d-f657bc696ffa","url":"/templates/user/json-info"}
+2019-08-26 22:03:41.028 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"c94528df-fdcf-404b-ba6d-f657bc696ffa","responseStatus":404}
+2019-08-26 22:06:08.185 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 296 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:06:08.185 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:06:09.998 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:06:10.029 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-26 22:06:10.029 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-26 22:06:10.169 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:06:10.169 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1890 ms
+2019-08-26 22:06:10.840 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-26 22:06:11.081 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-26 22:06:11.081 [main] INFO  com.kin.maven.springboot.App - Started App in 3.912 seconds (JVM running for 4.955)
+2019-08-26 22:06:22.243 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=A2E0694C8BA01B408F1301156C35F077] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:06:22.258 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-26 22:06:22.258 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-08-26 22:06:22.258 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2019-08-26 22:06:22.289 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"47f5d434-cb60-4f66-bd8c-e2a07b2f38d0","url":"/user/info"}
+2019-08-26 22:06:22.676 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"47f5d434-cb60-4f66-bd8c-e2a07b2f38d0","responseStatus":404}
+2019-08-26 22:06:22.713 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"740be5b4-506f-4183-acaa-83859cfaa9b9","url":"/favicon.ico"}
+2019-08-26 22:06:22.765 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"740be5b4-506f-4183-acaa-83859cfaa9b9","responseStatus":200}
+2019-08-26 22:06:26.784 [http-nio-8080-exec-5] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"b554ed83-bdfe-42d9-9bfe-37517932cfc6","url":"/user/info"}
+2019-08-26 22:06:26.795 [http-nio-8080-exec-5] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"b554ed83-bdfe-42d9-9bfe-37517932cfc6","responseStatus":404}
+2019-08-26 22:06:26.826 [http-nio-8080-exec-6] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"09a84a9b-03d4-4efc-8b54-5be08095abfd","url":"/favicon.ico"}
+2019-08-26 22:06:26.832 [http-nio-8080-exec-6] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"09a84a9b-03d4-4efc-8b54-5be08095abfd","responseStatus":200}
+2019-08-26 22:09:35.710 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 2684 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:09:35.710 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:09:36.103 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4afcd809: startup date [Mon Aug 26 22:09:36 CST 2019]; root of context hierarchy
+2019-08-26 22:09:41.184 [main] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'methodValidationPostProcessor' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/DefaultValidatorConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+2019-08-26 22:09:41.200 [main] ERROR o.s.b.factory.support.DefaultListableBeanFactory - Destroy method on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4afcd809: startup date [Mon Aug 26 22:09:36 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.kin.maven.springboot.App.main(App.java:15)
+2019-08-26 22:09:41.215 [main] ERROR o.s.b.factory.support.DefaultListableBeanFactory - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4afcd809: startup date [Mon Aug 26 22:09:36 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.kin.maven.springboot.App.main(App.java:15)
+2019-08-26 22:09:41.215 [main] ERROR org.springframework.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'methodValidationPostProcessor' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/DefaultValidatorConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:223)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:702)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:527)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.kin.maven.springboot.App.main(App.java:15)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/DefaultValidatorConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 32 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.<init>(ConfigurationImpl.java:135)
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.<init>(ConfigurationImpl.java:108)
+	at org.hibernate.validator.HibernateValidator.createGenericConfiguration(HibernateValidator.java:33)
+	at javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:276)
+	at org.springframework.boot.validation.MessageInterpolatorFactory.getObject(MessageInterpolatorFactory.java:53)
+	at org.springframework.boot.autoconfigure.validation.DefaultValidatorConfiguration.defaultValidator(DefaultValidatorConfiguration.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 33 common frames omitted
+2019-08-26 22:10:02.432 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 3980 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:10:02.432 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:10:02.635 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4afcd809: startup date [Mon Aug 26 22:10:02 CST 2019]; root of context hierarchy
+2019-08-26 22:10:03.871 [main] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'methodValidationPostProcessor' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/DefaultValidatorConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+2019-08-26 22:10:03.871 [main] ERROR o.s.b.factory.support.DefaultListableBeanFactory - Destroy method on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4afcd809: startup date [Mon Aug 26 22:10:02 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.kin.maven.springboot.App.main(App.java:15)
+2019-08-26 22:10:03.871 [main] ERROR o.s.b.factory.support.DefaultListableBeanFactory - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4afcd809: startup date [Mon Aug 26 22:10:02 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.kin.maven.springboot.App.main(App.java:15)
+2019-08-26 22:10:03.886 [main] ERROR org.springframework.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'methodValidationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'methodValidationPostProcessor' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/DefaultValidatorConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:223)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:702)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:527)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.kin.maven.springboot.App.main(App.java:15)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultValidator' defined in class path resource [org/springframework/boot/autoconfigure/validation/DefaultValidatorConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.validation.beanvalidation.LocalValidatorFactoryBean]: Factory method 'defaultValidator' threw exception; nested exception is java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 32 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/hibernate/validator/internal/engine/DefaultClockProvider
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.<init>(ConfigurationImpl.java:135)
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.<init>(ConfigurationImpl.java:108)
+	at org.hibernate.validator.HibernateValidator.createGenericConfiguration(HibernateValidator.java:33)
+	at javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:276)
+	at org.springframework.boot.validation.MessageInterpolatorFactory.getObject(MessageInterpolatorFactory.java:53)
+	at org.springframework.boot.autoconfigure.validation.DefaultValidatorConfiguration.defaultValidator(DefaultValidatorConfiguration.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 33 common frames omitted
+2019-08-26 22:12:09.723 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 4796 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:12:09.771 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:12:09.852 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b2ea799: startup date [Mon Aug 26 22:12:09 CST 2019]; root of context hierarchy
+2019-08-26 22:12:14.192 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:12:14.255 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-08-26 22:12:14.333 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-08-26 22:12:14.613 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:12:14.613 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4762 ms
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'logFilter' to urls: [/*]
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'sessionFilter' to urls: [/*]
+2019-08-26 22:12:14.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-26 22:12:17.843 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b2ea799: startup date [Mon Aug 26 22:12:09 CST 2019]; root of context hierarchy
+2019-08-26 22:12:18.033 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/info],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.kin.maven.springboot.controller.page.UserController.getUserInfo(java.lang.String)
+2019-08-26 22:12:18.033 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/login],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-08-26 22:12:18.033 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/add],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.registUser(com.kin.maven.springboot.model.User)
+2019-08-26 22:12:18.033 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getUser(javax.servlet.http.HttpServletRequest,java.lang.String)
+2019-08-26 22:12:18.033 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getcurrentuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getCurrentUser()
+2019-08-26 22:12:18.048 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-26 22:12:18.048 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-26 22:12:18.079 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:12:18.095 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:12:18.142 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalException
+2019-08-26 22:12:18.220 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:12:18.735 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-26 22:12:19.317 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-08-26 22:12:19.504 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-08-26 22:12:19.520 [main] INFO  com.kin.maven.springboot.App - Started App in 10.773 seconds (JVM running for 11.928)
+2019-08-26 22:12:32.964 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=3E934AE1CE2068691C34259FF1246222] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:12:33.297 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-26 22:12:33.297 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-26 22:12:33.631 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 334 ms
+2019-08-26 22:12:33.796 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"5b76a703-ed4a-415d-b097-62c46a780a0a","url":"/user/info"}
+2019-08-26 22:12:35.617 [http-nio-8080-exec-1] ERROR freemarker.runtime - Error executing FreeMarker template
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> user.username  [in template "user/json-info.ftl" at line 2, column 19]
+
+----
+Tip: It's the step after the last dot that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${user.username}  [in template "user/json-info.ftl" at line 2, column 17]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134)
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:465)
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:387)
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:356)
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:96)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:59)
+	at freemarker.core.Environment.visit(Environment.java:326)
+	at freemarker.core.Environment.visit(Environment.java:332)
+	at freemarker.core.Environment.process(Environment.java:305)
+	at freemarker.template.Template.process(Template.java:378)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.kin.maven.springboot.filter.SessionFilter.doFilterInternal(SessionFilter.java:27)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.kin.maven.springboot.filter.LogFilter.doFilterInternal(LogFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-08-26 22:12:35.696 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> user.username  [in template "user/json-info.ftl" at line 2, column 19]
+
+----
+Tip: It's the step after the last dot that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${user.username}  [in template "user/json-info.ftl" at line 2, column 17]
+----] with root cause
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> user.username  [in template "user/json-info.ftl" at line 2, column 19]
+
+----
+Tip: It's the step after the last dot that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${user.username}  [in template "user/json-info.ftl" at line 2, column 17]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134)
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:465)
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:387)
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:356)
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:96)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:59)
+	at freemarker.core.Environment.visit(Environment.java:326)
+	at freemarker.core.Environment.visit(Environment.java:332)
+	at freemarker.core.Environment.process(Environment.java:305)
+	at freemarker.template.Template.process(Template.java:378)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.kin.maven.springboot.filter.SessionFilter.doFilterInternal(SessionFilter.java:27)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.kin.maven.springboot.filter.LogFilter.doFilterInternal(LogFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-08-26 22:12:35.865 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"2c8ffa79-3bde-4797-909b-53d844a431b0","url":"/favicon.ico"}
+2019-08-26 22:12:36.194 [http-nio-8080-exec-3] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"2c8ffa79-3bde-4797-909b-53d844a431b0","responseStatus":200}
+2019-08-26 22:13:11.258 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 5032 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:13:11.258 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:13:11.476 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b2ea799: startup date [Mon Aug 26 22:13:11 CST 2019]; root of context hierarchy
+2019-08-26 22:13:13.323 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:13:13.323 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-08-26 22:13:13.338 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-08-26 22:13:13.416 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:13:13.416 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1940 ms
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'logFilter' to urls: [/*]
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'sessionFilter' to urls: [/*]
+2019-08-26 22:13:13.572 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-26 22:13:14.313 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b2ea799: startup date [Mon Aug 26 22:13:11 CST 2019]; root of context hierarchy
+2019-08-26 22:13:14.360 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/info],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.kin.maven.springboot.controller.page.UserController.getUserInfo(java.lang.String)
+2019-08-26 22:13:14.360 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/login],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-08-26 22:13:14.360 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/add],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.registUser(com.kin.maven.springboot.model.User)
+2019-08-26 22:13:14.360 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getUser(javax.servlet.http.HttpServletRequest,java.lang.String)
+2019-08-26 22:13:14.360 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getcurrentuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getCurrentUser()
+2019-08-26 22:13:14.375 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-26 22:13:14.375 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-26 22:13:14.391 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:13:14.391 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:13:14.422 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalException
+2019-08-26 22:13:14.438 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:13:14.641 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-26 22:13:14.812 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-08-26 22:13:14.859 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-08-26 22:13:14.875 [main] INFO  com.kin.maven.springboot.App - Started App in 4.28 seconds (JVM running for 5.394)
+2019-08-26 22:13:17.961 [http-nio-8080-exec-2] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=C9E95727EFA0D7B80406AB999EDE5647] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:13:17.976 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-26 22:13:17.976 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-26 22:13:17.992 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2019-08-26 22:13:18.185 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"ec94222f-c232-4a0a-bbec-744b9d278177","url":"/user/info"}
+2019-08-26 22:13:18.585 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"ec94222f-c232-4a0a-bbec-744b9d278177","responseStatus":200}
+2019-08-26 22:13:18.619 [http-nio-8080-exec-6] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"eac15284-376c-491d-b80f-2b3512cf5a5c","url":"/favicon.ico"}
+2019-08-26 22:13:18.658 [http-nio-8080-exec-6] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"eac15284-376c-491d-b80f-2b3512cf5a5c","responseStatus":200}
+2019-08-26 22:14:24.694 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 2964 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:14:24.694 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:14:24.959 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@411f53a0: startup date [Mon Aug 26 22:14:24 CST 2019]; root of context hierarchy
+2019-08-26 22:14:27.009 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:14:27.024 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-08-26 22:14:27.024 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-08-26 22:14:27.102 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:14:27.102 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2143 ms
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'logFilter' to urls: [/*]
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'sessionFilter' to urls: [/*]
+2019-08-26 22:14:27.290 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-26 22:14:28.027 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@411f53a0: startup date [Mon Aug 26 22:14:24 CST 2019]; root of context hierarchy
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/info],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.kin.maven.springboot.controller.page.UserController.getUserInfo(java.lang.String)
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/login],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/add],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.registUser(com.kin.maven.springboot.model.User)
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getUser(javax.servlet.http.HttpServletRequest,java.lang.String)
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getcurrentuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getCurrentUser()
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-26 22:14:28.074 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-26 22:14:28.136 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:14:28.136 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:14:28.152 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalException
+2019-08-26 22:14:28.183 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:14:28.370 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-26 22:14:28.542 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-08-26 22:14:28.651 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-08-26 22:14:28.651 [main] INFO  com.kin.maven.springboot.App - Started App in 4.659 seconds (JVM running for 5.727)
+2019-08-26 22:14:30.958 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=4C63643D2745FEBD48D2F20D35360166] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:14:30.958 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-26 22:14:30.958 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-26 22:14:30.973 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2019-08-26 22:14:31.173 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"c8d50fcd-742f-438a-afcb-030fcc1f1e6c","url":"/user/info"}
+2019-08-26 22:14:31.556 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"c8d50fcd-742f-438a-afcb-030fcc1f1e6c","responseStatus":404}
+2019-08-26 22:14:31.630 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"d89429a3-5fba-41f6-93c0-efb13d0d4392","url":"/favicon.ico"}
+2019-08-26 22:14:31.655 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"d89429a3-5fba-41f6-93c0-efb13d0d4392","responseStatus":200}
+2019-08-26 22:14:49.413 [main] INFO  com.kin.maven.springboot.App - Starting App on Kin with PID 4292 (started by Administrator in E:\JAVA test\springboot0826)
+2019-08-26 22:14:49.460 [main] INFO  com.kin.maven.springboot.App - No active profile set, falling back to default profiles: default
+2019-08-26 22:14:49.601 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b2ea799: startup date [Mon Aug 26 22:14:49 CST 2019]; root of context hierarchy
+2019-08-26 22:14:51.677 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-08-26 22:14:51.692 [main] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-08-26 22:14:51.692 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-08-26 22:14:51.850 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-26 22:14:51.850 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2249 ms
+2019-08-26 22:14:52.008 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-26 22:14:52.024 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-26 22:14:52.024 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-26 22:14:52.024 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-26 22:14:52.024 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'logFilter' to urls: [/*]
+2019-08-26 22:14:52.024 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'sessionFilter' to urls: [/*]
+2019-08-26 22:14:52.024 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-26 22:14:52.774 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b2ea799: startup date [Mon Aug 26 22:14:49 CST 2019]; root of context hierarchy
+2019-08-26 22:14:52.836 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/info],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.kin.maven.springboot.controller.page.UserController.getUserInfo(java.lang.String)
+2019-08-26 22:14:52.836 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/login],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-08-26 22:14:52.836 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/add],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.registUser(com.kin.maven.springboot.model.User)
+2019-08-26 22:14:52.836 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getUser(javax.servlet.http.HttpServletRequest,java.lang.String)
+2019-08-26 22:14:52.836 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/getcurrentuser],methods=[GET]}" onto public com.kin.maven.springboot.global.ResultBean com.kin.maven.springboot.controller.UserController.getCurrentUser()
+2019-08-26 22:14:52.853 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-26 22:14:52.853 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-26 22:14:52.868 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:14:52.868 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:14:52.884 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalException
+2019-08-26 22:14:52.915 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-26 22:14:53.105 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-26 22:14:53.292 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-08-26 22:14:53.355 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-08-26 22:14:53.355 [main] INFO  com.kin.maven.springboot.App - Started App in 4.61 seconds (JVM running for 5.701)
+2019-08-26 22:14:57.166 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1566397500,1566435816,1566527593; zg_18f5038ab49c4ae4918641ae36d67496=%7B%22sid%22%3A%201566535219466%2C%22updated%22%3A%201566535928467%2C%22info%22%3A%201566398645929%2C%22superProperty%22%3A%20%22%7B%7D%22%2C%22platform%22%3A%20%22%7B%7D%22%2C%22utm%22%3A%20%22%7B%7D%22%2C%22referrerDomain%22%3A%20%22localhost%22%2C%22zs%22%3A%200%2C%22sc%22%3A%200%2C%22firstScreen%22%3A%201566535219466%7D; JSESSIONID=CC1560B07A8E5BD0D134C880CF4663BD] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2019-08-26 22:14:57.177 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-26 22:14:57.178 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-26 22:14:57.193 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2019-08-26 22:14:57.386 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{"userName":["kin"]},"requestId":"bae535e5-f072-4349-97ae-3cc4943b5592","url":"/user/info"}
+2019-08-26 22:14:57.777 [http-nio-8080-exec-1] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"bae535e5-f072-4349-97ae-3cc4943b5592","responseStatus":200}
+2019-08-26 22:14:57.802 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 请求 : {"method":"GET","parameterMap":{},"requestId":"2cd34a52-82e4-4e59-aabd-164478cf039f","url":"/favicon.ico"}
+2019-08-26 22:14:57.836 [http-nio-8080-exec-2] INFO  com.kin.maven.springboot.filter.LogFilter - 响应 : {"requestId":"2cd34a52-82e4-4e59-aabd-164478cf039f","responseStatus":200}

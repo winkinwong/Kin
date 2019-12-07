@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kin.test.springboot.dao.DangerousSourcePlaceMapper">
+    <select id="getAllDangerousSourcePlaceByCompany" resultType="com.kin.test.springboot.model.DangerousSourcePlace" parameterType="com.kin.test.springboot.model.DangerousSourcePlace">
+        SELECT
+        t.dangeroussource_place_id AS dangeroussourcePlaceId,
+        t.dangeroussource_place_name AS dangeroussourcePlaceName,
+        t.dangeroussource_place_place AS dangeroussourcePlacePlace,
+        t.dangeroussource_place_technology_control AS dangeroussourcePlaceTechnologyControl,
+        t.dangeroussource_place_artificial_control AS dangeroussourcePlaceArtificialControl,
+        t.dangeroussource_place_management_control AS dangeroussourcePlaceManagementControl,
+        t.dangeroussource_place_content AS dangeroussourcePlaceContent,
+        t.dangeroussource_place_attendance_workday_frequency AS dangeroussourcePlaceAttendanceWorkdayFrequency,
+        t.dangeroussource_place_attendance_restday_frequency AS dangeroussourcePlaceAttendanceRestdayFrequency,
+        t.create_time AS createTime,
+        t.status AS status,
+        t.department_id_inspect AS departmentIdInspect,
+        t.inspect_attendance_id AS inspectAttendanceId,
+        t.company_id AS companyId,
+        de.department_name AS departmentName,
+        us.user_realname AS userRealname,
+        co.company_name AS companyName
+        FROM dangeroussource_place t
+        LEFT OUTER JOIN department de ON(t.department_id_inspect=de.department_id)
+        LEFT OUTER JOIN company co ON(de.company_id=co.company_id)
+        LEFT OUTER JOIN user us ON(de.user_id=us.user_id)
+        <where>
+            <if test="dangeroussourcePlaceName != null and dangeroussourcePlaceName != ''">
+                and t.dangeroussource_place_name LIKE "%"#{dangeroussourcePlaceName}"%"
+            </if>
+            <if test="dangeroussourcePlacePlace != null and dangeroussourcePlacePlace != ''">
+                and t.dangeroussource_place_place = #{dangeroussourcePlacePlace}
+            </if>
+            <if test="dangeroussourcePlaceTechnologyControl != null and dangeroussourcePlaceTechnologyControl != ''">
+                and t.dangeroussource_place_technology_control = #{dangeroussourcePlaceTechnologyControl}
+            </if>
+            <if test="dangeroussourcePlaceArtificialControl != null and dangeroussourcePlaceArtificialControl != ''">
+                and t.dangeroussource_place_artificial_control = #{dangeroussourcePlaceArtificialControl}
+            </if>
+            <if test="dangeroussourcePlaceManagementControl != null and dangeroussourcePlaceManagementControl != ''">
+                and t.dangeroussource_place_management_control = #{dangeroussourcePlaceManagementControl}
+            </if>
+            <if test="dangeroussourcePlaceContent != null and dangeroussourcePlaceContent != ''">
+                and t.dangeroussource_place_content = #{dangeroussourcePlaceContent}
+            </if>
+            <if test="dangeroussourcePlaceAttendanceWorkdayFrequency != null">
+                and t.dangeroussource_place_attendance_workday_frequency = #{dangeroussourcePlaceAttendanceWorkdayFrequency}
+            </if>
+            <if test="dangeroussourcePlaceAttendanceRestdayFrequency != null">
+                and t.dangeroussource_place_attendance_restday_frequency = #{dangeroussourcePlaceAttendanceRestdayFrequency}
+            </if>
+            <if test="createTimeBegin != null and createTimeBegin != ''">
+                <![CDATA[ and date_format(t.create_time,'%Y/%m/%d') >= #{createTimeBegin} ]]>
+            </if>
+            <if test="createTimeEnd != null and createTimeEnd != ''">
+                <![CDATA[ and date_format(t.create_time,'%Y/%m/%d') <= #{createTimeEnd} ]]>
+            </if>
+            <if test="status != null and status != ''">
+                and t.status = #{status}
+            </if>
+            <if test="departmentIdInspect != null">
+                and t.department_id_inspect = #{departmentIdInspect}
+            </if>
+            <if test="inspectAttendanceId != null">
+                and t.inspect_attendance_id = #{inspectAttendanceId}
+            </if>
+            <!-- <if test="companyId != null">
+            and t.company_id= #{companyId}
+            </if> -->
+            <if test="companyId != null and companyId !=-1">
+                AND de.company_id= #{companyId}
+            </if>
+            <if test="companyId == null">
+                AND de.company_id IN
+                <foreach collection="companyIds" index="index" item="item" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="userRealname!=null">
+                AND us.user_realname LIKE "%"#{userRealname}"%"
+            </if>
+        </where>
+    </select>
+</mapper>

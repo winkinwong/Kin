@@ -1,0 +1,14 @@
+server:
+  port: 5555
+spring:
+  activemq:
+    #broker-url: tcp://localhost:61616 #自己的MQ服务器地址
+    #broker-url: nio://localhost:61618 #自己的MQ服务器地址 nio协议性能优于tcp协议
+    broker-url: nio://localhost:61608 #自己的MQ服务器地址 auto自动选择协议nio的增强
+    user: admin
+    password: admin
+  jms:
+    pub-sub-domain: true #false = Queue true = Topic
+
+#自己定义队列名称
+myTopic: boot-activemq-topic
