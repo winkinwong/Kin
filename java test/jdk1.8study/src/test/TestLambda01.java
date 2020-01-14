@@ -2,7 +2,7 @@ package test;
 
 import impl.EmployeeByAgeImpl;
 import interf.MyPredicate;
-import module.Employee;
+import model.Employee;
 import org.junit.Test;
 
 import java.util.ArrayList;

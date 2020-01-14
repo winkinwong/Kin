@@ -1,8 +1,6 @@
 package interf;
 
-import module.Employee;
-
-import java.util.List;
+import model.Employee;
 
 public interface MyPredicate<T> {
     boolean test(Employee employee);

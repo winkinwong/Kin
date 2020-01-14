@@ -1,6 +1,6 @@
 package impl;
 
-import module.Employee;
+import model.Employee;
 import interf.MyPredicate;
 
 /**
