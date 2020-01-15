@@ -53,4 +53,13 @@ public class Employee {
                 ", salary=" + salary +
                 '}';
     }
+
+    public Employee(Integer age) {
+        this.age = age;
+    }
+
+    public Employee(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }
