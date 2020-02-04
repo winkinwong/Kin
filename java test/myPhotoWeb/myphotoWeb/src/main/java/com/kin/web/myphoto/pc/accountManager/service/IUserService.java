@@ -1,7 +1,9 @@
 package com.kin.web.myphoto.pc.accountManager.service;
 
+import com.kin.web.myphoto.pc.accountManager.dto.UserDTO;
 import com.kin.web.myphoto.pc.accountManager.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.kin.web.myphoto.pc.accountManager.req.UserReq;
 
 /**
  * <p>
@@ -12,5 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-02-02
  */
 public interface IUserService extends IService<User> {
-
+    int registerAccount(UserDTO userDTO) throws Exception;
+    User loginAccount(UserReq req);
 }

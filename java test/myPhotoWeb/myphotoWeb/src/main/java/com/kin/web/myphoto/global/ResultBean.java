@@ -21,6 +21,11 @@ public class ResultBean<T> {
         this.requestId = requestId;
     }
 
+    public ResultBean(String message, String requestId) {
+        this.message = message;
+        this.requestId = requestId;
+    }
+
     public ResultBean(int code, String message, String requestId) {
         this.code = code;
         this.message = message;
@@ -56,6 +61,9 @@ public class ResultBean<T> {
     }
     public static ResultBean success(){
         return new ResultBean(ThreadLocalHelper.getRequestId());
+    }
+    public static ResultBean success(String message){
+        return new ResultBean(message,ThreadLocalHelper.getRequestId());
     }
     public static <V> ResultBean<V> success(V data){
         ResultBean resultBean = new ResultBean(ThreadLocalHelper.getRequestId());

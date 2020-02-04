@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.kin.web.myphoto.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
+
+import com.kin.web.myphoto.pc.accountManager.dto.UserDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -79,15 +81,20 @@ public class User extends BaseEntity {
      */
     private Integer deleted;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
 
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updateTime;
-
+    public UserDTO toConvertUserDTO(){
+        UserDTO userDTO = new UserDTO();
+        userDTO.setAddress(this.address);
+        userDTO.setBirth(this.birth);
+        userDTO.setDeleted(this.deleted);
+        userDTO.setEnable(this.enable);
+        userDTO.setHeadImage(this.headImage);
+        userDTO.setPhoneNumber(this.phoneNumber);
+        userDTO.setUserName(this.userName);
+        userDTO.setUserPassword(this.userPassword);
+        userDTO.setUserRealName(this.userRealName);
+        userDTO.setSex(this.sex);
+        return userDTO;
+    }
 
 }

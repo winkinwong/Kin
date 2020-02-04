@@ -49,15 +49,6 @@ public class Images extends BaseEntity {
      */
     private String imageUrl;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updateTime;
 
     /**
      * 图片上传者名称

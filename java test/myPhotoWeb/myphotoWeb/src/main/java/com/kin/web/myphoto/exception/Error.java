@@ -6,6 +6,7 @@ public enum Error {
     USER_LOGIN_FAIL(10003,"登录失败"),
     USER_LOGOUT(10004,"用户已经登出"),
     USER_ALREAD_LOGIN(10005,"用户已经登录"),
+    USER_PASSWORD_FAIL(10006,"密码错误"),
     ;
     private int code;
     private String message;
