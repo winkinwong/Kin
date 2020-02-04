@@ -13,6 +13,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -66,5 +67,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         }
         //登陆成功返回用户信息
         return user;
+    }
+
+    @Override
+    public List<User> listAllUser() {
+        return  userMapper.selectList(new QueryWrapper<>());
     }
 }

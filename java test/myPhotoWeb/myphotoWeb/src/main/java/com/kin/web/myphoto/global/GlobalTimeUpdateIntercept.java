@@ -29,7 +29,7 @@ public class GlobalTimeUpdateIntercept implements Interceptor {
         String operation = mappedId.substring(mappedId.lastIndexOf(".") + 1).toLowerCase();
         Object object = invocation.getArgs()[1];
 
-        if (operation.contains("add")) {
+        if (operation.contains("insert")) {
             // 插入
             if (object instanceof Map && ((Map) object).get("list") != null && ((Map) object).get("list") instanceof List && !((List) ((Map) object).get("list")).isEmpty()) {
                 // 批量插入

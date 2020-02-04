@@ -7,6 +7,19 @@ public enum Error {
     USER_LOGOUT(10004,"用户已经登出"),
     USER_ALREAD_LOGIN(10005,"用户已经登录"),
     USER_PASSWORD_FAIL(10006,"密码错误"),
+
+    //权限********************************************
+    FUNCTION_NOT_FOUND(20001,"未找到该权限"),
+    FUNCTION_EXISTS(20002,"该权限名已存在"),
+    FUNCTION_RELATION_EXISTS(20003,"该权限有存在关联角色"),
+
+    //角色********************************************
+    ROLE_EXISTS(30001,"角色名已存在"),
+    ROLE_NOT_FOUND(30002,"该角色不存在"),
+
+    //RoleFunction*************************************
+    ROLEFUNCTION_IS_NULL(40001,"当前角色未添加权限"),
+    ROLEFUNCTION_NOT_FOUND(40002,"当前角色未添加该权限"),
     ;
     private int code;
     private String message;

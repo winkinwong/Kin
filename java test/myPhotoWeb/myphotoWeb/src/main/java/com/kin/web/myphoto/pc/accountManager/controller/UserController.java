@@ -31,12 +31,13 @@ public class UserController extends BaseController {
     @Resource
     private IUserService userService;
 
+    //注册账号
     @PostMapping("/registerAccount")
     public ResultBean registerAccount(@RequestBody UserDTO userDTO) throws Exception {
         userService.registerAccount(userDTO);
         return ResultBean.success();
     }
-
+    //登录
     @PostMapping("/loginAccount")
     public ResultBean loginAccount(@RequestBody UserReq req, HttpServletRequest request){
         User user = userService.loginAccount(req);
@@ -46,7 +47,7 @@ public class UserController extends BaseController {
         session.setAttribute("login_user",user);
         return ResultBean.success("登陆成功");
     }
-
+    //登出
     @GetMapping("/logoutAccount")
     public ResultBean logoutAccount(HttpServletRequest request){
         User user = ThreadLocalHelper.getSessionUser();

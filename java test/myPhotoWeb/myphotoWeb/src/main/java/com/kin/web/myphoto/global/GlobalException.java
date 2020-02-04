@@ -1,7 +1,11 @@
 package com.kin.web.myphoto.global;
 
 
+import com.kin.web.myphoto.exception.FunctionException;
+import com.kin.web.myphoto.exception.RoleException;
+import com.kin.web.myphoto.exception.RoleFunctionException;
 import com.kin.web.myphoto.exception.UserException;
+import com.kin.web.myphoto.pc.accountManager.entity.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -21,6 +25,24 @@ public class GlobalException {
     @ExceptionHandler
     @ResponseBody
     public ResultBean userException(UserException u, HttpServletRequest request , HttpServletResponse response){
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        return ResultBean.error(u.getCode(),u.getMessage());
+    }
+    @ExceptionHandler
+    @ResponseBody
+    public ResultBean functionException(FunctionException u, HttpServletRequest request , HttpServletResponse response){
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        return ResultBean.error(u.getCode(),u.getMessage());
+    }
+    @ExceptionHandler
+    @ResponseBody
+    public ResultBean roleException(RoleException u, HttpServletRequest request , HttpServletResponse response){
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        return ResultBean.error(u.getCode(),u.getMessage());
+    }
+    @ExceptionHandler
+    @ResponseBody
+    public ResultBean roleFunctionException(RoleFunctionException u, HttpServletRequest request , HttpServletResponse response){
         response.setStatus(HttpStatus.BAD_REQUEST.value());
         return ResultBean.error(u.getCode(),u.getMessage());
     }

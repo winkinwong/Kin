@@ -1,10 +1,15 @@
 package com.kin.web.myphoto.pc.accountManager.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.kin.web.myphoto.global.ResultBean;
+import com.kin.web.myphoto.pc.accountManager.entity.Function;
+import com.kin.web.myphoto.pc.accountManager.service.IFunctionService;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
 import com.kin.web.myphoto.base.BaseController;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -17,5 +22,31 @@ import com.kin.web.myphoto.base.BaseController;
 @RestController
 @RequestMapping("/accountManager/function")
 public class FunctionController extends BaseController {
+
+    @Resource
+    private IFunctionService functionService;
+    //TODO  权限功能 1.添加权限 2.删除权限  3.列出所有权限
+
+    //1.添加权限
+    @PostMapping("/addFunction")
+    public ResultBean addFunction(Function function){
+        functionService.addFunction(function);
+        return ResultBean.success("添加成功");
+    }
+    //2.删除权限
+    @GetMapping("/delFunction/{id}")
+    public ResultBean delFunction(@PathVariable Long id){
+        functionService.delFunction(id);
+        return ResultBean.success("删除成功");
+    }
+
+    //3.列出所有权限(根据角色筛选，若角色已添加该权限，则不显示)
+    @GetMapping("/showAllFunction/{roleId}")
+    public ResultBean showAllFunction(@PathVariable Long roleId){
+        ResultBean resultBean = new ResultBean<>();
+        //分页查询权限
+        resultBean.setData(functionService.listFunctionByPage(roleId));
+        return resultBean;
+    }
 
 }
