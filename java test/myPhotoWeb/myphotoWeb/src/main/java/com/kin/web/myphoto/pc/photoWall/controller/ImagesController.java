@@ -18,4 +18,8 @@ import com.kin.web.myphoto.base.BaseController;
 @RequestMapping("/photoWall/images")
 public class ImagesController extends BaseController {
 
+    //1.上传图片
+    //2.展示所有图片
+    //3.展示个人上传图片（既个人照片墙）
+    //4.删除图片
 }
