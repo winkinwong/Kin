@@ -20,6 +20,10 @@ public enum Error {
     //RoleFunction*************************************
     ROLEFUNCTION_IS_NULL(40001,"当前角色未添加权限"),
     ROLEFUNCTION_NOT_FOUND(40002,"当前角色未添加该权限"),
+
+    //Images*******************************************
+    IMG_UPLOAD_FAIL(50001,"图片上传失败"),
+    IMG_SAVE_FILE(50002,"图片保存失败"),
     ;
     private int code;
     private String message;

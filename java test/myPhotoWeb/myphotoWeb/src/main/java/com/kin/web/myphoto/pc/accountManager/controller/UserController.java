@@ -9,6 +9,8 @@ import com.kin.web.myphoto.pc.accountManager.dto.UserDTO;
 import com.kin.web.myphoto.pc.accountManager.entity.User;
 import com.kin.web.myphoto.pc.accountManager.req.UserReq;
 import com.kin.web.myphoto.pc.accountManager.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import com.kin.web.myphoto.base.BaseController;
@@ -28,12 +30,14 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RequestMapping("/accountManager/user")
 public class UserController extends BaseController {
+    private static final Logger logger=LoggerFactory.getLogger(UserController.class);
     @Resource
     private IUserService userService;
 
     //注册账号
     @PostMapping("/registerAccount")
     public ResultBean registerAccount(@RequestBody UserDTO userDTO) throws Exception {
+        logger.info("注册账号 user:",userDTO);
         userService.registerAccount(userDTO);
         return ResultBean.success();
     }
@@ -41,6 +45,7 @@ public class UserController extends BaseController {
     @PostMapping("/loginAccount")
     public ResultBean loginAccount(@RequestBody UserReq req, HttpServletRequest request){
         User user = userService.loginAccount(req);
+        logger.info("用户登陆 user:",user.getUserId());
         //将登陆信息放入session
         HttpSession session = request.getSession();
         //这个让前端获取的登陆信息
@@ -54,6 +59,7 @@ public class UserController extends BaseController {
         if (user==null){
             throw new UserException(Error.USER_LOGOUT);
         }
+        logger.info("用户登出 user:",user.getUserId());
         HttpSession session = request.getSession();
         session.invalidate();
         return ResultBean.success("已登出");

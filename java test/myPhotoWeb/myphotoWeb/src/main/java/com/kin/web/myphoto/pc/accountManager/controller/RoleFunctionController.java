@@ -6,6 +6,8 @@ import com.kin.web.myphoto.pc.accountManager.entity.Function;
 import com.kin.web.myphoto.pc.accountManager.entity.RoleFunction;
 import com.kin.web.myphoto.pc.accountManager.service.IFunctionService;
 import com.kin.web.myphoto.pc.accountManager.service.IRoleFunctionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import com.kin.web.myphoto.base.BaseController;
@@ -24,7 +26,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/accountManager/roleFunction")
 public class RoleFunctionController extends BaseController {
-
+    private static final Logger logger=LoggerFactory.getLogger(RoleFunctionController.class);
     @Resource
     private IRoleFunctionService roleFunctionService;
     @Resource
@@ -42,12 +44,14 @@ public class RoleFunctionController extends BaseController {
     //2.为角色添加权限，只允许一个一个添加，添加完一个后，选择列表刷新，显示未添加的权限
     @GetMapping("/addRoleFunction/{id}")
     public ResultBean addRoleFunction(@PathVariable Long id, Long functionId){
+        logger.info("为角色添加权限 roleId:",id,"functionId:",functionId);
         roleFunctionService.addRoleFunction(id,functionId);
         return ResultBean.success("添加成功");
     }
     //3.删除当前角色权限
     @GetMapping("/delRoleFunction/{id}")
     public ResultBean delRoleFunction(@PathVariable Long id){
+        logger.info("删除角色权限 functionId:",id);
         roleFunctionService.delRoleFunction(id);
         return ResultBean.success("删除成功");
     }

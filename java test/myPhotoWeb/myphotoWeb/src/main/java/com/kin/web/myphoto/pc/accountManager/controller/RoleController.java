@@ -6,6 +6,8 @@ import com.kin.web.myphoto.global.ResultBean;
 import com.kin.web.myphoto.pc.accountManager.entity.Function;
 import com.kin.web.myphoto.pc.accountManager.entity.Role;
 import com.kin.web.myphoto.pc.accountManager.service.IRoleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import com.kin.web.myphoto.base.BaseController;
@@ -23,13 +25,14 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/accountManager/role")
 public class RoleController extends BaseController {
-
+    private static final Logger logger=LoggerFactory.getLogger(RoleController.class);
     @Resource
     private IRoleService roleService;
 
     //1.添加角色
     @PostMapping("/addRole")
     public ResultBean addRole(Role role){
+        logger.info("添加角色 role:",role);
         roleService.addRole(role);
         return ResultBean.success("添加角色成功");
     }
@@ -37,6 +40,7 @@ public class RoleController extends BaseController {
     //2.删除角色
     @GetMapping("/delRole/{id}")
     public ResultBean delRole(@PathVariable Long id){
+        logger.info("删除角色 roleId:",id);
         roleService.delRole(id);
         return ResultBean.success("删除成功");
     }

@@ -1,10 +1,7 @@
 package com.kin.web.myphoto.global;
 
 
-import com.kin.web.myphoto.exception.FunctionException;
-import com.kin.web.myphoto.exception.RoleException;
-import com.kin.web.myphoto.exception.RoleFunctionException;
-import com.kin.web.myphoto.exception.UserException;
+import com.kin.web.myphoto.exception.*;
 import com.kin.web.myphoto.pc.accountManager.entity.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +43,13 @@ public class GlobalException {
         response.setStatus(HttpStatus.BAD_REQUEST.value());
         return ResultBean.error(u.getCode(),u.getMessage());
     }
+    @ExceptionHandler
+    @ResponseBody
+    public ResultBean imagesException(ImagesException u, HttpServletRequest request , HttpServletResponse response){
+        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        return ResultBean.error(u.getCode(),u.getMessage());
+    }
+
     @ExceptionHandler
     @ResponseBody
     public ResultBean unKnowException(Exception e){
