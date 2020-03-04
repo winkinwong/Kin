@@ -24,6 +24,8 @@ public enum Error {
     //Images*******************************************
     IMG_UPLOAD_FAIL(50001,"图片上传失败"),
     IMG_SAVE_FILE(50002,"图片保存失败"),
+    IMG_NOT_BELONG(50003,"该图片不属于你"),
+    IMG_NOT_FOUND(50004,"图片不存在"),
     ;
     private int code;
     private String message;

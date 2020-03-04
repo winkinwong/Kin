@@ -1,8 +1,12 @@
 package com.kin.web.myphoto.pc.photoWall.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.kin.web.myphoto.exception.Error;
 import com.kin.web.myphoto.exception.ImagesException;
 import com.kin.web.myphoto.global.ResultBean;
+import com.kin.web.myphoto.pc.accountManager.entity.User;
 import com.kin.web.myphoto.pc.photoWall.entity.Images;
 import com.kin.web.myphoto.pc.photoWall.mapper.ImagesMapper;
 import com.kin.web.myphoto.pc.photoWall.req.UploadImgReq;
@@ -15,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.awt.*;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -98,6 +103,45 @@ public class ImagesServiceImpl extends ServiceImpl<ImagesMapper, Images> impleme
             }
         }
         return ResultBean.success("上传成功");
+    }
+
+    @Override
+    public Page<Images> listImgByPage(Long currentPage, Long rows) {
+        IPage<Images>page = new Page<>(currentPage,rows);
+        return (Page<Images>) imagesMapper.selectPage(page,null);
+    }
+
+    @Override
+    public Page<Images> getPersonalImgByPage(Long currentPage, Long rows, User user) {
+        IPage<Images> page = new Page<>(currentPage,rows);
+        return (Page<Images>) imagesMapper.selectPage(page,new QueryWrapper<Images>().eq("uploader_id",user.getUserId()));
+    }
+
+    @Override
+    public int delImg(User user, Long id) {
+        Images images =imagesMapper.selectById(id);
+        if (images==null){
+            throw new ImagesException(Error.IMG_NOT_FOUND);
+        }
+        //先检查登录用户是否为超级管理员，若是则允许删除任何图片
+        if (!(user.getUserName().equals("admin"))){
+            //1.根据id查询图片是否为当前用户上传图片，若不是需要返回信息
+            if (images.getUploaderId()!=user.getUserId()){
+                throw new ImagesException(Error.IMG_NOT_BELONG);
+            }
+            //删除本地文件
+            File file = new File(images.getImageRealurl());
+            if (file.exists()){
+                file.delete();
+            }
+            return imagesMapper.deleteById(id);
+        }
+        //删除本地文件
+        File file = new File(images.getImageRealurl());
+        if (file.exists()){
+            file.delete();
+        }
+        return imagesMapper.deleteById(id);
     }
 
 

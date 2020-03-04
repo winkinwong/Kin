@@ -5,21 +5,6 @@
       <change afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/exception/ImagesException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/req/UploadImgReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/exception/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/exception/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/global/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/global/GlobalException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/FunctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/FunctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/RoleFunctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/RoleFunctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/accountManager/controller/UserRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/controller/ImagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/controller/ImagesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/service/IImagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/service/IImagesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/service/impl/ImagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/java/com/kin/web/myphoto/pc/photoWall/service/impl/ImagesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../myPhotoWeb/myphotoWeb/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterDir="false" />
@@ -69,7 +54,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -300,7 +284,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1" />
     <option name="width" value="1386" />
     <option name="height" value="788" />
@@ -534,7 +518,7 @@
     <option name="totallyTimeSpent" value="46106000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
